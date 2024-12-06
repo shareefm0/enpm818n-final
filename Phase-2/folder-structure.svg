@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" style="background-color: white;">
+  <style>
+    .text { font-family: monospace; font-size: 10px; }
+    .root { font-weight: bold; font-size: 14px; }
+  </style>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1600" height="900" fill="#f0f0f0"/>
+  
+  <!-- Folder Structure Text -->
+  <g transform="translate(50, 50)" class="text">
+    <text class="root" x="0" y="0">Phase-2</text>
+    <text class="root" x="20" y="30">└── split-yaml-files</text>
+
+    <!-- Columns to spread out the content -->
+    <g transform="translate(0, 60)">
+      <!-- First Column -->
+      <g transform="translate(0, 0)">
+        <text y="0">├── clusterrole</text>
+        <text y="20">│   ├── opentelemetry-demo-grafana-clusterrole.yaml</text>
+        <text y="40">│   ├── opentelemetry-demo-otelcol.yaml</text>
+        <text y="60">│   └── opentelemetry-demo-prometheus-server.yaml</text>
+
+        <text y="100">├── clusterrolebinding</text>
+        <text y="120">│   ├── opentelemetry-demo-grafana-clusterrolebinding.yaml</text>
+        <text y="140">│   ├── opentelemetry-demo-otelcol.yaml</text>
+        <text y="160">│   └── opentelemetry-demo-prometheus-server.yaml</text>
+
+        <text y="200">├── configmap</text>
+        <text y="220">│   ├── opentelemetry-demo-flagd-config.yaml</text>
+        <text y="240">│   ├── opentelemetry-demo-grafana-dashboards.yaml</text>
+        <text y="260">│   ├── opentelemetry-demo-grafana.yaml</text>
+        <text y="280">│   ├── opentelemetry-demo-otelcol.yaml</text>
+        <text y="300">│   ├── opentelemetry-demo-prometheus-server.yaml</text>
+        <text y="320">│   └── otel-demo-opensearch-config.yaml</text>
+        
+
+        <text y="360">├── serviceaccount</text>
+        <text y="380">│   ├── opentelemetry-demo-grafana.yaml</text>
+        <text y="400">│   ├── opentelemetry-demo-jaeger.yaml</text>
+        <text y="420">│   ├── opentelemetry-demo-otelcol.yaml</text>
+        <text y="440">│   ├── opentelemetry-demo-prometheus-server.yaml</text>
+        <text y="460">│   └── opentelemetry-demo.yaml</text>
+
+        <text y="500">└── statefulset</text>
+        <text y="520">    └── otel-demo-opensearch.yaml</text>
+      </g>
+
+      <!-- Second Column -->
+      <g transform="translate(500, 0)">
+        <text y="0">├── deployment</text>
+        <text y="20">│   ├── opentelemetry-demo-accountingservice.yaml</text>
+        <text y="40">│   ├── opentelemetry-demo-adservice.yaml</text>
+        <text y="60">│   ├── opentelemetry-demo-cartservice.yaml</text>
+        <text y="80">│   ├── opentelemetry-demo-checkoutservice.yaml</text>
+        <text y="100">│   ├── opentelemetry-demo-currencyservice.yaml</text>
+        <text y="120">│   ├── opentelemetry-demo-emailservice.yaml</text>
+        <text y="140">│   ├── opentelemetry-demo-flagd.yaml</text>
+        <text y="160">│   ├── opentelemetry-demo-frauddetectionservice.yaml</text>
+        <text y="180">│   ├── opentelemetry-demo-frontendproxy.yaml</text>
+        <text y="200">│   ├── opentelemetry-demo-frontend.yaml</text>
+        <text y="220">│   ├── opentelemetry-demo-grafana.yaml</text>
+        <text y="240">│   ├── opentelemetry-demo-imageprovider.yaml</text>
+        <text y="260">│   ├── opentelemetry-demo-jaeger.yaml</text>
+        <text y="280">│   ├── opentelemetry-demo-kafka.yaml</text>
+        <text y="300">│   ├── opentelemetry-demo-loadgenerator.yaml</text>
+        <text y="320">│   ├── opentelemetry-demo-otelcol.yaml</text>
+        <text y="340">│   ├── opentelemetry-demo-paymentservice.yaml</text>
+        <text y="360">│   ├── opentelemetry-demo-productcatalogservice.yaml</text>
+        <text y="380">│   ├── opentelemetry-demo-prometheus-server.yaml</text>
+        <text y="400">│   ├── opentelemetry-demo-quoteservice.yaml</text>
+        <text y="420">│   ├── opentelemetry-demo-recommendationservice.yaml</text>
+        <text y="440">│   ├── opentelemetry-demo-shippingservice.yaml</text>
+        <text y="460">│   └── opentelemetry-demo-valkey.yaml</text>
+        
+        <text y="500">├── namespace</text>
+        <text y="520">│   └── otel-demo.yaml</text>
+
+        <text y="560">├── poddisruptionbudget</text>
+        <text y="580">│   └── otel-demo-opensearch-pdb.yaml</text>
+
+        <text y="620">├── role</text>
+        <text y="640">│   └── opentelemetry-demo-grafana.yaml</text>
+
+      </g>
+
+      <!-- Third Column -->
+      <g transform="translate(1000, 0)">
+
+        <text y="0">├── service</text>
+        <text y="20">│   ├── opentelemetry-demo-adservice.yaml</text>
+        <text y="40">│   ├── opentelemetry-demo-cartservice.yaml</text>
+        <text y="60">│   ├── opentelemetry-demo-checkoutservice.yaml</text>
+        <text y="80">│   ├── opentelemetry-demo-currencyservice.yaml</text>
+        <text y="100">│   ├── opentelemetry-demo-emailservice.yaml</text>
+        <text y="120">│   ├── opentelemetry-demo-flagd.yaml</text>
+        <text y="140">│   ├── opentelemetry-demo-frontendproxy.yaml</text>
+        <text y="160">│   ├── opentelemetry-demo-frontend.yaml</text>
+        <text y="180">│   ├── opentelemetry-demo-grafana.yaml</text>
+        <text y="200">│   ├── opentelemetry-demo-imageprovider.yaml</text>
+        <text y="220">│   ├── opentelemetry-demo-jaeger-agent.yaml</text>
+        <text y="240">│   ├── opentelemetry-demo-jaeger-collector.yaml</text>
+        <text y="260">│   ├── opentelemetry-demo-jaeger-query.yaml</text>
+        <text y="280">│   ├── opentelemetry-demo-kafka.yaml</text>
+        <text y="300">│   ├── opentelemetry-demo-loadgenerator.yaml</text>
+        <text y="320">│   ├── opentelemetry-demo-otelcol.yaml</text>
+        <text y="340">│   ├── opentelemetry-demo-paymentservice.yaml</text>
+        <text y="360">│   ├── opentelemetry-demo-productcatalogservice.yaml</text>
+        <text y="380">│   ├── opentelemetry-demo-prometheus-server.yaml</text>
+        <text y="400">│   ├── opentelemetry-demo-quoteservice.yaml</text>
+        <text y="420">│   ├── opentelemetry-demo-recommendationservice.yaml</text>
+        <text y="440">│   ├── opentelemetry-demo-shippingservice.yaml</text>
+        <text y="460">│   ├── opentelemetry-demo-valkey.yaml</text>
+        <text y="480">│   ├── otel-demo-opensearch-headless.yaml</text>
+        <text y="500">│   └── otel-demo-opensearch.yaml</text>
+
+        <text y="540">├── rolebinding</text>
+        <text y="560">│   └── opentelemetry-demo-grafana.yaml</text>
+
+        <text y="600">├── secret</text>
+        <text y="620">│   └── opentelemetry-demo-grafana.yaml</text>
+      </g>
+    </g>
+  </g>
+</svg>
