@@ -1,0 +1,2084 @@
+2024-12-04T05:51:23.0990353Z Current runner version: '2.321.0'
+2024-12-04T05:51:23.1015140Z ##[group]Operating System
+2024-12-04T05:51:23.1016024Z Ubuntu
+2024-12-04T05:51:23.1016526Z 22.04.5
+2024-12-04T05:51:23.1016970Z LTS
+2024-12-04T05:51:23.1017546Z ##[endgroup]
+2024-12-04T05:51:23.1018083Z ##[group]Runner Image
+2024-12-04T05:51:23.1018595Z Image: ubuntu-22.04
+2024-12-04T05:51:23.1019518Z Version: 20241124.1.0
+2024-12-04T05:51:23.1020601Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20241124.1/images/ubuntu/Ubuntu2204-Readme.md
+2024-12-04T05:51:23.1021886Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20241124.1
+2024-12-04T05:51:23.1022904Z ##[endgroup]
+2024-12-04T05:51:23.1023431Z ##[group]Runner Image Provisioner
+2024-12-04T05:51:23.1024384Z 2.0.385.1
+2024-12-04T05:51:23.1024881Z ##[endgroup]
+2024-12-04T05:51:23.1027052Z ##[group]GITHUB_TOKEN Permissions
+2024-12-04T05:51:23.1029256Z Actions: write
+2024-12-04T05:51:23.1029996Z Attestations: write
+2024-12-04T05:51:23.1030733Z Checks: write
+2024-12-04T05:51:23.1031229Z Contents: write
+2024-12-04T05:51:23.1031793Z Deployments: write
+2024-12-04T05:51:23.1032286Z Discussions: write
+2024-12-04T05:51:23.1032784Z Issues: write
+2024-12-04T05:51:23.1033325Z Metadata: read
+2024-12-04T05:51:23.1033797Z Packages: write
+2024-12-04T05:51:23.1034295Z Pages: write
+2024-12-04T05:51:23.1034861Z PullRequests: write
+2024-12-04T05:51:23.1035376Z RepositoryProjects: write
+2024-12-04T05:51:23.1035954Z SecurityEvents: write
+2024-12-04T05:51:23.1036542Z Statuses: write
+2024-12-04T05:51:23.1037041Z ##[endgroup]
+2024-12-04T05:51:23.1040102Z Secret source: Actions
+2024-12-04T05:51:23.1041224Z Prepare workflow directory
+2024-12-04T05:51:23.1353615Z Prepare all required actions
+2024-12-04T05:51:23.1390832Z Getting action download info
+2024-12-04T05:51:23.2857537Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2024-12-04T05:51:23.4327338Z Uses: shareefm0/enpm818-final-phase-6/.github/workflows/component-build-images.yml@refs/heads/main (73cdadab1828cac9c6cb04a8dbfdb49fb1472015)
+2024-12-04T05:51:23.4330064Z ##[group] Inputs
+2024-12-04T05:51:23.4331024Z   push: true
+2024-12-04T05:51:23.4331572Z   version: 1.0.0
+2024-12-04T05:51:23.4332176Z   ghcr_repo: ghcr.io/shareefm0/demo
+2024-12-04T05:51:23.4332791Z ##[endgroup]
+2024-12-04T05:51:23.4333358Z Complete job name: build_images / protobufcheck
+2024-12-04T05:51:23.5193194Z ##[group]Run actions/checkout@v4
+2024-12-04T05:51:23.5194324Z with:
+2024-12-04T05:51:23.5194919Z   repository: shareefm0/enpm818-final-phase-6
+2024-12-04T05:51:23.5195715Z   token: ***
+2024-12-04T05:51:23.5196232Z   ssh-strict: true
+2024-12-04T05:51:23.5196758Z   ssh-user: git
+2024-12-04T05:51:23.5197283Z   persist-credentials: true
+2024-12-04T05:51:23.5197847Z   clean: true
+2024-12-04T05:51:23.5198377Z   sparse-checkout-cone-mode: true
+2024-12-04T05:51:23.5198946Z   fetch-depth: 1
+2024-12-04T05:51:23.5199433Z   fetch-tags: false
+2024-12-04T05:51:23.5199964Z   show-progress: true
+2024-12-04T05:51:23.5200487Z   lfs: false
+2024-12-04T05:51:23.5200972Z   submodules: false
+2024-12-04T05:51:23.5201546Z   set-safe-directory: true
+2024-12-04T05:51:23.5202359Z ##[endgroup]
+2024-12-04T05:51:23.7274244Z Syncing repository: shareefm0/enpm818-final-phase-6
+2024-12-04T05:51:23.7277291Z ##[group]Getting Git version info
+2024-12-04T05:51:23.7279167Z Working directory is '/home/runner/work/enpm818-final-phase-6/enpm818-final-phase-6'
+2024-12-04T05:51:23.7281384Z [command]/usr/bin/git version
+2024-12-04T05:51:23.7326979Z git version 2.47.0
+2024-12-04T05:51:23.7357831Z ##[endgroup]
+2024-12-04T05:51:23.7372851Z Temporarily overriding HOME='/home/runner/work/_temp/41df1415-22fb-4f5c-bd8f-c77423908d3a' before making global git config changes
+2024-12-04T05:51:23.7375492Z Adding repository directory to the temporary git global config as a safe directory
+2024-12-04T05:51:23.7388852Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/enpm818-final-phase-6/enpm818-final-phase-6
+2024-12-04T05:51:23.7428063Z Deleting the contents of '/home/runner/work/enpm818-final-phase-6/enpm818-final-phase-6'
+2024-12-04T05:51:23.7432400Z ##[group]Initializing the repository
+2024-12-04T05:51:23.7437041Z [command]/usr/bin/git init /home/runner/work/enpm818-final-phase-6/enpm818-final-phase-6
+2024-12-04T05:51:23.7500849Z hint: Using 'master' as the name for the initial branch. This default branch name
+2024-12-04T05:51:23.7502398Z hint: is subject to change. To configure the initial branch name to use in all
+2024-12-04T05:51:23.7503879Z hint: of your new repositories, which will suppress this warning, call:
+2024-12-04T05:51:23.7505198Z hint:
+2024-12-04T05:51:23.7506660Z hint: 	git config --global init.defaultBranch <name>
+2024-12-04T05:51:23.7507727Z hint:
+2024-12-04T05:51:23.7508517Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2024-12-04T05:51:23.7509556Z hint: 'development'. The just-created branch can be renamed via this command:
+2024-12-04T05:51:23.7510331Z hint:
+2024-12-04T05:51:23.7510816Z hint: 	git branch -m <name>
+2024-12-04T05:51:23.7512027Z Initialized empty Git repository in /home/runner/work/enpm818-final-phase-6/enpm818-final-phase-6/.git/
+2024-12-04T05:51:23.7517840Z [command]/usr/bin/git remote add origin https://github.com/shareefm0/enpm818-final-phase-6
+2024-12-04T05:51:23.7550347Z ##[endgroup]
+2024-12-04T05:51:23.7551335Z ##[group]Disabling automatic garbage collection
+2024-12-04T05:51:23.7554012Z [command]/usr/bin/git config --local gc.auto 0
+2024-12-04T05:51:23.7584137Z ##[endgroup]
+2024-12-04T05:51:23.7584933Z ##[group]Setting up auth
+2024-12-04T05:51:23.7590056Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2024-12-04T05:51:23.7622517Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2024-12-04T05:51:23.7913677Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2024-12-04T05:51:23.7943626Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2024-12-04T05:51:23.8179329Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2024-12-04T05:51:23.8216291Z ##[endgroup]
+2024-12-04T05:51:23.8217338Z ##[group]Fetching the repository
+2024-12-04T05:51:23.8224201Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +73cdadab1828cac9c6cb04a8dbfdb49fb1472015:refs/remotes/origin/main
+2024-12-04T05:51:24.2092404Z From https://github.com/shareefm0/enpm818-final-phase-6
+2024-12-04T05:51:24.2094266Z  * [new ref]         73cdadab1828cac9c6cb04a8dbfdb49fb1472015 -> origin/main
+2024-12-04T05:51:24.2120470Z ##[endgroup]
+2024-12-04T05:51:24.2121554Z ##[group]Determining the checkout info
+2024-12-04T05:51:24.2123023Z ##[endgroup]
+2024-12-04T05:51:24.2127575Z [command]/usr/bin/git sparse-checkout disable
+2024-12-04T05:51:24.2166273Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2024-12-04T05:51:24.2194558Z ##[group]Checking out the ref
+2024-12-04T05:51:24.2197821Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2024-12-04T05:51:24.2932271Z Switched to a new branch 'main'
+2024-12-04T05:51:24.2934564Z branch 'main' set up to track 'origin/main'.
+2024-12-04T05:51:24.2944042Z ##[endgroup]
+2024-12-04T05:51:24.2981148Z [command]/usr/bin/git log -1 --format=%H
+2024-12-04T05:51:24.3004086Z 73cdadab1828cac9c6cb04a8dbfdb49fb1472015
+2024-12-04T05:51:24.3202846Z ##[group]Run make clean docker-generate-protobuf
+2024-12-04T05:51:24.3203765Z [36;1mmake clean docker-generate-protobuf[0m
+2024-12-04T05:51:24.3293684Z shell: /usr/bin/bash -e {0}
+2024-12-04T05:51:24.3294410Z ##[endgroup]
+2024-12-04T05:51:24.3525332Z rm -rf ./src/{checkoutservice,productcatalogservice}/genproto/oteldemo/
+2024-12-04T05:51:24.3541629Z rm -rf ./src/recommendationservice/{demo_pb2,demo_pb2_grpc}.py
+2024-12-04T05:51:24.3556729Z ./docker-gen-proto.sh
+2024-12-04T05:51:24.3563312Z + gen_proto_go checkoutservice
+2024-12-04T05:51:24.3564650Z Generating Go protobuf files for checkoutservice
+2024-12-04T05:51:24.3565591Z + echo Generating Go protobuf files for checkoutservice
+2024-12-04T05:51:24.3566618Z + docker build -f src/checkoutservice/genproto/Dockerfile -t checkoutservice-genproto .
+2024-12-04T05:51:24.8579340Z #0 building with "default" instance using docker driver
+2024-12-04T05:51:24.8580336Z 
+2024-12-04T05:51:24.8581034Z #1 [internal] load build definition from Dockerfile
+2024-12-04T05:51:24.8582503Z #1 transferring dockerfile: 517B done
+2024-12-04T05:51:24.8583575Z #1 DONE 0.0s
+2024-12-04T05:51:24.8584034Z 
+2024-12-04T05:51:24.8584597Z #2 [auth] library/golang:pull token for registry-1.docker.io
+2024-12-04T05:51:24.8585937Z #2 DONE 0.0s
+2024-12-04T05:51:24.8586384Z 
+2024-12-04T05:51:24.8587077Z #3 [internal] load metadata for docker.io/library/golang:1.22-alpine
+2024-12-04T05:51:25.0854194Z #3 DONE 0.5s
+2024-12-04T05:51:25.2018690Z 
+2024-12-04T05:51:25.2021118Z #4 [internal] load .dockerignore
+2024-12-04T05:51:25.2023544Z #4 transferring context: 1.18kB done
+2024-12-04T05:51:25.2025733Z #4 DONE 0.0s
+2024-12-04T05:51:25.2026379Z 
+2024-12-04T05:51:25.2026909Z #5 [internal] load build context
+2024-12-04T05:51:25.2028561Z #5 transferring context: 33.36kB done
+2024-12-04T05:51:25.2029784Z #5 DONE 0.0s
+2024-12-04T05:51:25.2030221Z 
+2024-12-04T05:51:25.2031738Z #6 [stage-0 1/8] FROM docker.io/library/golang:1.22-alpine@sha256:4d8200dad11065dc089a5883db0cf82e89930f3d3efa4b9fe8be4d10da07ff6b
+2024-12-04T05:51:25.2035458Z #6 resolve docker.io/library/golang:1.22-alpine@sha256:4d8200dad11065dc089a5883db0cf82e89930f3d3efa4b9fe8be4d10da07ff6b done
+2024-12-04T05:51:25.2040040Z #6 sha256:0e3d8d070bd74d8b062d98538e79a98001d79b97d3a5a6ded814e7ecdf593aba 2.10kB / 2.10kB done
+2024-12-04T05:51:25.2043756Z #6 sha256:bc759497ee4d5d6a6b73a6e7b9efb84f134084126531c1691418f5d69b21f20c 290.88kB / 290.88kB 0.1s
+2024-12-04T05:51:25.2048630Z #6 sha256:67b1e9584e1979ea75698173e605956715dd1408a24052dfc4991b231c127706 6.29MB / 69.36MB 0.1s
+2024-12-04T05:51:25.2053465Z #6 sha256:2f3fd4950283ea8297754af1d9667c4f6f6f7da11ebe9771b0fac797a7034f08 0B / 126B 0.1s
+2024-12-04T05:51:25.2058941Z #6 sha256:4d8200dad11065dc089a5883db0cf82e89930f3d3efa4b9fe8be4d10da07ff6b 10.30kB / 10.30kB done
+2024-12-04T05:51:25.2064545Z #6 sha256:a38ee2e777f7815b7a455b9fba2ec320918ecddeb41df8d996c1ef2dcc54cf61 1.92kB / 1.92kB done
+2024-12-04T05:51:25.3030189Z #6 sha256:67b1e9584e1979ea75698173e605956715dd1408a24052dfc4991b231c127706 32.51MB / 69.36MB 0.2s
+2024-12-04T05:51:25.3036902Z #6 sha256:2f3fd4950283ea8297754af1d9667c4f6f6f7da11ebe9771b0fac797a7034f08 126B / 126B 0.1s done
+2024-12-04T05:51:25.3045004Z #6 extracting sha256:bc759497ee4d5d6a6b73a6e7b9efb84f134084126531c1691418f5d69b21f20c 0.0s done
+2024-12-04T05:51:25.3053074Z #6 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 32B / 32B 0.2s done
+2024-12-04T05:51:25.4032076Z #6 sha256:bc759497ee4d5d6a6b73a6e7b9efb84f134084126531c1691418f5d69b21f20c 290.88kB / 290.88kB 0.1s done
+2024-12-04T05:51:25.5817717Z #6 sha256:67b1e9584e1979ea75698173e605956715dd1408a24052dfc4991b231c127706 59.77MB / 69.36MB 0.3s
+2024-12-04T05:51:25.5822910Z #6 sha256:67b1e9584e1979ea75698173e605956715dd1408a24052dfc4991b231c127706 69.36MB / 69.36MB 0.4s done
+2024-12-04T05:51:25.5827707Z #6 extracting sha256:67b1e9584e1979ea75698173e605956715dd1408a24052dfc4991b231c127706 0.1s
+2024-12-04T05:51:29.1631902Z #6 extracting sha256:67b1e9584e1979ea75698173e605956715dd1408a24052dfc4991b231c127706 3.7s done
+2024-12-04T05:51:29.7708007Z #6 extracting sha256:2f3fd4950283ea8297754af1d9667c4f6f6f7da11ebe9771b0fac797a7034f08
+2024-12-04T05:51:29.9723011Z #6 extracting sha256:2f3fd4950283ea8297754af1d9667c4f6f6f7da11ebe9771b0fac797a7034f08 done
+2024-12-04T05:51:29.9724889Z #6 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 done
+2024-12-04T05:51:29.9726536Z #6 DONE 4.7s
+2024-12-04T05:51:29.9727092Z 
+2024-12-04T05:51:29.9727334Z #7 [stage-0 2/8] WORKDIR /build
+2024-12-04T05:51:29.9728183Z #7 DONE 0.0s
+2024-12-04T05:51:29.9728453Z 
+2024-12-04T05:51:29.9728743Z #8 [stage-0 3/8] RUN apk add --no-cache protobuf-dev
+2024-12-04T05:51:30.2359113Z #8 0.414 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/main/x86_64/APKINDEX.tar.gz
+2024-12-04T05:51:30.3650777Z #8 0.543 fetch https://dl-cdn.alpinelinux.org/alpine/v3.20/community/x86_64/APKINDEX.tar.gz
+2024-12-04T05:51:30.6026329Z #8 0.781 (1/111) Installing libgcc (13.2.1_git20240309-r0)
+2024-12-04T05:51:30.7049991Z #8 0.786 (2/111) Installing libstdc++ (13.2.1_git20240309-r0)
+2024-12-04T05:51:30.7051015Z #8 0.806 (3/111) Installing abseil-cpp-raw-logging-internal (20230802.1-r0)
+2024-12-04T05:51:30.7051660Z #8 0.816 (4/111) Installing abseil-cpp-log-internal-globals (20230802.1-r0)
+2024-12-04T05:51:30.7052185Z #8 0.820 (5/111) Installing abseil-cpp-time-zone (20230802.1-r0)
+2024-12-04T05:51:30.7052788Z #8 0.824 (6/111) Installing abseil-cpp-log-initialize (20230802.1-r0)
+2024-12-04T05:51:30.7053273Z #8 0.829 (7/111) Installing abseil-cpp-city (20230802.1-r0)
+2024-12-04T05:51:30.7053725Z #8 0.833 (8/111) Installing abseil-cpp-low-level-hash (20230802.1-r0)
+2024-12-04T05:51:30.7054255Z #8 0.837 (9/111) Installing abseil-cpp-hash (20230802.1-r0)
+2024-12-04T05:51:30.7054766Z #8 0.842 (10/111) Installing abseil-cpp-log-internal-nullguard (20230802.1-r0)
+2024-12-04T05:51:30.7055287Z #8 0.845 (11/111) Installing abseil-cpp-strings-internal (20230802.1-r0)
+2024-12-04T05:51:30.7055868Z #8 0.849 (12/111) Installing abseil-cpp-strings (20230802.1-r0)
+2024-12-04T05:51:30.7056333Z #8 0.853 (13/111) Installing abseil-cpp-log-internal-check-op (20230802.1-r0)
+2024-12-04T05:51:30.7056838Z #8 0.856 (14/111) Installing abseil-cpp-spinlock-wait (20230802.1-r0)
+2024-12-04T05:51:30.7057415Z #8 0.860 (15/111) Installing abseil-cpp-base (20230802.1-r0)
+2024-12-04T05:51:30.7057895Z #8 0.863 (16/111) Installing abseil-cpp-log-internal-conditions (20230802.1-r0)
+2024-12-04T05:51:30.7058432Z #8 0.867 (17/111) Installing abseil-cpp-debugging-internal (20230802.1-r0)
+2024-12-04T05:51:30.7059077Z #8 0.871 (18/111) Installing abseil-cpp-stacktrace (20230802.1-r0)
+2024-12-04T05:51:30.7059908Z #8 0.876 (19/111) Installing abseil-cpp-symbolize (20230802.1-r0)
+2024-12-04T05:51:30.7060403Z #8 0.880 (20/111) Installing abseil-cpp-examine-stack (20230802.1-r0)
+2024-12-04T05:51:30.7061016Z #8 0.883 (21/111) Installing abseil-cpp-log-globals (20230802.1-r0)
+2024-12-04T05:51:30.8066265Z #8 0.887 (22/111) Installing abseil-cpp-int128 (20230802.1-r0)
+2024-12-04T05:51:30.8067153Z #8 0.892 (23/111) Installing abseil-cpp-str-format-internal (20230802.1-r0)
+2024-12-04T05:51:30.8068484Z #8 0.897 (24/111) Installing abseil-cpp-time (20230802.1-r0)
+2024-12-04T05:51:30.8069022Z #8 0.901 (25/111) Installing abseil-cpp-log-internal-format (20230802.1-r0)
+2024-12-04T05:51:30.8069525Z #8 0.905 (26/111) Installing abseil-cpp-log-sink (20230802.1-r0)
+2024-12-04T05:51:30.8070206Z #8 0.908 (27/111) Installing abseil-cpp-kernel-timeout-internal (20230802.1-r0)
+2024-12-04T05:51:30.8070768Z #8 0.913 (28/111) Installing abseil-cpp-malloc-internal (20230802.1-r0)
+2024-12-04T05:51:30.8071237Z #8 0.921 (29/111) Installing abseil-cpp-synchronization (20230802.1-r0)
+2024-12-04T05:51:30.8071897Z #8 0.925 (30/111) Installing abseil-cpp-log-internal-log-sink-set (20230802.1-r0)
+2024-12-04T05:51:30.8072485Z #8 0.929 (31/111) Installing abseil-cpp-log-internal-proto (20230802.1-r0)
+2024-12-04T05:51:30.8073074Z #8 0.933 (32/111) Installing abseil-cpp-strerror (20230802.1-r0)
+2024-12-04T05:51:30.8073769Z #8 0.937 (33/111) Installing abseil-cpp-log-internal-message (20230802.1-r0)
+2024-12-04T05:51:30.8074279Z #8 0.941 (34/111) Installing abseil-cpp-raw-hash-set (20230802.1-r0)
+2024-12-04T05:51:30.8074797Z #8 0.945 (35/111) Installing abseil-cpp-crc-internal (20230802.1-r0)
+2024-12-04T05:51:30.8075225Z #8 0.949 (36/111) Installing abseil-cpp-crc32c (20230802.1-r0)
+2024-12-04T05:51:30.8076058Z #8 0.954 (37/111) Installing abseil-cpp-crc-cord-state (20230802.1-r0)
+2024-12-04T05:51:30.8076570Z #8 0.958 (38/111) Installing abseil-cpp-throw-delegate (20230802.1-r0)
+2024-12-04T05:51:30.8077006Z #8 0.962 (39/111) Installing abseil-cpp-cord-internal (20230802.1-r0)
+2024-12-04T05:51:30.8077487Z #8 0.966 (40/111) Installing abseil-cpp-exponential-biased (20230802.1-r0)
+2024-12-04T05:51:30.8078013Z #8 0.970 (41/111) Installing abseil-cpp-cordz-functions (20230802.1-r0)
+2024-12-04T05:51:30.8078451Z #8 0.973 (42/111) Installing abseil-cpp-cordz-handle (20230802.1-r0)
+2024-12-04T05:51:30.8078941Z #8 0.977 (43/111) Installing abseil-cpp-cordz-info (20230802.1-r0)
+2024-12-04T05:51:30.8079413Z #8 0.981 (44/111) Installing abseil-cpp-cord (20230802.1-r0)
+2024-12-04T05:51:30.8079854Z #8 0.985 (45/111) Installing abseil-cpp-status (20230802.1-r0)
+2024-12-04T05:51:30.9950519Z #8 0.989 (46/111) Installing abseil-cpp-statusor (20230802.1-r0)
+2024-12-04T05:51:30.9951470Z #8 0.993 (47/111) Installing abseil-cpp-die-if-null (20230802.1-r0)
+2024-12-04T05:51:30.9952258Z #8 0.997 (48/111) Installing libprotobuf (24.4-r1)
+2024-12-04T05:51:30.9952907Z #8 1.017 (49/111) Installing libprotoc (24.4-r1)
+2024-12-04T05:51:30.9953480Z #8 1.036 (50/111) Installing protoc (24.4-r1)
+2024-12-04T05:51:30.9954069Z #8 1.040 (51/111) Installing pkgconf (2.2.0-r0)
+2024-12-04T05:51:30.9954487Z #8 1.044 (52/111) Installing zlib-dev (1.3.1-r1)
+2024-12-04T05:51:30.9954880Z #8 1.048 (53/111) Installing libprotobuf-lite (24.4-r1)
+2024-12-04T05:51:31.0950705Z #8 1.057 (54/111) Installing linux-headers (6.6-r0)
+2024-12-04T05:51:31.0951752Z #8 1.173 (55/111) Installing abseil-cpp-atomic-hook-test-helper (20230802.1-r0)
+2024-12-04T05:51:31.0952665Z #8 1.178 (56/111) Installing abseil-cpp-bad-any-cast-impl (20230802.1-r0)
+2024-12-04T05:51:31.0953685Z #8 1.181 (57/111) Installing abseil-cpp-bad-optional-access (20230802.1-r0)
+2024-12-04T05:51:31.0954518Z #8 1.185 (58/111) Installing abseil-cpp-bad-variant-access (20230802.1-r0)
+2024-12-04T05:51:31.0955127Z #8 1.189 (59/111) Installing abseil-cpp-civil-time (20230802.1-r0)
+2024-12-04T05:51:31.0955774Z #8 1.192 (60/111) Installing abseil-cpp-cordz-sample-token (20230802.1-r0)
+2024-12-04T05:51:31.0956257Z #8 1.197 (61/111) Installing abseil-cpp-crc-cpu-detect (20230802.1-r0)
+2024-12-04T05:51:31.0956761Z #8 1.201 (62/111) Installing abseil-cpp-demangle-internal (20230802.1-r0)
+2024-12-04T05:51:31.0957311Z #8 1.206 (63/111) Installing gtest (1.14.0-r2)
+2024-12-04T05:51:31.0957769Z #8 1.213 (64/111) Installing abseil-cpp-exception-safety-testing (20230802.1-r0)
+2024-12-04T05:51:31.0958380Z #8 1.216 (65/111) Installing abseil-cpp-failure-signal-handler (20230802.1-r0)
+2024-12-04T05:51:31.0959049Z #8 1.220 (66/111) Installing abseil-cpp-flags-commandlineflag-internal (20230802.1-r0)
+2024-12-04T05:51:31.0959632Z #8 1.224 (67/111) Installing abseil-cpp-flags-commandlineflag (20230802.1-r0)
+2024-12-04T05:51:31.0960135Z #8 1.229 (68/111) Installing abseil-cpp-flags-program-name (20230802.1-r0)
+2024-12-04T05:51:31.0960694Z #8 1.233 (69/111) Installing abseil-cpp-flags-config (20230802.1-r0)
+2024-12-04T05:51:31.0961163Z #8 1.237 (70/111) Installing abseil-cpp-flags-internal (20230802.1-r0)
+2024-12-04T05:51:31.0961613Z #8 1.241 (71/111) Installing abseil-cpp-flags-marshalling (20230802.1-r0)
+2024-12-04T05:51:31.0962213Z #8 1.245 (72/111) Installing abseil-cpp-flags-private-handle-accessor (20230802.1-r0)
+2024-12-04T05:51:31.0962739Z #8 1.248 (73/111) Installing abseil-cpp-flags-reflection (20230802.1-r0)
+2024-12-04T05:51:31.0963176Z #8 1.252 (74/111) Installing abseil-cpp-flags-usage (20230802.1-r0)
+2024-12-04T05:51:31.0963958Z #8 1.261 (75/111) Installing abseil-cpp-flags-usage-internal (20230802.1-r0)
+2024-12-04T05:51:31.0964476Z #8 1.265 (76/111) Installing abseil-cpp-flags-parse (20230802.1-r0)
+2024-12-04T05:51:31.0964884Z #8 1.269 (77/111) Installing abseil-cpp-flags (20230802.1-r0)
+2024-12-04T05:51:31.0965425Z #8 1.273 (78/111) Installing abseil-cpp-graphcycles-internal (20230802.1-r0)
+2024-12-04T05:51:31.1959496Z #8 1.277 (79/111) Installing abseil-cpp-hash-generator-testing (20230802.1-r0)
+2024-12-04T05:51:31.1960311Z #8 1.280 (80/111) Installing abseil-cpp-hashtablez-sampler (20230802.1-r0)
+2024-12-04T05:51:31.1960972Z #8 1.289 (81/111) Installing abseil-cpp-leak-check (20230802.1-r0)
+2024-12-04T05:51:31.1961763Z #8 1.293 (82/111) Installing abseil-cpp-log-entry (20230802.1-r0)
+2024-12-04T05:51:31.1962321Z #8 1.296 (83/111) Installing abseil-cpp-log-flags (20230802.1-r0)
+2024-12-04T05:51:31.1962887Z #8 1.299 (84/111) Installing abseil-cpp-log-severity (20230802.1-r0)
+2024-12-04T05:51:31.1963591Z #8 1.303 (85/111) Installing abseil-cpp-log-internal-test-actions (20230802.1-r0)
+2024-12-04T05:51:31.1964269Z #8 1.307 (86/111) Installing abseil-cpp-log-internal-test-helpers (20230802.1-r0)
+2024-12-04T05:51:31.1964999Z #8 1.311 (87/111) Installing abseil-cpp-log-internal-test-matchers (20230802.1-r0)
+2024-12-04T05:51:31.1965760Z #8 1.316 (88/111) Installing abseil-cpp-per-thread-sem-test-common (20230802.1-r0)
+2024-12-04T05:51:31.1966433Z #8 1.319 (89/111) Installing abseil-cpp-periodic-sampler (20230802.1-r0)
+2024-12-04T05:51:31.1967022Z #8 1.323 (90/111) Installing abseil-cpp-pow10-helper (20230802.1-r0)
+2024-12-04T05:51:31.1967727Z #8 1.328 (91/111) Installing abseil-cpp-random-distributions (20230802.1-r0)
+2024-12-04T05:51:31.1968413Z #8 1.333 (92/111) Installing abseil-cpp-random-internal-distribution-test-util (20230802.1-r0)
+2024-12-04T05:51:31.1969167Z #8 1.339 (93/111) Installing abseil-cpp-random-internal-platform (20230802.1-r0)
+2024-12-04T05:51:31.1969951Z #8 1.343 (94/111) Installing abseil-cpp-random-internal-randen-hwaes (20230802.1-r0)
+2024-12-04T05:51:31.1970526Z #8 1.347 (95/111) Installing abseil-cpp-random-internal-randen-hwaes-impl (20230802.1-r0)
+2024-12-04T05:51:31.1971093Z #8 1.350 (96/111) Installing abseil-cpp-random-internal-randen-slow (20230802.1-r0)
+2024-12-04T05:51:31.1971710Z #8 1.354 (97/111) Installing abseil-cpp-random-internal-randen (20230802.1-r0)
+2024-12-04T05:51:31.1972247Z #8 1.358 (98/111) Installing abseil-cpp-random-internal-seed-material (20230802.1-r0)
+2024-12-04T05:51:31.1972805Z #8 1.362 (99/111) Installing abseil-cpp-random-seed-gen-exception (20230802.1-r0)
+2024-12-04T05:51:31.1973437Z #8 1.366 (100/111) Installing abseil-cpp-random-internal-pool-urbg (20230802.1-r0)
+2024-12-04T05:51:31.1973990Z #8 1.369 (101/111) Installing abseil-cpp-random-seed-sequences (20230802.1-r0)
+2024-12-04T05:51:31.1974377Z #8 1.374 (102/111) Installing gmock (1.14.0-r2)
+2024-12-04T05:51:31.3107142Z #8 1.378 (103/111) Installing abseil-cpp-scoped-mock-log (20230802.1-r0)
+2024-12-04T05:51:31.3108298Z #8 1.383 (104/111) Installing abseil-cpp-scoped-set-env (20230802.1-r0)
+2024-12-04T05:51:31.3109286Z #8 1.386 (105/111) Installing abseil-cpp-spinlock-test-common (20230802.1-r0)
+2024-12-04T05:51:31.3110652Z #8 1.390 (106/111) Installing abseil-cpp-stack-consumption (20230802.1-r0)
+2024-12-04T05:51:31.3111438Z #8 1.395 (107/111) Installing abseil-cpp-string-view (20230802.1-r0)
+2024-12-04T05:51:31.3112189Z #8 1.399 (108/111) Installing abseil-cpp-test-instance-tracker (20230802.1-r0)
+2024-12-04T05:51:31.3112777Z #8 1.403 (109/111) Installing abseil-cpp-time-internal-test-util (20230802.1-r0)
+2024-12-04T05:51:31.3113299Z #8 1.407 (110/111) Installing abseil-cpp-dev (20230802.1-r0)
+2024-12-04T05:51:31.3113783Z #8 1.489 (111/111) Installing protobuf-dev (24.4-r1)
+2024-12-04T05:51:31.4761875Z #8 1.529 Executing busybox-1.36.1-r29.trigger
+2024-12-04T05:51:31.4762658Z #8 1.537 OK: 39 MiB in 126 packages
+2024-12-04T05:51:31.4763027Z #8 DONE 1.7s
+2024-12-04T05:51:31.6678216Z 
+2024-12-04T05:51:31.6678964Z #9 [stage-0 4/8] COPY ./src/checkoutservice/go.mod ./
+2024-12-04T05:51:31.6679423Z #9 DONE 0.0s
+2024-12-04T05:51:31.6679600Z 
+2024-12-04T05:51:31.6679751Z #10 [stage-0 5/8] COPY ./src/checkoutservice/go.sum ./
+2024-12-04T05:51:31.6680261Z #10 DONE 0.0s
+2024-12-04T05:51:31.6680398Z 
+2024-12-04T05:51:31.6680558Z #11 [stage-0 6/8] COPY ./src/checkoutservice/tools.go ./
+2024-12-04T05:51:31.6681560Z #11 DONE 0.0s
+2024-12-04T05:51:31.6681793Z 
+2024-12-04T05:51:31.6682091Z #12 [stage-0 7/8] RUN go env -w GOMODCACHE=/root/.cache/go-build
+2024-12-04T05:51:31.7261377Z #12 DONE 0.2s
+2024-12-04T05:51:31.8772225Z 
+2024-12-04T05:51:31.8773190Z #13 [stage-0 8/8] RUN --mount=type=cache,target=/root/.cache/go-build     go list -e -f '{{range .Imports}}{{.}} {{end}}' tools.go | CGO_ENABLED=0 xargs go install -mod=readonly
+2024-12-04T05:51:31.9602989Z #13 0.234 go: downloading google.golang.org/protobuf v1.35.1
+2024-12-04T05:51:32.1687234Z #13 0.234 go: downloading google.golang.org/grpc/cmd/protoc-gen-go-grpc v1.5.1
+2024-12-04T05:51:32.1688127Z #13 0.291 go: downloading google.golang.org/grpc v1.67.1
+2024-12-04T05:51:39.9863408Z #13 DONE 8.3s
+2024-12-04T05:51:40.1382191Z 
+2024-12-04T05:51:40.1382796Z #14 exporting to image
+2024-12-04T05:51:40.1383351Z #14 exporting layers
+2024-12-04T05:51:41.6668221Z #14 exporting layers 1.7s done
+2024-12-04T05:51:41.6879133Z #14 writing image sha256:3ef73f82dd2df14215358b524ddb23499434c61531ee92b097f4fe5457b409eb done
+2024-12-04T05:51:41.6880217Z #14 naming to docker.io/library/checkoutservice-genproto done
+2024-12-04T05:51:41.6881004Z #14 DONE 1.7s
+2024-12-04T05:51:41.6924095Z + pwd
+2024-12-04T05:51:41.6927034Z + docker run --rm -v /home/runner/work/enpm818-final-phase-6/enpm818-final-phase-6:/build checkoutservice-genproto protoc -I /build/pb /build/pb/demo.proto --go_out=./src/checkoutservice/ --go-grpc_out=./src/checkoutservice/
+2024-12-04T05:51:42.1455801Z + gen_proto_go productcatalogservice
+2024-12-04T05:51:42.1456537Z Generating Go protobuf files for productcatalogservice
+2024-12-04T05:51:42.1457788Z + echo Generating Go protobuf files for productcatalogservice
+2024-12-04T05:51:42.1459050Z + docker build -f src/productcatalogservice/genproto/Dockerfile -t productcatalogservice-genproto .
+2024-12-04T05:51:42.3767927Z #0 building with "default" instance using docker driver
+2024-12-04T05:51:42.3768433Z 
+2024-12-04T05:51:42.3768692Z #1 [internal] load build definition from Dockerfile
+2024-12-04T05:51:42.3769358Z #1 transferring dockerfile: 537B done
+2024-12-04T05:51:42.3770136Z #1 DONE 0.0s
+2024-12-04T05:51:42.3770379Z 
+2024-12-04T05:51:42.3770786Z #2 [internal] load metadata for docker.io/library/golang:1.22-alpine
+2024-12-04T05:51:42.3771477Z #2 DONE 0.1s
+2024-12-04T05:51:42.3771916Z 
+2024-12-04T05:51:42.3772121Z #3 [internal] load .dockerignore
+2024-12-04T05:51:42.3772731Z #3 transferring context: 1.18kB done
+2024-12-04T05:51:42.3773382Z #3 DONE 0.0s
+2024-12-04T05:51:42.3773709Z 
+2024-12-04T05:51:42.3774449Z #4 [stage-0 1/8] FROM docker.io/library/golang:1.22-alpine@sha256:4d8200dad11065dc089a5883db0cf82e89930f3d3efa4b9fe8be4d10da07ff6b
+2024-12-04T05:51:42.3775429Z #4 DONE 0.0s
+2024-12-04T05:51:42.3775585Z 
+2024-12-04T05:51:42.3775804Z #5 [internal] load build context
+2024-12-04T05:51:42.3776168Z #5 transferring context: 25.53kB done
+2024-12-04T05:51:42.3776503Z #5 DONE 0.0s
+2024-12-04T05:51:42.3776612Z 
+2024-12-04T05:51:42.3776842Z #6 [stage-0 2/8] WORKDIR /build
+2024-12-04T05:51:42.3777117Z #6 CACHED
+2024-12-04T05:51:42.3777278Z 
+2024-12-04T05:51:42.3777457Z #7 [stage-0 3/8] RUN apk add --no-cache protobuf-dev
+2024-12-04T05:51:42.3777890Z #7 CACHED
+2024-12-04T05:51:42.3778012Z 
+2024-12-04T05:51:42.3778181Z #8 [stage-0 4/8] COPY ./src/productcatalogservice/go.mod ./
+2024-12-04T05:51:42.3778568Z #8 DONE 0.0s
+2024-12-04T05:51:42.5487949Z 
+2024-12-04T05:51:42.5488730Z #9 [stage-0 5/8] COPY ./src/productcatalogservice/go.sum ./
+2024-12-04T05:51:42.5489396Z #9 DONE 0.0s
+2024-12-04T05:51:42.5489549Z 
+2024-12-04T05:51:42.5489990Z #10 [stage-0 6/8] COPY ./src/productcatalogservice/tools.go ./
+2024-12-04T05:51:42.5490488Z #10 DONE 0.0s
+2024-12-04T05:51:42.5491001Z 
+2024-12-04T05:51:42.5491249Z #11 [stage-0 7/8] RUN go env -w GOMODCACHE=/root/.cache/go-build
+2024-12-04T05:51:42.5818586Z #11 DONE 0.2s
+2024-12-04T05:51:42.7330391Z 
+2024-12-04T05:51:42.7331523Z #12 [stage-0 8/8] RUN --mount=type=cache,target=/root/.cache/go-build     go list -e -f '{{range .Imports}}{{.}} {{end}}' tools.go | CGO_ENABLED=0 xargs go install -mod=readonly
+2024-12-04T05:51:43.1510249Z #12 DONE 0.6s
+2024-12-04T05:51:43.3029469Z 
+2024-12-04T05:51:43.3029974Z #13 exporting to image
+2024-12-04T05:51:43.3030719Z #13 exporting layers
+2024-12-04T05:51:44.2900846Z #13 exporting layers 1.1s done
+2024-12-04T05:51:44.3157193Z #13 writing image sha256:74ef4ee344cecd0fd8351843a6c8e4b4d97abbca83383a17eeff79868631e695 done
+2024-12-04T05:51:44.3158234Z #13 naming to docker.io/library/productcatalogservice-genproto done
+2024-12-04T05:51:44.3159102Z #13 DONE 1.1s
+2024-12-04T05:51:44.3206808Z + pwd
+2024-12-04T05:51:44.3209234Z + docker run --rm -v /home/runner/work/enpm818-final-phase-6/enpm818-final-phase-6:/build productcatalogservice-genproto protoc -I /build/pb /build/pb/demo.proto --go_out=./src/productcatalogservice/ --go-grpc_out=./src/productcatalogservice/
+2024-12-04T05:51:44.6861543Z + gen_proto_python recommendationservice
+2024-12-04T05:51:44.6862270Z Generating Python protobuf files for recommendationservice
+2024-12-04T05:51:44.6863187Z + echo Generating Python protobuf files for recommendationservice
+2024-12-04T05:51:44.6863976Z + docker build -f src/recommendationservice/genproto/Dockerfile -t recommendationservice-genproto .
+2024-12-04T05:51:45.0399898Z #0 building with "default" instance using docker driver
+2024-12-04T05:51:45.0400502Z 
+2024-12-04T05:51:45.0400782Z #1 [internal] load build definition from Dockerfile
+2024-12-04T05:51:45.0401295Z #1 transferring dockerfile: 211B done
+2024-12-04T05:51:45.0401973Z #1 DONE 0.0s
+2024-12-04T05:51:45.0402152Z 
+2024-12-04T05:51:45.0402392Z #2 [auth] library/python:pull token for registry-1.docker.io
+2024-12-04T05:51:45.0402863Z #2 DONE 0.0s
+2024-12-04T05:51:45.0403164Z 
+2024-12-04T05:51:45.0403500Z #3 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm
+2024-12-04T05:51:45.3106307Z #3 DONE 0.5s
+2024-12-04T05:51:45.4213506Z 
+2024-12-04T05:51:45.4214116Z #4 [internal] load .dockerignore
+2024-12-04T05:51:45.4214789Z #4 transferring context: 1.18kB done
+2024-12-04T05:51:45.4215668Z #4 DONE 0.0s
+2024-12-04T05:51:45.4215907Z 
+2024-12-04T05:51:45.4216390Z #5 [1/3] FROM docker.io/library/python:3.12-slim-bookworm@sha256:60d9996b6a8a3689d36db740b49f4327be3be09a21122bd02fb8895abb38b50d
+2024-12-04T05:51:45.4217295Z #5 resolve docker.io/library/python:3.12-slim-bookworm@sha256:60d9996b6a8a3689d36db740b49f4327be3be09a21122bd02fb8895abb38b50d done
+2024-12-04T05:51:45.4218880Z #5 sha256:5e739003c33414360cf2cec9452e1935b1bfcae79f279c33009bf4c0d5596f52 0B / 3.32MB 0.1s
+2024-12-04T05:51:45.4220304Z #5 sha256:5f86e0092844f78afa84a3b63059ea82e82fa93a28eedde55386370d924e8cf3 0B / 13.63MB 0.1s
+2024-12-04T05:51:45.4221488Z #5 sha256:60d9996b6a8a3689d36db740b49f4327be3be09a21122bd02fb8895abb38b50d 9.12kB / 9.12kB done
+2024-12-04T05:51:45.4222770Z #5 sha256:1c44018d7eb40488f29e7c6ad4991d3200507e14dca71b94fe61011815e98155 1.75kB / 1.75kB done
+2024-12-04T05:51:45.4223949Z #5 sha256:e35f80b558775b0903c34523ef3422645c10e06a66b151f228acf9cf8b862f66 5.17kB / 5.17kB done
+2024-12-04T05:51:45.4225141Z #5 sha256:bc0965b23a04fe7f2d9fb20f597008fcf89891de1c705ffc1c80483a1f098e4f 10.49MB / 28.23MB 0.1s
+2024-12-04T05:51:45.5344995Z #5 sha256:5e739003c33414360cf2cec9452e1935b1bfcae79f279c33009bf4c0d5596f52 3.32MB / 3.32MB 0.2s done
+2024-12-04T05:51:45.5346265Z #5 sha256:5f86e0092844f78afa84a3b63059ea82e82fa93a28eedde55386370d924e8cf3 12.58MB / 13.63MB 0.2s
+2024-12-04T05:51:45.5347795Z #5 sha256:bc0965b23a04fe7f2d9fb20f597008fcf89891de1c705ffc1c80483a1f098e4f 28.23MB / 28.23MB 0.2s done
+2024-12-04T05:51:45.5348917Z #5 sha256:46271edb89aec00565d974118707aaded82928c7ea7cb0a2bcc94b1f17e17e3d 0B / 249B 0.2s
+2024-12-04T05:51:45.5350161Z #5 extracting sha256:bc0965b23a04fe7f2d9fb20f597008fcf89891de1c705ffc1c80483a1f098e4f
+2024-12-04T05:51:45.6374376Z #5 sha256:5f86e0092844f78afa84a3b63059ea82e82fa93a28eedde55386370d924e8cf3 13.63MB / 13.63MB 0.2s done
+2024-12-04T05:51:45.6375476Z #5 sha256:46271edb89aec00565d974118707aaded82928c7ea7cb0a2bcc94b1f17e17e3d 249B / 249B 0.2s done
+2024-12-04T05:51:46.5088849Z #5 extracting sha256:bc0965b23a04fe7f2d9fb20f597008fcf89891de1c705ffc1c80483a1f098e4f 1.0s done
+2024-12-04T05:51:46.5090127Z #5 extracting sha256:5e739003c33414360cf2cec9452e1935b1bfcae79f279c33009bf4c0d5596f52
+2024-12-04T05:51:46.7490265Z #5 extracting sha256:5e739003c33414360cf2cec9452e1935b1bfcae79f279c33009bf4c0d5596f52 0.1s done
+2024-12-04T05:51:46.7492497Z #5 extracting sha256:5f86e0092844f78afa84a3b63059ea82e82fa93a28eedde55386370d924e8cf3 0.1s
+2024-12-04T05:51:47.2941121Z #5 extracting sha256:5f86e0092844f78afa84a3b63059ea82e82fa93a28eedde55386370d924e8cf3 0.6s done
+2024-12-04T05:51:47.2942479Z #5 extracting sha256:46271edb89aec00565d974118707aaded82928c7ea7cb0a2bcc94b1f17e17e3d done
+2024-12-04T05:51:47.2943348Z #5 DONE 2.0s
+2024-12-04T05:51:47.4520348Z 
+2024-12-04T05:51:47.4521075Z #6 [2/3] WORKDIR /build
+2024-12-04T05:51:47.4521499Z #6 DONE 0.0s
+2024-12-04T05:51:47.4521670Z 
+2024-12-04T05:51:47.4521935Z #7 [3/3] RUN python -m pip install grpcio-tools==1.59.2
+2024-12-04T05:51:49.5537357Z #7 2.252 Collecting grpcio-tools==1.59.2
+2024-12-04T05:51:49.7710160Z #7 2.318   Downloading grpcio_tools-1.59.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.2 kB)
+2024-12-04T05:51:49.8223722Z #7 2.521 Collecting protobuf<5.0dev,>=4.21.6 (from grpcio-tools==1.59.2)
+2024-12-04T05:51:49.9926040Z #7 2.540   Downloading protobuf-4.25.5-cp37-abi3-manylinux2014_x86_64.whl.metadata (541 bytes)
+2024-12-04T05:51:50.4392470Z #7 3.137 Collecting grpcio>=1.59.2 (from grpcio-tools==1.59.2)
+2024-12-04T05:51:50.6043073Z #7 3.152   Downloading grpcio-1.68.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (3.9 kB)
+2024-12-04T05:51:50.6651293Z #7 3.363 Collecting setuptools (from grpcio-tools==1.59.2)
+2024-12-04T05:51:50.8069764Z #7 3.378   Downloading setuptools-75.6.0-py3-none-any.whl.metadata (6.7 kB)
+2024-12-04T05:51:50.8071197Z #7 3.407 Downloading grpcio_tools-1.59.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.7 MB)
+2024-12-04T05:51:50.9081789Z #7 3.505    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.7/2.7 MB 45.5 MB/s eta 0:00:00
+2024-12-04T05:51:50.9083042Z #7 3.521 Downloading grpcio-1.68.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (5.9 MB)
+2024-12-04T05:51:50.9084285Z #7 3.564    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.9/5.9 MB 140.2 MB/s eta 0:00:00
+2024-12-04T05:51:50.9085126Z #7 3.578 Downloading protobuf-4.25.5-cp37-abi3-manylinux2014_x86_64.whl (294 kB)
+2024-12-04T05:51:50.9085888Z #7 3.596 Downloading setuptools-75.6.0-py3-none-any.whl (1.2 MB)
+2024-12-04T05:51:51.0866334Z #7 3.606    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 123.9 MB/s eta 0:00:00
+2024-12-04T05:51:51.0867005Z #7 3.635 Installing collected packages: setuptools, protobuf, grpcio, grpcio-tools
+2024-12-04T05:51:51.9861018Z #7 4.684 Successfully installed grpcio-1.68.1 grpcio-tools-1.59.2 protobuf-4.25.5 setuptools-75.6.0
+2024-12-04T05:51:52.1147332Z #7 4.685 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+2024-12-04T05:51:52.1149997Z #7 4.813 
+2024-12-04T05:51:52.1150618Z #7 4.813 [notice] A new release of pip is available: 24.2 -> 24.3.1
+2024-12-04T05:51:52.1151430Z #7 4.813 [notice] To update, run: pip install --upgrade pip
+2024-12-04T05:51:52.3536245Z #7 DONE 5.1s
+2024-12-04T05:51:52.5048636Z 
+2024-12-04T05:51:52.5053096Z #8 exporting to image
+2024-12-04T05:51:52.5053720Z #8 exporting layers
+2024-12-04T05:51:53.0079916Z #8 exporting layers 0.7s done
+2024-12-04T05:51:53.0280600Z #8 writing image sha256:b7d2bd179fde156c5d2d4f7254aaddb7d89db298033d8c4d869548de915a5820 done
+2024-12-04T05:51:53.0281980Z #8 naming to docker.io/library/recommendationservice-genproto done
+2024-12-04T05:51:53.0282838Z #8 DONE 0.7s
+2024-12-04T05:51:53.0322254Z + pwd
+2024-12-04T05:51:53.0324312Z + docker run --rm -v /home/runner/work/enpm818-final-phase-6/enpm818-final-phase-6:/build recommendationservice-genproto python -m grpc_tools.protoc -I /build/pb/ --python_out=./src/recommendationservice/ --grpc_python_out=./src/recommendationservice/ /build/pb/demo.proto
+2024-12-04T05:51:53.3385233Z /usr/local/lib/python3.12/site-packages/grpc_tools/protoc.py:21: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+2024-12-04T05:51:53.3386271Z   import pkg_resources
+2024-12-04T05:51:53.5177334Z ##[group]Run make check-clean-work-tree
+2024-12-04T05:51:53.5177751Z [36;1mmake check-clean-work-tree[0m
+2024-12-04T05:51:53.5237486Z shell: /usr/bin/bash -e {0}
+2024-12-04T05:51:53.5237828Z ##[endgroup]
+2024-12-04T05:51:53.6768305Z Post job cleanup.
+2024-12-04T05:51:53.7697486Z [command]/usr/bin/git version
+2024-12-04T05:51:53.7737481Z git version 2.47.0
+2024-12-04T05:51:53.7778465Z Temporarily overriding HOME='/home/runner/work/_temp/4c4e16a3-d28d-4206-9740-fe68adfa19ee' before making global git config changes
+2024-12-04T05:51:53.7779825Z Adding repository directory to the temporary git global config as a safe directory
+2024-12-04T05:51:53.7784304Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/enpm818-final-phase-6/enpm818-final-phase-6
+2024-12-04T05:51:53.7827880Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2024-12-04T05:51:53.7861507Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2024-12-04T05:51:53.8108647Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2024-12-04T05:51:53.8129799Z http.https://github.com/.extraheader
+2024-12-04T05:51:53.8158484Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2024-12-04T05:51:53.8180095Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2024-12-04T05:51:53.8547958Z Cleaning up orphan processes
+-----------------------------------------------
+2024-12-04T05:52:03.8723233Z Current runner version: '2.321.0'
+2024-12-04T05:52:03.8750319Z ##[group]Operating System
+2024-12-04T05:52:03.8751233Z Ubuntu
+2024-12-04T05:52:03.8751784Z 22.04.5
+2024-12-04T05:52:03.8752343Z LTS
+2024-12-04T05:52:03.8752793Z ##[endgroup]
+2024-12-04T05:52:03.8753331Z ##[group]Runner Image
+2024-12-04T05:52:03.8753929Z Image: ubuntu-22.04
+2024-12-04T05:52:03.8754416Z Version: 20241124.1.0
+2024-12-04T05:52:03.8755469Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20241124.1/images/ubuntu/Ubuntu2204-Readme.md
+2024-12-04T05:52:03.8756880Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20241124.1
+2024-12-04T05:52:03.8757748Z ##[endgroup]
+2024-12-04T05:52:03.8758286Z ##[group]Runner Image Provisioner
+2024-12-04T05:52:03.8758911Z 2.0.385.1
+2024-12-04T05:52:03.8759906Z ##[endgroup]
+2024-12-04T05:52:03.8761013Z ##[group]GITHUB_TOKEN Permissions
+2024-12-04T05:52:03.8763134Z Contents: read
+2024-12-04T05:52:03.8763678Z Metadata: read
+2024-12-04T05:52:03.8764484Z Packages: write
+2024-12-04T05:52:03.8765016Z ##[endgroup]
+2024-12-04T05:52:03.8767978Z Secret source: Actions
+2024-12-04T05:52:03.8769025Z Prepare workflow directory
+2024-12-04T05:52:03.9246924Z Prepare all required actions
+2024-12-04T05:52:03.9283074Z Getting action download info
+2024-12-04T05:52:04.1526475Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2024-12-04T05:52:04.2675729Z Download action repository 'docker/login-action@v3' (SHA:9780b0c442fbb1117ed29e0efdff1e18412f7567)
+2024-12-04T05:52:04.6009273Z Download action repository 'docker/setup-qemu-action@v3' (SHA:49b3bc8e6bdd4a60e6116a5414239cba5943d3cf)
+2024-12-04T05:52:04.8956159Z Download action repository 'docker/setup-buildx-action@v3' (SHA:c47758b77c9736f4b2ef4073d4d51994fabfe349)
+2024-12-04T05:52:05.1850949Z Download action repository 'docker/build-push-action@v6.10.0' (SHA:48aba3b46d1b1fec4febb7c5d0c644b249a11355)
+2024-12-04T05:52:05.5813189Z Uses: shareefm0/enpm818-final-phase-6/.github/workflows/component-build-images.yml@refs/heads/main (73cdadab1828cac9c6cb04a8dbfdb49fb1472015)
+2024-12-04T05:52:05.5816955Z ##[group] Inputs
+2024-12-04T05:52:05.5818209Z   push: true
+2024-12-04T05:52:05.5819020Z   version: 1.0.0
+2024-12-04T05:52:05.5819873Z   ghcr_repo: ghcr.io/shareefm0/demo
+2024-12-04T05:52:05.5820864Z ##[endgroup]
+2024-12-04T05:52:05.5822490Z Complete job name: build_images / build_and_push_images (./src/accountingservice/Dockerfile, accountingservice, ./, true)
+2024-12-04T05:52:05.6616166Z ##[group]Run actions/checkout@v4
+2024-12-04T05:52:05.6617487Z with:
+2024-12-04T05:52:05.6618217Z   fetch-depth: 0
+2024-12-04T05:52:05.6619120Z   repository: shareefm0/enpm818-final-phase-6
+2024-12-04T05:52:05.6620461Z   token: ***
+2024-12-04T05:52:05.6621216Z   ssh-strict: true
+2024-12-04T05:52:05.6622025Z   ssh-user: git
+2024-12-04T05:52:05.6622837Z   persist-credentials: true
+2024-12-04T05:52:05.6623730Z   clean: true
+2024-12-04T05:52:05.6624553Z   sparse-checkout-cone-mode: true
+2024-12-04T05:52:05.6625518Z   fetch-tags: false
+2024-12-04T05:52:05.6626342Z   show-progress: true
+2024-12-04T05:52:05.6627159Z   lfs: false
+2024-12-04T05:52:05.6627923Z   submodules: false
+2024-12-04T05:52:05.6628790Z   set-safe-directory: true
+2024-12-04T05:52:05.6629880Z env:
+2024-12-04T05:52:05.6630664Z   RELEASE_VERSION: 
+2024-12-04T05:52:05.6631455Z ##[endgroup]
+2024-12-04T05:52:05.9232932Z Syncing repository: shareefm0/enpm818-final-phase-6
+2024-12-04T05:52:05.9237023Z ##[group]Getting Git version info
+2024-12-04T05:52:05.9240046Z Working directory is '/home/runner/work/enpm818-final-phase-6/enpm818-final-phase-6'
+2024-12-04T05:52:05.9243716Z [command]/usr/bin/git version
+2024-12-04T05:52:05.9348930Z git version 2.47.0
+2024-12-04T05:52:05.9379283Z ##[endgroup]
+2024-12-04T05:52:05.9395534Z Temporarily overriding HOME='/home/runner/work/_temp/a64babb8-9cd5-435c-9e11-d787f258af82' before making global git config changes
+2024-12-04T05:52:05.9400092Z Adding repository directory to the temporary git global config as a safe directory
+2024-12-04T05:52:05.9405109Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/enpm818-final-phase-6/enpm818-final-phase-6
+2024-12-04T05:52:05.9461476Z Deleting the contents of '/home/runner/work/enpm818-final-phase-6/enpm818-final-phase-6'
+2024-12-04T05:52:05.9465894Z ##[group]Initializing the repository
+2024-12-04T05:52:05.9471814Z [command]/usr/bin/git init /home/runner/work/enpm818-final-phase-6/enpm818-final-phase-6
+2024-12-04T05:52:05.9576610Z hint: Using 'master' as the name for the initial branch. This default branch name
+2024-12-04T05:52:05.9578748Z hint: is subject to change. To configure the initial branch name to use in all
+2024-12-04T05:52:05.9580442Z hint: of your new repositories, which will suppress this warning, call:
+2024-12-04T05:52:05.9581707Z hint:
+2024-12-04T05:52:05.9583409Z hint: 	git config --global init.defaultBranch <name>
+2024-12-04T05:52:05.9585441Z hint:
+2024-12-04T05:52:05.9587215Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2024-12-04T05:52:05.9589189Z hint: 'development'. The just-created branch can be renamed via this command:
+2024-12-04T05:52:05.9590677Z hint:
+2024-12-04T05:52:05.9591573Z hint: 	git branch -m <name>
+2024-12-04T05:52:05.9593344Z Initialized empty Git repository in /home/runner/work/enpm818-final-phase-6/enpm818-final-phase-6/.git/
+2024-12-04T05:52:05.9605274Z [command]/usr/bin/git remote add origin https://github.com/shareefm0/enpm818-final-phase-6
+2024-12-04T05:52:05.9651849Z ##[endgroup]
+2024-12-04T05:52:05.9654783Z ##[group]Disabling automatic garbage collection
+2024-12-04T05:52:05.9657026Z [command]/usr/bin/git config --local gc.auto 0
+2024-12-04T05:52:05.9695525Z ##[endgroup]
+2024-12-04T05:52:05.9698271Z ##[group]Setting up auth
+2024-12-04T05:52:05.9700638Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2024-12-04T05:52:05.9728955Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2024-12-04T05:52:06.0092630Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2024-12-04T05:52:06.0132284Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2024-12-04T05:52:06.0378405Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2024-12-04T05:52:06.0421394Z ##[endgroup]
+2024-12-04T05:52:06.0423057Z ##[group]Fetching the repository
+2024-12-04T05:52:06.0430331Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2024-12-04T05:52:06.4198246Z From https://github.com/shareefm0/enpm818-final-phase-6
+2024-12-04T05:52:06.4200023Z  * [new branch]      main       -> origin/main
+2024-12-04T05:52:06.4234266Z [command]/usr/bin/git branch --list --remote origin/main
+2024-12-04T05:52:06.4258580Z   origin/main
+2024-12-04T05:52:06.4268814Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2024-12-04T05:52:06.4291101Z 73cdadab1828cac9c6cb04a8dbfdb49fb1472015
+2024-12-04T05:52:06.4296545Z ##[endgroup]
+2024-12-04T05:52:06.4297409Z ##[group]Determining the checkout info
+2024-12-04T05:52:06.4298266Z ##[endgroup]
+2024-12-04T05:52:06.4301977Z [command]/usr/bin/git sparse-checkout disable
+2024-12-04T05:52:06.4340691Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2024-12-04T05:52:06.4367422Z ##[group]Checking out the ref
+2024-12-04T05:52:06.4371231Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2024-12-04T05:52:06.5082257Z Switched to a new branch 'main'
+2024-12-04T05:52:06.5083550Z branch 'main' set up to track 'origin/main'.
+2024-12-04T05:52:06.5130335Z ##[endgroup]
+2024-12-04T05:52:06.5134036Z [command]/usr/bin/git log -1 --format=%H
+2024-12-04T05:52:06.5158140Z 73cdadab1828cac9c6cb04a8dbfdb49fb1472015
+2024-12-04T05:52:06.5338562Z ##[group]Run if [ -f .env ]; then
+2024-12-04T05:52:06.5339073Z [36;1mif [ -f .env ]; then[0m
+2024-12-04T05:52:06.5339723Z [36;1m  # Filter out comments and empty lines, then add each variable to $GITHUB_ENV[0m
+2024-12-04T05:52:06.5340250Z [36;1m  grep -vE '^\s*#|^\s*$' .env | while read -r line; do[0m
+2024-12-04T05:52:06.5340644Z [36;1m    echo "$line" >> $GITHUB_ENV[0m
+2024-12-04T05:52:06.5341259Z [36;1m  done[0m
+2024-12-04T05:52:06.5341532Z [36;1melse[0m
+2024-12-04T05:52:06.5341838Z [36;1m  echo ".env file not found!"[0m
+2024-12-04T05:52:06.5342315Z [36;1m  exit 1[0m
+2024-12-04T05:52:06.5342585Z [36;1mfi[0m
+2024-12-04T05:52:06.5443868Z shell: /usr/bin/bash -e {0}
+2024-12-04T05:52:06.5444288Z env:
+2024-12-04T05:52:06.5444687Z   RELEASE_VERSION: 
+2024-12-04T05:52:06.5444995Z ##[endgroup]
+2024-12-04T05:52:06.5665135Z ##[group]Run DOCKERFILE_DIR=$(dirname ./src/accountingservice/Dockerfile)
+2024-12-04T05:52:06.5665912Z [36;1mDOCKERFILE_DIR=$(dirname ./src/accountingservice/Dockerfile)[0m
+2024-12-04T05:52:06.5666617Z [36;1mFILES_CHANGED=$(git diff --name-only  73cdadab1828cac9c6cb04a8dbfdb49fb1472015 -- $DOCKERFILE_DIR)[0m
+2024-12-04T05:52:06.5667230Z [36;1mFORCE_PUSH=true[0m
+2024-12-04T05:52:06.5667646Z [36;1mif [ "$FORCE_PUSH" = true ]; then[0m
+2024-12-04T05:52:06.5668100Z [36;1m  echo "Force push is enabled, proceeding with build."[0m
+2024-12-04T05:52:06.5668568Z [36;1m  echo "skip=false" >> "$GITHUB_OUTPUT"[0m
+2024-12-04T05:52:06.5669039Z [36;1melif [ -z "$FILES_CHANGED" ]; then[0m
+2024-12-04T05:52:06.5669459Z [36;1m  echo "No changes in ./, skipping build."[0m
+2024-12-04T05:52:06.5669885Z [36;1m  echo "skip=true" >> "$GITHUB_OUTPUT"[0m
+2024-12-04T05:52:06.5670325Z [36;1melse[0m
+2024-12-04T05:52:06.5670817Z [36;1m  echo "Changes detected in ./, proceeding with build."[0m
+2024-12-04T05:52:06.5671256Z [36;1m  echo "skip=false" >> "$GITHUB_OUTPUT"[0m
+2024-12-04T05:52:06.5671799Z [36;1mfi[0m
+2024-12-04T05:52:06.5726759Z shell: /usr/bin/bash -e {0}
+2024-12-04T05:52:06.5727123Z env:
+2024-12-04T05:52:06.5727438Z   RELEASE_VERSION: 
+2024-12-04T05:52:06.5727830Z   IMAGE_VERSION: 1.12.0
+2024-12-04T05:52:06.5728157Z   IMAGE_NAME: ghcr.io/shareefm0/demo
+2024-12-04T05:52:06.5728556Z   DEMO_VERSION: latest
+2024-12-04T05:52:06.5728952Z   TRACETEST_IMAGE_VERSION: v1.7.1
+2024-12-04T05:52:06.5729310Z   OTEL_JAVA_AGENT_VERSION: 2.9.0
+2024-12-04T05:52:06.5729707Z   OPENTELEMETRY_CPP_VERSION: 1.17.0
+2024-12-04T05:52:06.5730283Z   COLLECTOR_CONTRIB_IMAGE: otel/opentelemetry-collector-contrib:0.113.0
+2024-12-04T05:52:06.5730869Z   FLAGD_IMAGE: ghcr.io/open-feature/flagd:v0.11.4
+2024-12-04T05:52:06.5731311Z   GRAFANA_IMAGE: grafana/grafana:11.3.0
+2024-12-04T05:52:06.5731812Z   JAEGERTRACING_IMAGE: jaegertracing/all-in-one:1.62.0
+2024-12-04T05:52:06.5732293Z   OPENSEARCH_IMAGE: opensearchproject/opensearch:2.18.0
+2024-12-04T05:52:06.5732749Z   POSTGRES_IMAGE: postgres:17.0
+2024-12-04T05:52:06.5733238Z   PROMETHEUS_IMAGE: quay.io/prometheus/prometheus:v2.55.1
+2024-12-04T05:52:06.5733734Z   VALKEY_IMAGE: valkey/valkey:8.0-alpine
+2024-12-04T05:52:06.5734156Z   TRACETEST_IMAGE: kubeshop/tracetest:${TRACETEST_IMAGE_VERSION}
+2024-12-04T05:52:06.5734648Z   ENV_PLATFORM: local
+2024-12-04T05:52:06.5735084Z   HOST_FILESYSTEM: /
+2024-12-04T05:52:06.5735394Z   DOCKER_SOCK: /var/run/docker.sock
+2024-12-04T05:52:06.5735821Z   OTEL_COLLECTOR_HOST: otelcol
+2024-12-04T05:52:06.5736244Z   OTEL_COLLECTOR_PORT_GRPC: 4317
+2024-12-04T05:52:06.5736605Z   OTEL_COLLECTOR_PORT_HTTP: 4318
+2024-12-04T05:52:06.5737053Z   OTEL_COLLECTOR_CONFIG: ./src/otelcollector/otelcol-config.yml
+2024-12-04T05:52:06.5737648Z   OTEL_COLLECTOR_CONFIG_EXTRAS: ./src/otelcollector/otelcol-config-extras.yml
+2024-12-04T05:52:06.5738361Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://${OTEL_COLLECTOR_HOST}:${OTEL_COLLECTOR_PORT_GRPC}
+2024-12-04T05:52:06.5739127Z   PUBLIC_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: http://localhost:8080/otlp-http/v1/traces
+2024-12-04T05:52:06.5739904Z   OTEL_RESOURCE_ATTRIBUTES: service.namespace=opentelemetry-demo,service.version=${IMAGE_VERSION}
+2024-12-04T05:52:06.5740770Z   OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE: cumulative
+2024-12-04T05:52:06.5741406Z   ACCOUNTING_SERVICE_DOCKERFILE: ./src/accountingservice/Dockerfile
+2024-12-04T05:52:06.5741841Z   AD_SERVICE_PORT: 9555
+2024-12-04T05:52:06.5742198Z   AD_SERVICE_ADDR: adservice:${AD_SERVICE_PORT}
+2024-12-04T05:52:06.5742748Z   AD_SERVICE_DOCKERFILE: ./src/adservice/Dockerfile
+2024-12-04T05:52:06.5743119Z   CART_SERVICE_PORT: 7070
+2024-12-04T05:52:06.5743511Z   CART_SERVICE_ADDR: cartservice:${CART_SERVICE_PORT}
+2024-12-04T05:52:06.5744047Z   CART_SERVICE_DOCKERFILE: ./src/cartservice/src/Dockerfile
+2024-12-04T05:52:06.5744443Z   CHECKOUT_SERVICE_PORT: 5050
+2024-12-04T05:52:06.5744894Z   CHECKOUT_SERVICE_ADDR: checkoutservice:${CHECKOUT_SERVICE_PORT}
+2024-12-04T05:52:06.5745694Z   CHECKOUT_SERVICE_DOCKERFILE: ./src/checkoutservice/Dockerfile
+2024-12-04T05:52:06.5746126Z   CURRENCY_SERVICE_PORT: 7001
+2024-12-04T05:52:06.5746588Z   CURRENCY_SERVICE_ADDR: currencyservice:${CURRENCY_SERVICE_PORT}
+2024-12-04T05:52:06.5747187Z   CURRENCY_SERVICE_DOCKERFILE: ./src/currencyservice/Dockerfile
+2024-12-04T05:52:06.5747646Z   EMAIL_SERVICE_PORT: 6060
+2024-12-04T05:52:06.5748064Z   EMAIL_SERVICE_ADDR: http://emailservice:${EMAIL_SERVICE_PORT}
+2024-12-04T05:52:06.5748637Z   EMAIL_SERVICE_DOCKERFILE: ./src/emailservice/Dockerfile
+2024-12-04T05:52:06.5749168Z   FRAUD_SERVICE_DOCKERFILE: ./src/frauddetectionservice/Dockerfile
+2024-12-04T05:52:06.5749583Z   FRONTEND_PORT: 8080
+2024-12-04T05:52:06.5750002Z   FRONTEND_ADDR: frontend:${FRONTEND_PORT}
+2024-12-04T05:52:06.5750429Z   FRONTEND_DOCKERFILE: ./src/frontend/Dockerfile
+2024-12-04T05:52:06.5750799Z   FRONTEND_HOST: frontend
+2024-12-04T05:52:06.5751190Z   ENVOY_PORT: 8080
+2024-12-04T05:52:06.5751576Z   FRONTEND_PROXY_ADDR: frontend-proxy:${ENVOY_PORT}
+2024-12-04T05:52:06.5752016Z   FRONTEND_PROXY_DOCKERFILE: ./src/frontendproxy/Dockerfile
+2024-12-04T05:52:06.5752524Z   IMAGE_PROVIDER_HOST: imageprovider
+2024-12-04T05:52:06.5752914Z   IMAGE_PROVIDER_PORT: 8081
+2024-12-04T05:52:06.5753301Z   IMAGE_PROVIDER_DOCKERFILE: ./src/imageprovider/Dockerfile
+2024-12-04T05:52:06.5753803Z   LOCUST_WEB_PORT: 8089
+2024-12-04T05:52:06.5754130Z   LOCUST_USERS: 10
+2024-12-04T05:52:06.5754437Z   LOCUST_HOST: http://${FRONTEND_PROXY_ADDR}
+2024-12-04T05:52:06.5754909Z   LOCUST_WEB_HOST: loadgenerator
+2024-12-04T05:52:06.5755261Z   LOCUST_AUTOSTART: true
+2024-12-04T05:52:06.5755559Z   LOCUST_HEADLESS: false
+2024-12-04T05:52:06.5756033Z   LOAD_GENERATOR_DOCKERFILE: ./src/loadgenerator/Dockerfile
+2024-12-04T05:52:06.5756463Z   PAYMENT_SERVICE_PORT: 50051
+2024-12-04T05:52:06.5756853Z   PAYMENT_SERVICE_ADDR: paymentservice:${PAYMENT_SERVICE_PORT}
+2024-12-04T05:52:06.5757448Z   PAYMENT_SERVICE_DOCKERFILE: ./src/paymentservice/Dockerfile
+2024-12-04T05:52:06.5757917Z   PRODUCT_CATALOG_SERVICE_PORT: 3550
+2024-12-04T05:52:06.5758417Z   PRODUCT_CATALOG_SERVICE_ADDR: productcatalogservice:${PRODUCT_CATALOG_SERVICE_PORT}
+2024-12-04T05:52:06.5759103Z   PRODUCT_CATALOG_DOCKERFILE: ./src/productcatalogservice/Dockerfile
+2024-12-04T05:52:06.5759821Z   QUOTE_SERVICE_PORT: 8090
+2024-12-04T05:52:06.5760258Z   QUOTE_SERVICE_ADDR: http://quoteservice:${QUOTE_SERVICE_PORT}
+2024-12-04T05:52:06.5760823Z   QUOTE_SERVICE_DOCKERFILE: ./src/quoteservice/Dockerfile
+2024-12-04T05:52:06.5761256Z   RECOMMENDATION_SERVICE_PORT: 9001
+2024-12-04T05:52:06.5761771Z   RECOMMENDATION_SERVICE_ADDR: recommendationservice:${RECOMMENDATION_SERVICE_PORT}
+2024-12-04T05:52:06.5762453Z   RECOMMENDATION_SERVICE_DOCKERFILE: ./src/recommendationservice/Dockerfile
+2024-12-04T05:52:06.5762956Z   SHIPPING_SERVICE_PORT: 50050
+2024-12-04T05:52:06.5763386Z   SHIPPING_SERVICE_ADDR: shippingservice:${SHIPPING_SERVICE_PORT}
+2024-12-04T05:52:06.5763995Z   SHIPPING_SERVICE_DOCKERFILE: ./src/shippingservice/Dockerfile
+2024-12-04T05:52:06.5764420Z   FLAGD_HOST: flagd
+2024-12-04T05:52:06.5764734Z   FLAGD_PORT: 8013
+2024-12-04T05:52:06.5765129Z   FLAGD_UI_HOST: flagdui
+2024-12-04T05:52:06.5765625Z   FLAGD_UI_PORT: 4000
+2024-12-04T05:52:06.5765965Z   FLAGD_UI_DOCKERFILE: ./src/flagd-ui/Dockerfile
+2024-12-04T05:52:06.5766446Z   KAFKA_SERVICE_PORT: 9092
+2024-12-04T05:52:06.5766800Z   KAFKA_SERVICE_ADDR: kafka:${KAFKA_SERVICE_PORT}
+2024-12-04T05:52:06.5767208Z   KAFKA_SERVICE_DOCKERFILE: ./src/kafka/Dockerfile
+2024-12-04T05:52:06.5767672Z   VALKEY_PORT: 6379
+2024-12-04T05:52:06.5767989Z   VALKEY_ADDR: valkey-cart:${VALKEY_PORT}
+2024-12-04T05:52:06.5768356Z   GRAFANA_SERVICE_PORT: 3000
+2024-12-04T05:52:06.5768819Z   GRAFANA_SERVICE_HOST: grafana
+2024-12-04T05:52:06.5769135Z   JAEGER_SERVICE_PORT: 16686
+2024-12-04T05:52:06.5769465Z   JAEGER_SERVICE_HOST: jaeger
+2024-12-04T05:52:06.5769913Z   PROMETHEUS_SERVICE_PORT: 9090
+2024-12-04T05:52:06.5770242Z   PROMETHEUS_SERVICE_HOST: prometheus
+2024-12-04T05:52:06.5770871Z   PROMETHEUS_ADDR: ${PROMETHEUS_SERVICE_HOST}:${PROMETHEUS_SERVICE_PORT}
+2024-12-04T05:52:06.5771452Z ##[endgroup]
+2024-12-04T05:52:06.5897929Z Force push is enabled, proceeding with build.
+2024-12-04T05:52:06.5983585Z ##[group]Run docker/login-action@v3
+2024-12-04T05:52:06.5984027Z with:
+2024-12-04T05:52:06.5984423Z   registry: ghcr.io
+2024-12-04T05:52:06.5984744Z   username: shareefm0
+2024-12-04T05:52:06.5985362Z   password: ***
+2024-12-04T05:52:06.5985770Z   ecr: auto
+2024-12-04T05:52:06.5986047Z   logout: true
+2024-12-04T05:52:06.5986376Z env:
+2024-12-04T05:52:06.5986737Z   RELEASE_VERSION: 
+2024-12-04T05:52:06.5987043Z   IMAGE_VERSION: 1.12.0
+2024-12-04T05:52:06.5987385Z   IMAGE_NAME: ghcr.io/shareefm0/demo
+2024-12-04T05:52:06.5987834Z   DEMO_VERSION: latest
+2024-12-04T05:52:06.5988150Z   TRACETEST_IMAGE_VERSION: v1.7.1
+2024-12-04T05:52:06.5988533Z   OTEL_JAVA_AGENT_VERSION: 2.9.0
+2024-12-04T05:52:06.5988956Z   OPENTELEMETRY_CPP_VERSION: 1.17.0
+2024-12-04T05:52:06.5989424Z   COLLECTOR_CONTRIB_IMAGE: otel/opentelemetry-collector-contrib:0.113.0
+2024-12-04T05:52:06.5989974Z   FLAGD_IMAGE: ghcr.io/open-feature/flagd:v0.11.4
+2024-12-04T05:52:06.5990443Z   GRAFANA_IMAGE: grafana/grafana:11.3.0
+2024-12-04T05:52:06.5991026Z   JAEGERTRACING_IMAGE: jaegertracing/all-in-one:1.62.0
+2024-12-04T05:52:06.5991509Z   OPENSEARCH_IMAGE: opensearchproject/opensearch:2.18.0
+2024-12-04T05:52:06.5992042Z   POSTGRES_IMAGE: postgres:17.0
+2024-12-04T05:52:06.5992462Z   PROMETHEUS_IMAGE: quay.io/prometheus/prometheus:v2.55.1
+2024-12-04T05:52:06.5992899Z   VALKEY_IMAGE: valkey/valkey:8.0-alpine
+2024-12-04T05:52:06.5993444Z   TRACETEST_IMAGE: kubeshop/tracetest:${TRACETEST_IMAGE_VERSION}
+2024-12-04T05:52:06.5993873Z   ENV_PLATFORM: local
+2024-12-04T05:52:06.5994185Z   HOST_FILESYSTEM: /
+2024-12-04T05:52:06.5994599Z   DOCKER_SOCK: /var/run/docker.sock
+2024-12-04T05:52:06.5994953Z   OTEL_COLLECTOR_HOST: otelcol
+2024-12-04T05:52:06.5995299Z   OTEL_COLLECTOR_PORT_GRPC: 4317
+2024-12-04T05:52:06.5995797Z   OTEL_COLLECTOR_PORT_HTTP: 4318
+2024-12-04T05:52:06.5996228Z   OTEL_COLLECTOR_CONFIG: ./src/otelcollector/otelcol-config.yml
+2024-12-04T05:52:06.5996741Z   OTEL_COLLECTOR_CONFIG_EXTRAS: ./src/otelcollector/otelcol-config-extras.yml
+2024-12-04T05:52:06.5997481Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://${OTEL_COLLECTOR_HOST}:${OTEL_COLLECTOR_PORT_GRPC}
+2024-12-04T05:52:06.5998148Z   PUBLIC_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: http://localhost:8080/otlp-http/v1/traces
+2024-12-04T05:52:06.5998816Z   OTEL_RESOURCE_ATTRIBUTES: service.namespace=opentelemetry-demo,service.version=${IMAGE_VERSION}
+2024-12-04T05:52:06.5999854Z   OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE: cumulative
+2024-12-04T05:52:06.6000405Z   ACCOUNTING_SERVICE_DOCKERFILE: ./src/accountingservice/Dockerfile
+2024-12-04T05:52:06.6000933Z   AD_SERVICE_PORT: 9555
+2024-12-04T05:52:06.6001293Z   AD_SERVICE_ADDR: adservice:${AD_SERVICE_PORT}
+2024-12-04T05:52:06.6001721Z   AD_SERVICE_DOCKERFILE: ./src/adservice/Dockerfile
+2024-12-04T05:52:06.6002183Z   CART_SERVICE_PORT: 7070
+2024-12-04T05:52:06.6002586Z   CART_SERVICE_ADDR: cartservice:${CART_SERVICE_PORT}
+2024-12-04T05:52:06.6003055Z   CART_SERVICE_DOCKERFILE: ./src/cartservice/src/Dockerfile
+2024-12-04T05:52:06.6003798Z   CHECKOUT_SERVICE_PORT: 5050
+2024-12-04T05:52:06.6004219Z   CHECKOUT_SERVICE_ADDR: checkoutservice:${CHECKOUT_SERVICE_PORT}
+2024-12-04T05:52:06.6004743Z   CHECKOUT_SERVICE_DOCKERFILE: ./src/checkoutservice/Dockerfile
+2024-12-04T05:52:06.6005256Z   CURRENCY_SERVICE_PORT: 7001
+2024-12-04T05:52:06.6005670Z   CURRENCY_SERVICE_ADDR: currencyservice:${CURRENCY_SERVICE_PORT}
+2024-12-04T05:52:06.6006194Z   CURRENCY_SERVICE_DOCKERFILE: ./src/currencyservice/Dockerfile
+2024-12-04T05:52:06.6006724Z   EMAIL_SERVICE_PORT: 6060
+2024-12-04T05:52:06.6007166Z   EMAIL_SERVICE_ADDR: http://emailservice:${EMAIL_SERVICE_PORT}
+2024-12-04T05:52:06.6007680Z   EMAIL_SERVICE_DOCKERFILE: ./src/emailservice/Dockerfile
+2024-12-04T05:52:06.6008204Z   FRAUD_SERVICE_DOCKERFILE: ./src/frauddetectionservice/Dockerfile
+2024-12-04T05:52:06.6008686Z   FRONTEND_PORT: 8080
+2024-12-04T05:52:06.6009052Z   FRONTEND_ADDR: frontend:${FRONTEND_PORT}
+2024-12-04T05:52:06.6009478Z   FRONTEND_DOCKERFILE: ./src/frontend/Dockerfile
+2024-12-04T05:52:06.6010126Z   FRONTEND_HOST: frontend
+2024-12-04T05:52:06.6010473Z   ENVOY_PORT: 8080
+2024-12-04T05:52:06.6010855Z   FRONTEND_PROXY_ADDR: frontend-proxy:${ENVOY_PORT}
+2024-12-04T05:52:06.6011363Z   FRONTEND_PROXY_DOCKERFILE: ./src/frontendproxy/Dockerfile
+2024-12-04T05:52:06.6011798Z   IMAGE_PROVIDER_HOST: imageprovider
+2024-12-04T05:52:06.6012232Z   IMAGE_PROVIDER_PORT: 8081
+2024-12-04T05:52:06.6012618Z   IMAGE_PROVIDER_DOCKERFILE: ./src/imageprovider/Dockerfile
+2024-12-04T05:52:06.6013042Z   LOCUST_WEB_PORT: 8089
+2024-12-04T05:52:06.6013456Z   LOCUST_USERS: 10
+2024-12-04T05:52:06.6013784Z   LOCUST_HOST: http://${FRONTEND_PROXY_ADDR}
+2024-12-04T05:52:06.6014175Z   LOCUST_WEB_HOST: loadgenerator
+2024-12-04T05:52:06.6014614Z   LOCUST_AUTOSTART: true
+2024-12-04T05:52:06.6014914Z   LOCUST_HEADLESS: false
+2024-12-04T05:52:06.6015300Z   LOAD_GENERATOR_DOCKERFILE: ./src/loadgenerator/Dockerfile
+2024-12-04T05:52:06.6015813Z   PAYMENT_SERVICE_PORT: 50051
+2024-12-04T05:52:06.6016221Z   PAYMENT_SERVICE_ADDR: paymentservice:${PAYMENT_SERVICE_PORT}
+2024-12-04T05:52:06.6016742Z   PAYMENT_SERVICE_DOCKERFILE: ./src/paymentservice/Dockerfile
+2024-12-04T05:52:06.6017278Z   PRODUCT_CATALOG_SERVICE_PORT: 3550
+2024-12-04T05:52:06.6017759Z   PRODUCT_CATALOG_SERVICE_ADDR: productcatalogservice:${PRODUCT_CATALOG_SERVICE_PORT}
+2024-12-04T05:52:06.6018389Z   PRODUCT_CATALOG_DOCKERFILE: ./src/productcatalogservice/Dockerfile
+2024-12-04T05:52:06.6018940Z   QUOTE_SERVICE_PORT: 8090
+2024-12-04T05:52:06.6019337Z   QUOTE_SERVICE_ADDR: http://quoteservice:${QUOTE_SERVICE_PORT}
+2024-12-04T05:52:06.6019873Z   QUOTE_SERVICE_DOCKERFILE: ./src/quoteservice/Dockerfile
+2024-12-04T05:52:06.6020400Z   RECOMMENDATION_SERVICE_PORT: 9001
+2024-12-04T05:52:06.6020918Z   RECOMMENDATION_SERVICE_ADDR: recommendationservice:${RECOMMENDATION_SERVICE_PORT}
+2024-12-04T05:52:06.6021520Z   RECOMMENDATION_SERVICE_DOCKERFILE: ./src/recommendationservice/Dockerfile
+2024-12-04T05:52:06.6022094Z   SHIPPING_SERVICE_PORT: 50050
+2024-12-04T05:52:06.6022553Z   SHIPPING_SERVICE_ADDR: shippingservice:${SHIPPING_SERVICE_PORT}
+2024-12-04T05:52:06.6023061Z   SHIPPING_SERVICE_DOCKERFILE: ./src/shippingservice/Dockerfile
+2024-12-04T05:52:06.6023564Z   FLAGD_HOST: flagd
+2024-12-04T05:52:06.6023877Z   FLAGD_PORT: 8013
+2024-12-04T05:52:06.6024192Z   FLAGD_UI_HOST: flagdui
+2024-12-04T05:52:06.6024591Z   FLAGD_UI_PORT: 4000
+2024-12-04T05:52:06.6024950Z   FLAGD_UI_DOCKERFILE: ./src/flagd-ui/Dockerfile
+2024-12-04T05:52:06.6025329Z   KAFKA_SERVICE_PORT: 9092
+2024-12-04T05:52:06.6025771Z   KAFKA_SERVICE_ADDR: kafka:${KAFKA_SERVICE_PORT}
+2024-12-04T05:52:06.6026198Z   KAFKA_SERVICE_DOCKERFILE: ./src/kafka/Dockerfile
+2024-12-04T05:52:06.6026567Z   VALKEY_PORT: 6379
+2024-12-04T05:52:06.6026968Z   VALKEY_ADDR: valkey-cart:${VALKEY_PORT}
+2024-12-04T05:52:06.6027370Z   GRAFANA_SERVICE_PORT: 3000
+2024-12-04T05:52:06.6027681Z   GRAFANA_SERVICE_HOST: grafana
+2024-12-04T05:52:06.6028091Z   JAEGER_SERVICE_PORT: 16686
+2024-12-04T05:52:06.6028449Z   JAEGER_SERVICE_HOST: jaeger
+2024-12-04T05:52:06.6028926Z   PROMETHEUS_SERVICE_PORT: 9090
+2024-12-04T05:52:06.6029364Z   PROMETHEUS_SERVICE_HOST: prometheus
+2024-12-04T05:52:06.6029855Z   PROMETHEUS_ADDR: ${PROMETHEUS_SERVICE_HOST}:${PROMETHEUS_SERVICE_PORT}
+2024-12-04T05:52:06.6030299Z ##[endgroup]
+2024-12-04T05:52:06.8844661Z Logging into ghcr.io...
+2024-12-04T05:52:07.1502392Z Login Succeeded!
+2024-12-04T05:52:07.1636505Z ##[group]Run docker/setup-qemu-action@v3
+2024-12-04T05:52:07.1636988Z with:
+2024-12-04T05:52:07.1637408Z   image: tonistiigi/binfmt:master
+2024-12-04T05:52:07.1637743Z   platforms: all
+2024-12-04T05:52:07.1638054Z env:
+2024-12-04T05:52:07.1638439Z   RELEASE_VERSION: 
+2024-12-04T05:52:07.1638726Z   IMAGE_VERSION: 1.12.0
+2024-12-04T05:52:07.1639068Z   IMAGE_NAME: ghcr.io/shareefm0/demo
+2024-12-04T05:52:07.1639845Z   DEMO_VERSION: latest
+2024-12-04T05:52:07.1640175Z   TRACETEST_IMAGE_VERSION: v1.7.1
+2024-12-04T05:52:07.1640547Z   OTEL_JAVA_AGENT_VERSION: 2.9.0
+2024-12-04T05:52:07.1641016Z   OPENTELEMETRY_CPP_VERSION: 1.17.0
+2024-12-04T05:52:07.1641501Z   COLLECTOR_CONTRIB_IMAGE: otel/opentelemetry-collector-contrib:0.113.0
+2024-12-04T05:52:07.1642040Z   FLAGD_IMAGE: ghcr.io/open-feature/flagd:v0.11.4
+2024-12-04T05:52:07.1642554Z   GRAFANA_IMAGE: grafana/grafana:11.3.0
+2024-12-04T05:52:07.1642970Z   JAEGERTRACING_IMAGE: jaegertracing/all-in-one:1.62.0
+2024-12-04T05:52:07.1643611Z   OPENSEARCH_IMAGE: opensearchproject/opensearch:2.18.0
+2024-12-04T05:52:07.1644027Z   POSTGRES_IMAGE: postgres:17.0
+2024-12-04T05:52:07.1644443Z   PROMETHEUS_IMAGE: quay.io/prometheus/prometheus:v2.55.1
+2024-12-04T05:52:07.1644964Z   VALKEY_IMAGE: valkey/valkey:8.0-alpine
+2024-12-04T05:52:07.1645437Z   TRACETEST_IMAGE: kubeshop/tracetest:${TRACETEST_IMAGE_VERSION}
+2024-12-04T05:52:07.1645847Z   ENV_PLATFORM: local
+2024-12-04T05:52:07.1646240Z   HOST_FILESYSTEM: /
+2024-12-04T05:52:07.1646597Z   DOCKER_SOCK: /var/run/docker.sock
+2024-12-04T05:52:07.1646972Z   OTEL_COLLECTOR_HOST: otelcol
+2024-12-04T05:52:07.1647421Z   OTEL_COLLECTOR_PORT_GRPC: 4317
+2024-12-04T05:52:07.1647793Z   OTEL_COLLECTOR_PORT_HTTP: 4318
+2024-12-04T05:52:07.1648190Z   OTEL_COLLECTOR_CONFIG: ./src/otelcollector/otelcol-config.yml
+2024-12-04T05:52:07.1648835Z   OTEL_COLLECTOR_CONFIG_EXTRAS: ./src/otelcollector/otelcol-config-extras.yml
+2024-12-04T05:52:07.1649490Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://${OTEL_COLLECTOR_HOST}:${OTEL_COLLECTOR_PORT_GRPC}
+2024-12-04T05:52:07.1650138Z   PUBLIC_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: http://localhost:8080/otlp-http/v1/traces
+2024-12-04T05:52:07.1650916Z   OTEL_RESOURCE_ATTRIBUTES: service.namespace=opentelemetry-demo,service.version=${IMAGE_VERSION}
+2024-12-04T05:52:07.1651553Z   OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE: cumulative
+2024-12-04T05:52:07.1652069Z   ACCOUNTING_SERVICE_DOCKERFILE: ./src/accountingservice/Dockerfile
+2024-12-04T05:52:07.1652588Z   AD_SERVICE_PORT: 9555
+2024-12-04T05:52:07.1652949Z   AD_SERVICE_ADDR: adservice:${AD_SERVICE_PORT}
+2024-12-04T05:52:07.1653394Z   AD_SERVICE_DOCKERFILE: ./src/adservice/Dockerfile
+2024-12-04T05:52:07.1653870Z   CART_SERVICE_PORT: 7070
+2024-12-04T05:52:07.1654250Z   CART_SERVICE_ADDR: cartservice:${CART_SERVICE_PORT}
+2024-12-04T05:52:07.1654708Z   CART_SERVICE_DOCKERFILE: ./src/cartservice/src/Dockerfile
+2024-12-04T05:52:07.1655225Z   CHECKOUT_SERVICE_PORT: 5050
+2024-12-04T05:52:07.1655627Z   CHECKOUT_SERVICE_ADDR: checkoutservice:${CHECKOUT_SERVICE_PORT}
+2024-12-04T05:52:07.1656147Z   CHECKOUT_SERVICE_DOCKERFILE: ./src/checkoutservice/Dockerfile
+2024-12-04T05:52:07.1656668Z   CURRENCY_SERVICE_PORT: 7001
+2024-12-04T05:52:07.1657058Z   CURRENCY_SERVICE_ADDR: currencyservice:${CURRENCY_SERVICE_PORT}
+2024-12-04T05:52:07.1657573Z   CURRENCY_SERVICE_DOCKERFILE: ./src/currencyservice/Dockerfile
+2024-12-04T05:52:07.1658098Z   EMAIL_SERVICE_PORT: 6060
+2024-12-04T05:52:07.1658529Z   EMAIL_SERVICE_ADDR: http://emailservice:${EMAIL_SERVICE_PORT}
+2024-12-04T05:52:07.1659040Z   EMAIL_SERVICE_DOCKERFILE: ./src/emailservice/Dockerfile
+2024-12-04T05:52:07.1659626Z   FRAUD_SERVICE_DOCKERFILE: ./src/frauddetectionservice/Dockerfile
+2024-12-04T05:52:07.1660281Z   FRONTEND_PORT: 8080
+2024-12-04T05:52:07.1660614Z   FRONTEND_ADDR: frontend:${FRONTEND_PORT}
+2024-12-04T05:52:07.1661123Z   FRONTEND_DOCKERFILE: ./src/frontend/Dockerfile
+2024-12-04T05:52:07.1661538Z   FRONTEND_HOST: frontend
+2024-12-04T05:52:07.1662003Z   ENVOY_PORT: 8080
+2024-12-04T05:52:07.1662666Z   FRONTEND_PROXY_ADDR: frontend-proxy:${ENVOY_PORT}
+2024-12-04T05:52:07.1663167Z   FRONTEND_PROXY_DOCKERFILE: ./src/frontendproxy/Dockerfile
+2024-12-04T05:52:07.1663556Z   IMAGE_PROVIDER_HOST: imageprovider
+2024-12-04T05:52:07.1664072Z   IMAGE_PROVIDER_PORT: 8081
+2024-12-04T05:52:07.1664471Z   IMAGE_PROVIDER_DOCKERFILE: ./src/imageprovider/Dockerfile
+2024-12-04T05:52:07.1664841Z   LOCUST_WEB_PORT: 8089
+2024-12-04T05:52:07.1665266Z   LOCUST_USERS: 10
+2024-12-04T05:52:07.1665619Z   LOCUST_HOST: http://${FRONTEND_PROXY_ADDR}
+2024-12-04T05:52:07.1665958Z   LOCUST_WEB_HOST: loadgenerator
+2024-12-04T05:52:07.1666414Z   LOCUST_AUTOSTART: true
+2024-12-04T05:52:07.1666753Z   LOCUST_HEADLESS: false
+2024-12-04T05:52:07.1667098Z   LOAD_GENERATOR_DOCKERFILE: ./src/loadgenerator/Dockerfile
+2024-12-04T05:52:07.1667624Z   PAYMENT_SERVICE_PORT: 50051
+2024-12-04T05:52:07.1668051Z   PAYMENT_SERVICE_ADDR: paymentservice:${PAYMENT_SERVICE_PORT}
+2024-12-04T05:52:07.1668504Z   PAYMENT_SERVICE_DOCKERFILE: ./src/paymentservice/Dockerfile
+2024-12-04T05:52:07.1669095Z   PRODUCT_CATALOG_SERVICE_PORT: 3550
+2024-12-04T05:52:07.1669608Z   PRODUCT_CATALOG_SERVICE_ADDR: productcatalogservice:${PRODUCT_CATALOG_SERVICE_PORT}
+2024-12-04T05:52:07.1670289Z   PRODUCT_CATALOG_DOCKERFILE: ./src/productcatalogservice/Dockerfile
+2024-12-04T05:52:07.1670794Z   QUOTE_SERVICE_PORT: 8090
+2024-12-04T05:52:07.1671217Z   QUOTE_SERVICE_ADDR: http://quoteservice:${QUOTE_SERVICE_PORT}
+2024-12-04T05:52:07.1671791Z   QUOTE_SERVICE_DOCKERFILE: ./src/quoteservice/Dockerfile
+2024-12-04T05:52:07.1672205Z   RECOMMENDATION_SERVICE_PORT: 9001
+2024-12-04T05:52:07.1672721Z   RECOMMENDATION_SERVICE_ADDR: recommendationservice:${RECOMMENDATION_SERVICE_PORT}
+2024-12-04T05:52:07.1673439Z   RECOMMENDATION_SERVICE_DOCKERFILE: ./src/recommendationservice/Dockerfile
+2024-12-04T05:52:07.1673913Z   SHIPPING_SERVICE_PORT: 50050
+2024-12-04T05:52:07.1674366Z   SHIPPING_SERVICE_ADDR: shippingservice:${SHIPPING_SERVICE_PORT}
+2024-12-04T05:52:07.1674943Z   SHIPPING_SERVICE_DOCKERFILE: ./src/shippingservice/Dockerfile
+2024-12-04T05:52:07.1675398Z   FLAGD_HOST: flagd
+2024-12-04T05:52:07.1675728Z   FLAGD_PORT: 8013
+2024-12-04T05:52:07.1676097Z   FLAGD_UI_HOST: flagdui
+2024-12-04T05:52:07.1676403Z   FLAGD_UI_PORT: 4000
+2024-12-04T05:52:07.1676772Z   FLAGD_UI_DOCKERFILE: ./src/flagd-ui/Dockerfile
+2024-12-04T05:52:07.1677217Z   KAFKA_SERVICE_PORT: 9092
+2024-12-04T05:52:07.1677564Z   KAFKA_SERVICE_ADDR: kafka:${KAFKA_SERVICE_PORT}
+2024-12-04T05:52:07.1678006Z   KAFKA_SERVICE_DOCKERFILE: ./src/kafka/Dockerfile
+2024-12-04T05:52:07.1678467Z   VALKEY_PORT: 6379
+2024-12-04T05:52:07.1678835Z   VALKEY_ADDR: valkey-cart:${VALKEY_PORT}
+2024-12-04T05:52:07.1679187Z   GRAFANA_SERVICE_PORT: 3000
+2024-12-04T05:52:07.1679833Z   GRAFANA_SERVICE_HOST: grafana
+2024-12-04T05:52:07.1680267Z   JAEGER_SERVICE_PORT: 16686
+2024-12-04T05:52:07.1680583Z   JAEGER_SERVICE_HOST: jaeger
+2024-12-04T05:52:07.1680988Z   PROMETHEUS_SERVICE_PORT: 9090
+2024-12-04T05:52:07.1681390Z   PROMETHEUS_SERVICE_HOST: prometheus
+2024-12-04T05:52:07.1681834Z   PROMETHEUS_ADDR: ${PROMETHEUS_SERVICE_HOST}:${PROMETHEUS_SERVICE_PORT}
+2024-12-04T05:52:07.1682345Z ##[endgroup]
+2024-12-04T05:52:07.4203582Z ##[group]Docker info
+2024-12-04T05:52:07.4253102Z [command]/usr/bin/docker version
+2024-12-04T05:52:07.4476192Z Client: Docker Engine - Community
+2024-12-04T05:52:07.4477345Z  Version:           26.1.3
+2024-12-04T05:52:07.4478353Z  API version:       1.45
+2024-12-04T05:52:07.4479250Z  Go version:        go1.21.10
+2024-12-04T05:52:07.4480483Z  Git commit:        b72abbb
+2024-12-04T05:52:07.4481098Z  Built:             Thu May 16 08:33:29 2024
+2024-12-04T05:52:07.4481998Z  OS/Arch:           linux/amd64
+2024-12-04T05:52:07.4483221Z  Context:           default
+2024-12-04T05:52:07.4483587Z 
+2024-12-04T05:52:07.4483937Z Server: Docker Engine - Community
+2024-12-04T05:52:07.4484639Z  Engine:
+2024-12-04T05:52:07.4485158Z   Version:          26.1.3
+2024-12-04T05:52:07.4485778Z   API version:      1.45 (minimum version 1.24)
+2024-12-04T05:52:07.4486860Z   Go version:       go1.21.10
+2024-12-04T05:52:07.4487502Z   Git commit:       8e96db1
+2024-12-04T05:52:07.4488158Z   Built:            Thu May 16 08:33:29 2024
+2024-12-04T05:52:07.4488859Z   OS/Arch:          linux/amd64
+2024-12-04T05:52:07.4489523Z   Experimental:     false
+2024-12-04T05:52:07.4490081Z  containerd:
+2024-12-04T05:52:07.4490782Z   Version:          1.7.23
+2024-12-04T05:52:07.4491629Z   GitCommit:        57f17b0a6295a39009d861b89e3b3b87b005ca27
+2024-12-04T05:52:07.4492359Z  runc:
+2024-12-04T05:52:07.4493031Z   Version:          1.1.14
+2024-12-04T05:52:07.4493733Z   GitCommit:        v1.1.14-0-g2c9f560
+2024-12-04T05:52:07.4494414Z  docker-init:
+2024-12-04T05:52:07.4495101Z   Version:          0.19.0
+2024-12-04T05:52:07.4495797Z   GitCommit:        de40ad0
+2024-12-04T05:52:07.4528642Z [command]/usr/bin/docker info
+2024-12-04T05:52:07.6371310Z Client: Docker Engine - Community
+2024-12-04T05:52:07.6371950Z  Version:    26.1.3
+2024-12-04T05:52:07.6372373Z  Context:    default
+2024-12-04T05:52:07.6372919Z  Debug Mode: false
+2024-12-04T05:52:07.6373235Z  Plugins:
+2024-12-04T05:52:07.6373559Z   buildx: Docker Buildx (Docker Inc.)
+2024-12-04T05:52:07.6374103Z     Version:  v0.18.0
+2024-12-04T05:52:07.6374755Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2024-12-04T05:52:07.6375563Z   compose: Docker Compose (Docker Inc.)
+2024-12-04T05:52:07.6375993Z     Version:  v2.27.1
+2024-12-04T05:52:07.6376410Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2024-12-04T05:52:07.6376737Z 
+2024-12-04T05:52:07.6376933Z Server:
+2024-12-04T05:52:07.6377282Z  Containers: 0
+2024-12-04T05:52:07.6377582Z   Running: 0
+2024-12-04T05:52:07.6377961Z   Paused: 0
+2024-12-04T05:52:07.6378312Z   Stopped: 0
+2024-12-04T05:52:07.6378577Z  Images: 15
+2024-12-04T05:52:07.6378939Z  Server Version: 26.1.3
+2024-12-04T05:52:07.6379321Z  Storage Driver: overlay2
+2024-12-04T05:52:07.6379639Z   Backing Filesystem: extfs
+2024-12-04T05:52:07.6380047Z   Supports d_type: true
+2024-12-04T05:52:07.6380484Z   Using metacopy: false
+2024-12-04T05:52:07.6380849Z   Native Overlay Diff: false
+2024-12-04T05:52:07.6381219Z   userxattr: false
+2024-12-04T05:52:07.6381598Z  Logging Driver: json-file
+2024-12-04T05:52:07.6381962Z  Cgroup Driver: cgroupfs
+2024-12-04T05:52:07.6382328Z  Cgroup Version: 2
+2024-12-04T05:52:07.6382672Z  Plugins:
+2024-12-04T05:52:07.6382949Z   Volume: local
+2024-12-04T05:52:07.6383368Z   Network: bridge host ipvlan macvlan null overlay
+2024-12-04T05:52:07.6384213Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2024-12-04T05:52:07.6384735Z  Swarm: inactive
+2024-12-04T05:52:07.6385139Z  Runtimes: io.containerd.runc.v2 runc
+2024-12-04T05:52:07.6385585Z  Default Runtime: runc
+2024-12-04T05:52:07.6385943Z  Init Binary: docker-init
+2024-12-04T05:52:07.6386415Z  containerd version: 57f17b0a6295a39009d861b89e3b3b87b005ca27
+2024-12-04T05:52:07.6386898Z  runc version: v1.1.14-0-g2c9f560
+2024-12-04T05:52:07.6387282Z  init version: de40ad0
+2024-12-04T05:52:07.6387656Z  Security Options:
+2024-12-04T05:52:07.6388001Z   apparmor
+2024-12-04T05:52:07.6388263Z   seccomp
+2024-12-04T05:52:07.6388643Z    Profile: builtin
+2024-12-04T05:52:07.6388984Z   cgroupns
+2024-12-04T05:52:07.6389314Z  Kernel Version: 6.5.0-1025-azure
+2024-12-04T05:52:07.6390029Z  Operating System: Ubuntu 22.04.5 LTS
+2024-12-04T05:52:07.6390605Z  OSType: linux
+2024-12-04T05:52:07.6390913Z  Architecture: x86_64
+2024-12-04T05:52:07.6391328Z  CPUs: 4
+2024-12-04T05:52:07.6391657Z  Total Memory: 15.61GiB
+2024-12-04T05:52:07.6391979Z  Name: fv-az1208-167
+2024-12-04T05:52:07.6392382Z  ID: 447383f1-9802-458d-bd1f-610ec17602af
+2024-12-04T05:52:07.6392802Z  Docker Root Dir: /var/lib/docker
+2024-12-04T05:52:07.6393468Z  Debug Mode: false
+2024-12-04T05:52:07.6393867Z  Username: githubactions
+2024-12-04T05:52:07.6394254Z  Experimental: false
+2024-12-04T05:52:07.6394559Z  Insecure Registries:
+2024-12-04T05:52:07.6394937Z   127.0.0.0/8
+2024-12-04T05:52:07.6395301Z  Live Restore Enabled: false
+2024-12-04T05:52:07.6395502Z 
+2024-12-04T05:52:07.6396071Z ##[endgroup]
+2024-12-04T05:52:07.6397285Z ##[group]Pulling binfmt Docker image
+2024-12-04T05:52:07.6415869Z [command]/usr/bin/docker pull tonistiigi/binfmt:master
+2024-12-04T05:52:07.9205774Z master: Pulling from tonistiigi/binfmt
+2024-12-04T05:52:07.9897319Z 317acfa545d9: Pulling fs layer
+2024-12-04T05:52:07.9897893Z 4ee6aba6720c: Pulling fs layer
+2024-12-04T05:52:08.1137071Z 4ee6aba6720c: Verifying Checksum
+2024-12-04T05:52:08.1137882Z 4ee6aba6720c: Download complete
+2024-12-04T05:52:08.2278111Z 317acfa545d9: Verifying Checksum
+2024-12-04T05:52:08.2278985Z 317acfa545d9: Download complete
+2024-12-04T05:52:08.5672211Z 317acfa545d9: Pull complete
+2024-12-04T05:52:08.7115845Z 4ee6aba6720c: Pull complete
+2024-12-04T05:52:08.7161009Z Digest: sha256:4ea31e9b91c2e7954f5f6ce991fd199a640f194ec5d7961917b5544f66062965
+2024-12-04T05:52:08.7181784Z Status: Downloaded newer image for tonistiigi/binfmt:master
+2024-12-04T05:52:08.7193233Z docker.io/tonistiigi/binfmt:master
+2024-12-04T05:52:08.7211163Z ##[endgroup]
+2024-12-04T05:52:08.7212024Z ##[group]Image info
+2024-12-04T05:52:08.7246045Z [command]/usr/bin/docker image inspect tonistiigi/binfmt:master
+2024-12-04T05:52:08.7376601Z [
+2024-12-04T05:52:08.7377364Z     {
+2024-12-04T05:52:08.7378223Z         "Id": "sha256:240acc65a9a1721655084dac7afbb1bd9f81015adfa4c92f3617fcb9282de010",
+2024-12-04T05:52:08.7378815Z         "RepoTags": [
+2024-12-04T05:52:08.7379145Z             "tonistiigi/binfmt:master"
+2024-12-04T05:52:08.7379592Z         ],
+2024-12-04T05:52:08.7379867Z         "RepoDigests": [
+2024-12-04T05:52:08.7380364Z             "tonistiigi/binfmt@sha256:4ea31e9b91c2e7954f5f6ce991fd199a640f194ec5d7961917b5544f66062965"
+2024-12-04T05:52:08.7380981Z         ],
+2024-12-04T05:52:08.7381252Z         "Parent": "",
+2024-12-04T05:52:08.7381571Z         "Comment": "buildkit.dockerfile.v0",
+2024-12-04T05:52:08.7382000Z         "Created": "2024-09-07T08:12:05.462923016Z",
+2024-12-04T05:52:08.7382403Z         "DockerVersion": "",
+2024-12-04T05:52:08.7382699Z         "Author": "",
+2024-12-04T05:52:08.7383082Z         "Config": {
+2024-12-04T05:52:08.7383397Z             "Hostname": "",
+2024-12-04T05:52:08.7383698Z             "Domainname": "",
+2024-12-04T05:52:08.7384068Z             "User": "",
+2024-12-04T05:52:08.7384340Z             "AttachStdin": false,
+2024-12-04T05:52:08.7384668Z             "AttachStdout": false,
+2024-12-04T05:52:08.7385084Z             "AttachStderr": false,
+2024-12-04T05:52:08.7385383Z             "Tty": false,
+2024-12-04T05:52:08.7385681Z             "OpenStdin": false,
+2024-12-04T05:52:08.7386058Z             "StdinOnce": false,
+2024-12-04T05:52:08.7386338Z             "Env": [
+2024-12-04T05:52:08.7386791Z                 "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+2024-12-04T05:52:08.7387716Z                 "QEMU_PRESERVE_ARGV0=1"
+2024-12-04T05:52:08.7388243Z             ],
+2024-12-04T05:52:08.7388800Z             "Cmd": null,
+2024-12-04T05:52:08.7389447Z             "Image": "",
+2024-12-04T05:52:08.7389947Z             "Volumes": {
+2024-12-04T05:52:08.7390505Z                 "/tmp": {}
+2024-12-04T05:52:08.7391103Z             },
+2024-12-04T05:52:08.7391538Z             "WorkingDir": "/",
+2024-12-04T05:52:08.7392105Z             "Entrypoint": [
+2024-12-04T05:52:08.7392711Z                 "/usr/bin/binfmt"
+2024-12-04T05:52:08.7393211Z             ],
+2024-12-04T05:52:08.7393633Z             "OnBuild": null,
+2024-12-04T05:52:08.7394209Z             "Labels": {
+2024-12-04T05:52:08.7394798Z                 "org.opencontainers.image.created": "2024-11-01T08:19:23.520Z",
+2024-12-04T05:52:08.7395991Z                 "org.opencontainers.image.description": "Cross-platform emulator collection distributed with Docker images",
+2024-12-04T05:52:08.7397666Z                 "org.opencontainers.image.licenses": "MIT",
+2024-12-04T05:52:08.7398563Z                 "org.opencontainers.image.revision": "91b7087460b5fd3ed0d90c912090ed0046889695",
+2024-12-04T05:52:08.7399746Z                 "org.opencontainers.image.source": "https://github.com/tonistiigi/binfmt",
+2024-12-04T05:52:08.7400990Z                 "org.opencontainers.image.title": "Binfmt",
+2024-12-04T05:52:08.7401863Z                 "org.opencontainers.image.url": "https://github.com/tonistiigi/binfmt",
+2024-12-04T05:52:08.7402615Z                 "org.opencontainers.image.version": "master"
+2024-12-04T05:52:08.7403343Z             }
+2024-12-04T05:52:08.7403845Z         },
+2024-12-04T05:52:08.7404246Z         "Architecture": "amd64",
+2024-12-04T05:52:08.7404894Z         "Os": "linux",
+2024-12-04T05:52:08.7405414Z         "Size": 78151089,
+2024-12-04T05:52:08.7405830Z         "GraphDriver": {
+2024-12-04T05:52:08.7406486Z             "Data": {
+2024-12-04T05:52:08.7407517Z                 "LowerDir": "/var/lib/docker/overlay2/0b24d847b13f32aa868f246ebf65471af42ef659d658049e9caf348123d6cb10/diff",
+2024-12-04T05:52:08.7409036Z                 "MergedDir": "/var/lib/docker/overlay2/f2bd6536aa44869eaa422bc2a8db290d212caff793b8c1296296820b9c9e5f14/merged",
+2024-12-04T05:52:08.7410775Z                 "UpperDir": "/var/lib/docker/overlay2/f2bd6536aa44869eaa422bc2a8db290d212caff793b8c1296296820b9c9e5f14/diff",
+2024-12-04T05:52:08.7412360Z                 "WorkDir": "/var/lib/docker/overlay2/f2bd6536aa44869eaa422bc2a8db290d212caff793b8c1296296820b9c9e5f14/work"
+2024-12-04T05:52:08.7413439Z             },
+2024-12-04T05:52:08.7414029Z             "Name": "overlay2"
+2024-12-04T05:52:08.7414606Z         },
+2024-12-04T05:52:08.7415091Z         "RootFS": {
+2024-12-04T05:52:08.7415703Z             "Type": "layers",
+2024-12-04T05:52:08.7416271Z             "Layers": [
+2024-12-04T05:52:08.7417012Z                 "sha256:67c64442a7d968fd7ee6b24d86a4cb14449bed2252a5cbcbf386467b87fe4ca6",
+2024-12-04T05:52:08.7418049Z                 "sha256:d9930989c26afd8b4b41e63b074f63ed6aae8d545a0aa566a502f362b74f2711"
+2024-12-04T05:52:08.7418809Z             ]
+2024-12-04T05:52:08.7419228Z         },
+2024-12-04T05:52:08.7419653Z         "Metadata": {
+2024-12-04T05:52:08.7420151Z             "LastTagTime": "0001-01-01T00:00:00Z"
+2024-12-04T05:52:08.7420692Z         }
+2024-12-04T05:52:08.7421099Z     }
+2024-12-04T05:52:08.7421494Z ]
+2024-12-04T05:52:08.7422328Z ##[endgroup]
+2024-12-04T05:52:08.7423114Z ##[group]Installing QEMU static binaries
+2024-12-04T05:52:08.7424120Z [command]/usr/bin/docker run --rm --privileged tonistiigi/binfmt:master --install all
+2024-12-04T05:52:09.0679636Z installing: s390x OK
+2024-12-04T05:52:09.0680261Z installing: ppc64le OK
+2024-12-04T05:52:09.0680673Z installing: mips64le OK
+2024-12-04T05:52:09.0681193Z installing: mips64 OK
+2024-12-04T05:52:09.0681656Z installing: arm OK
+2024-12-04T05:52:09.0682023Z installing: loong64 OK
+2024-12-04T05:52:09.0682527Z installing: arm64 OK
+2024-12-04T05:52:09.0683040Z installing: riscv64 OK
+2024-12-04T05:52:09.0839244Z {
+2024-12-04T05:52:09.0840083Z   "supported": [
+2024-12-04T05:52:09.0840501Z     "linux/amd64",
+2024-12-04T05:52:09.0840888Z     "linux/amd64/v2",
+2024-12-04T05:52:09.0841648Z     "linux/amd64/v3",
+2024-12-04T05:52:09.0842233Z     "linux/arm64",
+2024-12-04T05:52:09.0842645Z     "linux/riscv64",
+2024-12-04T05:52:09.0843215Z     "linux/ppc64le",
+2024-12-04T05:52:09.0843647Z     "linux/s390x",
+2024-12-04T05:52:09.0844000Z     "linux/386",
+2024-12-04T05:52:09.0844521Z     "linux/mips64le",
+2024-12-04T05:52:09.0844986Z     "linux/mips64",
+2024-12-04T05:52:09.0845362Z     "linux/arm/v7",
+2024-12-04T05:52:09.0845931Z     "linux/arm/v6"
+2024-12-04T05:52:09.0846235Z   ],
+2024-12-04T05:52:09.0846442Z   "emulators": [
+2024-12-04T05:52:09.0846798Z     "cli",
+2024-12-04T05:52:09.0847045Z     "llvm-13-runtime.binfmt",
+2024-12-04T05:52:09.0847360Z     "llvm-14-runtime.binfmt",
+2024-12-04T05:52:09.0847722Z     "llvm-15-runtime.binfmt",
+2024-12-04T05:52:09.0848297Z     "python3.10",
+2024-12-04T05:52:09.0848730Z     "qemu-aarch64",
+2024-12-04T05:52:09.0849295Z     "qemu-arm",
+2024-12-04T05:52:09.0849665Z     "qemu-loongarch64",
+2024-12-04T05:52:09.0850107Z     "qemu-mips64",
+2024-12-04T05:52:09.0850677Z     "qemu-mips64el",
+2024-12-04T05:52:09.0851089Z     "qemu-ppc64le",
+2024-12-04T05:52:09.0851844Z     "qemu-riscv64",
+2024-12-04T05:52:09.0852513Z     "qemu-s390x"
+2024-12-04T05:52:09.0852888Z   ]
+2024-12-04T05:52:09.0853293Z }
+2024-12-04T05:52:09.2315425Z ##[endgroup]
+2024-12-04T05:52:09.2316432Z ##[group]Extracting available platforms
+2024-12-04T05:52:09.6313357Z linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/arm64,linux/riscv64,linux/ppc64le,linux/s390x,linux/386,linux/mips64le,linux/mips64,linux/arm/v7,linux/arm/v6
+2024-12-04T05:52:09.6315972Z ##[endgroup]
+2024-12-04T05:52:09.6466389Z ##[group]Run docker/setup-buildx-action@v3
+2024-12-04T05:52:09.6466909Z with:
+2024-12-04T05:52:09.6467229Z   buildkitd-config-inline: [worker.oci]
+max-parallelism = 2
+
+2024-12-04T05:52:09.6467655Z   driver: docker-container
+2024-12-04T05:52:09.6468061Z   install: false
+2024-12-04T05:52:09.6468286Z   use: true
+2024-12-04T05:52:09.6468523Z   cache-binary: true
+2024-12-04T05:52:09.6468897Z   cleanup: true
+2024-12-04T05:52:09.6469122Z env:
+2024-12-04T05:52:09.6469357Z   RELEASE_VERSION: 
+2024-12-04T05:52:09.6469730Z   IMAGE_VERSION: 1.12.0
+2024-12-04T05:52:09.6470040Z   IMAGE_NAME: ghcr.io/shareefm0/demo
+2024-12-04T05:52:09.6470362Z   DEMO_VERSION: latest
+2024-12-04T05:52:09.6470754Z   TRACETEST_IMAGE_VERSION: v1.7.1
+2024-12-04T05:52:09.6471041Z   OTEL_JAVA_AGENT_VERSION: 2.9.0
+2024-12-04T05:52:09.6471342Z   OPENTELEMETRY_CPP_VERSION: 1.17.0
+2024-12-04T05:52:09.6471866Z   COLLECTOR_CONTRIB_IMAGE: otel/opentelemetry-collector-contrib:0.113.0
+2024-12-04T05:52:09.6472398Z   FLAGD_IMAGE: ghcr.io/open-feature/flagd:v0.11.4
+2024-12-04T05:52:09.6472852Z   GRAFANA_IMAGE: grafana/grafana:11.3.0
+2024-12-04T05:52:09.6473190Z   JAEGERTRACING_IMAGE: jaegertracing/all-in-one:1.62.0
+2024-12-04T05:52:09.6473611Z   OPENSEARCH_IMAGE: opensearchproject/opensearch:2.18.0
+2024-12-04T05:52:09.6474070Z   POSTGRES_IMAGE: postgres:17.0
+2024-12-04T05:52:09.6474483Z   PROMETHEUS_IMAGE: quay.io/prometheus/prometheus:v2.55.1
+2024-12-04T05:52:09.6474853Z   VALKEY_IMAGE: valkey/valkey:8.0-alpine
+2024-12-04T05:52:09.6475313Z   TRACETEST_IMAGE: kubeshop/tracetest:${TRACETEST_IMAGE_VERSION}
+2024-12-04T05:52:09.6475704Z   ENV_PLATFORM: local
+2024-12-04T05:52:09.6475962Z   HOST_FILESYSTEM: /
+2024-12-04T05:52:09.6476316Z   DOCKER_SOCK: /var/run/docker.sock
+2024-12-04T05:52:09.6476635Z   OTEL_COLLECTOR_HOST: otelcol
+2024-12-04T05:52:09.6476922Z   OTEL_COLLECTOR_PORT_GRPC: 4317
+2024-12-04T05:52:09.6477296Z   OTEL_COLLECTOR_PORT_HTTP: 4318
+2024-12-04T05:52:09.6477675Z   OTEL_COLLECTOR_CONFIG: ./src/otelcollector/otelcol-config.yml
+2024-12-04T05:52:09.6478164Z   OTEL_COLLECTOR_CONFIG_EXTRAS: ./src/otelcollector/otelcol-config-extras.yml
+2024-12-04T05:52:09.6478810Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://${OTEL_COLLECTOR_HOST}:${OTEL_COLLECTOR_PORT_GRPC}
+2024-12-04T05:52:09.6479794Z   PUBLIC_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: http://localhost:8080/otlp-http/v1/traces
+2024-12-04T05:52:09.6480453Z   OTEL_RESOURCE_ATTRIBUTES: service.namespace=opentelemetry-demo,service.version=${IMAGE_VERSION}
+2024-12-04T05:52:09.6481126Z   OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE: cumulative
+2024-12-04T05:52:09.6481626Z   ACCOUNTING_SERVICE_DOCKERFILE: ./src/accountingservice/Dockerfile
+2024-12-04T05:52:09.6482020Z   AD_SERVICE_PORT: 9555
+2024-12-04T05:52:09.6482377Z   AD_SERVICE_ADDR: adservice:${AD_SERVICE_PORT}
+2024-12-04T05:52:09.6482768Z   AD_SERVICE_DOCKERFILE: ./src/adservice/Dockerfile
+2024-12-04T05:52:09.6483105Z   CART_SERVICE_PORT: 7070
+2024-12-04T05:52:09.6483489Z   CART_SERVICE_ADDR: cartservice:${CART_SERVICE_PORT}
+2024-12-04T05:52:09.6483920Z   CART_SERVICE_DOCKERFILE: ./src/cartservice/src/Dockerfile
+2024-12-04T05:52:09.6484294Z   CHECKOUT_SERVICE_PORT: 5050
+2024-12-04T05:52:09.6484726Z   CHECKOUT_SERVICE_ADDR: checkoutservice:${CHECKOUT_SERVICE_PORT}
+2024-12-04T05:52:09.6485497Z   CHECKOUT_SERVICE_DOCKERFILE: ./src/checkoutservice/Dockerfile
+2024-12-04T05:52:09.6485872Z   CURRENCY_SERVICE_PORT: 7001
+2024-12-04T05:52:09.6486346Z   CURRENCY_SERVICE_ADDR: currencyservice:${CURRENCY_SERVICE_PORT}
+2024-12-04T05:52:09.6486766Z   CURRENCY_SERVICE_DOCKERFILE: ./src/currencyservice/Dockerfile
+2024-12-04T05:52:09.6487133Z   EMAIL_SERVICE_PORT: 6060
+2024-12-04T05:52:09.6487599Z   EMAIL_SERVICE_ADDR: http://emailservice:${EMAIL_SERVICE_PORT}
+2024-12-04T05:52:09.6488003Z   EMAIL_SERVICE_DOCKERFILE: ./src/emailservice/Dockerfile
+2024-12-04T05:52:09.6488440Z   FRAUD_SERVICE_DOCKERFILE: ./src/frauddetectionservice/Dockerfile
+2024-12-04T05:52:09.6488937Z   FRONTEND_PORT: 8080
+2024-12-04T05:52:09.6489390Z   FRONTEND_ADDR: frontend:${FRONTEND_PORT}
+2024-12-04T05:52:09.6489766Z   FRONTEND_DOCKERFILE: ./src/frontend/Dockerfile
+2024-12-04T05:52:09.6490256Z   FRONTEND_HOST: frontend
+2024-12-04T05:52:09.6490502Z   ENVOY_PORT: 8080
+2024-12-04T05:52:09.6490817Z   FRONTEND_PROXY_ADDR: frontend-proxy:${ENVOY_PORT}
+2024-12-04T05:52:09.6491311Z   FRONTEND_PROXY_DOCKERFILE: ./src/frontendproxy/Dockerfile
+2024-12-04T05:52:09.6491665Z   IMAGE_PROVIDER_HOST: imageprovider
+2024-12-04T05:52:09.6491991Z   IMAGE_PROVIDER_PORT: 8081
+2024-12-04T05:52:09.6492427Z   IMAGE_PROVIDER_DOCKERFILE: ./src/imageprovider/Dockerfile
+2024-12-04T05:52:09.6492761Z   LOCUST_WEB_PORT: 8089
+2024-12-04T05:52:09.6493037Z   LOCUST_USERS: 10
+2024-12-04T05:52:09.6493407Z   LOCUST_HOST: http://${FRONTEND_PROXY_ADDR}
+2024-12-04T05:52:09.6493762Z   LOCUST_WEB_HOST: loadgenerator
+2024-12-04T05:52:09.6494071Z   LOCUST_AUTOSTART: true
+2024-12-04T05:52:09.6494433Z   LOCUST_HEADLESS: false
+2024-12-04T05:52:09.6494784Z   LOAD_GENERATOR_DOCKERFILE: ./src/loadgenerator/Dockerfile
+2024-12-04T05:52:09.6495114Z   PAYMENT_SERVICE_PORT: 50051
+2024-12-04T05:52:09.6495567Z   PAYMENT_SERVICE_ADDR: paymentservice:${PAYMENT_SERVICE_PORT}
+2024-12-04T05:52:09.6496033Z   PAYMENT_SERVICE_DOCKERFILE: ./src/paymentservice/Dockerfile
+2024-12-04T05:52:09.6496378Z   PRODUCT_CATALOG_SERVICE_PORT: 3550
+2024-12-04T05:52:09.6496918Z   PRODUCT_CATALOG_SERVICE_ADDR: productcatalogservice:${PRODUCT_CATALOG_SERVICE_PORT}
+2024-12-04T05:52:09.6497484Z   PRODUCT_CATALOG_DOCKERFILE: ./src/productcatalogservice/Dockerfile
+2024-12-04T05:52:09.6497844Z   QUOTE_SERVICE_PORT: 8090
+2024-12-04T05:52:09.6498314Z   QUOTE_SERVICE_ADDR: http://quoteservice:${QUOTE_SERVICE_PORT}
+2024-12-04T05:52:09.6498761Z   QUOTE_SERVICE_DOCKERFILE: ./src/quoteservice/Dockerfile
+2024-12-04T05:52:09.6499140Z   RECOMMENDATION_SERVICE_PORT: 9001
+2024-12-04T05:52:09.6499694Z   RECOMMENDATION_SERVICE_ADDR: recommendationservice:${RECOMMENDATION_SERVICE_PORT}
+2024-12-04T05:52:09.6500268Z   RECOMMENDATION_SERVICE_DOCKERFILE: ./src/recommendationservice/Dockerfile
+2024-12-04T05:52:09.6500780Z   SHIPPING_SERVICE_PORT: 50050
+2024-12-04T05:52:09.6501159Z   SHIPPING_SERVICE_ADDR: shippingservice:${SHIPPING_SERVICE_PORT}
+2024-12-04T05:52:09.6501625Z   SHIPPING_SERVICE_DOCKERFILE: ./src/shippingservice/Dockerfile
+2024-12-04T05:52:09.6502059Z   FLAGD_HOST: flagd
+2024-12-04T05:52:09.6502323Z   FLAGD_PORT: 8013
+2024-12-04T05:52:09.6502589Z   FLAGD_UI_HOST: flagdui
+2024-12-04T05:52:09.6502918Z   FLAGD_UI_PORT: 4000
+2024-12-04T05:52:09.6503238Z   FLAGD_UI_DOCKERFILE: ./src/flagd-ui/Dockerfile
+2024-12-04T05:52:09.6503595Z   KAFKA_SERVICE_PORT: 9092
+2024-12-04T05:52:09.6504045Z   KAFKA_SERVICE_ADDR: kafka:${KAFKA_SERVICE_PORT}
+2024-12-04T05:52:09.6504399Z   KAFKA_SERVICE_DOCKERFILE: ./src/kafka/Dockerfile
+2024-12-04T05:52:09.6504740Z   VALKEY_PORT: 6379
+2024-12-04T05:52:09.6505086Z   VALKEY_ADDR: valkey-cart:${VALKEY_PORT}
+2024-12-04T05:52:09.6505398Z   GRAFANA_SERVICE_PORT: 3000
+2024-12-04T05:52:09.6505699Z   GRAFANA_SERVICE_HOST: grafana
+2024-12-04T05:52:09.6506066Z   JAEGER_SERVICE_PORT: 16686
+2024-12-04T05:52:09.6506344Z   JAEGER_SERVICE_HOST: jaeger
+2024-12-04T05:52:09.6506646Z   PROMETHEUS_SERVICE_PORT: 9090
+2024-12-04T05:52:09.6507024Z   PROMETHEUS_SERVICE_HOST: prometheus
+2024-12-04T05:52:09.6507561Z   PROMETHEUS_ADDR: ${PROMETHEUS_SERVICE_HOST}:${PROMETHEUS_SERVICE_PORT}
+2024-12-04T05:52:09.6508050Z ##[endgroup]
+2024-12-04T05:52:09.8888366Z ##[group]Docker info
+2024-12-04T05:52:09.8917415Z [command]/usr/bin/docker version
+2024-12-04T05:52:09.9144581Z Client: Docker Engine - Community
+2024-12-04T05:52:09.9145244Z  Version:           26.1.3
+2024-12-04T05:52:09.9146014Z  API version:       1.45
+2024-12-04T05:52:09.9146564Z  Go version:        go1.21.10
+2024-12-04T05:52:09.9147062Z  Git commit:        b72abbb
+2024-12-04T05:52:09.9148117Z  Built:             Thu May 16 08:33:29 2024
+2024-12-04T05:52:09.9148721Z  OS/Arch:           linux/amd64
+2024-12-04T05:52:09.9149233Z  Context:           default
+2024-12-04T05:52:09.9149664Z 
+2024-12-04T05:52:09.9150168Z Server: Docker Engine - Community
+2024-12-04T05:52:09.9151460Z  Engine:
+2024-12-04T05:52:09.9151981Z   Version:          26.1.3
+2024-12-04T05:52:09.9152664Z   API version:      1.45 (minimum version 1.24)
+2024-12-04T05:52:09.9153275Z   Go version:       go1.21.10
+2024-12-04T05:52:09.9153832Z   Git commit:       8e96db1
+2024-12-04T05:52:09.9154506Z   Built:            Thu May 16 08:33:29 2024
+2024-12-04T05:52:09.9155083Z   OS/Arch:          linux/amd64
+2024-12-04T05:52:09.9155610Z   Experimental:     false
+2024-12-04T05:52:09.9156228Z  containerd:
+2024-12-04T05:52:09.9156682Z   Version:          1.7.23
+2024-12-04T05:52:09.9157313Z   GitCommit:        57f17b0a6295a39009d861b89e3b3b87b005ca27
+2024-12-04T05:52:09.9158028Z  runc:
+2024-12-04T05:52:09.9158457Z   Version:          1.1.14
+2024-12-04T05:52:09.9158982Z   GitCommit:        v1.1.14-0-g2c9f560
+2024-12-04T05:52:09.9159969Z  docker-init:
+2024-12-04T05:52:09.9160525Z   Version:          0.19.0
+2024-12-04T05:52:09.9161016Z   GitCommit:        de40ad0
+2024-12-04T05:52:09.9210786Z [command]/usr/bin/docker info
+2024-12-04T05:52:09.9632459Z Client: Docker Engine - Community
+2024-12-04T05:52:09.9633637Z  Version:    26.1.3
+2024-12-04T05:52:09.9634507Z  Context:    default
+2024-12-04T05:52:09.9635173Z  Debug Mode: false
+2024-12-04T05:52:09.9635964Z  Plugins:
+2024-12-04T05:52:09.9644949Z   buildx: Docker Buildx (Docker Inc.)
+2024-12-04T05:52:09.9646136Z     Version:  v0.18.0
+2024-12-04T05:52:09.9646772Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2024-12-04T05:52:09.9647428Z   compose: Docker Compose (Docker Inc.)
+2024-12-04T05:52:09.9648048Z     Version:  v2.27.1
+2024-12-04T05:52:09.9648595Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2024-12-04T05:52:09.9648980Z 
+2024-12-04T05:52:09.9649124Z Server:
+2024-12-04T05:52:09.9649610Z  Containers: 0
+2024-12-04T05:52:09.9650073Z   Running: 0
+2024-12-04T05:52:09.9650423Z   Paused: 0
+2024-12-04T05:52:09.9650928Z   Stopped: 0
+2024-12-04T05:52:09.9651444Z  Images: 16
+2024-12-04T05:52:09.9651804Z  Server Version: 26.1.3
+2024-12-04T05:52:09.9652384Z  Storage Driver: overlay2
+2024-12-04T05:52:09.9652828Z   Backing Filesystem: extfs
+2024-12-04T05:52:09.9653104Z   Supports d_type: true
+2024-12-04T05:52:09.9653468Z   Using metacopy: false
+2024-12-04T05:52:09.9653949Z   Native Overlay Diff: false
+2024-12-04T05:52:09.9654348Z   userxattr: false
+2024-12-04T05:52:09.9654908Z  Logging Driver: json-file
+2024-12-04T05:52:09.9655454Z  Cgroup Driver: cgroupfs
+2024-12-04T05:52:09.9655891Z  Cgroup Version: 2
+2024-12-04T05:52:09.9656456Z  Plugins:
+2024-12-04T05:52:09.9656923Z   Volume: local
+2024-12-04T05:52:09.9657356Z   Network: bridge host ipvlan macvlan null overlay
+2024-12-04T05:52:09.9658252Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2024-12-04T05:52:09.9659067Z  Swarm: inactive
+2024-12-04T05:52:09.9659531Z  Runtimes: runc io.containerd.runc.v2
+2024-12-04T05:52:09.9660283Z  Default Runtime: runc
+2024-12-04T05:52:09.9660823Z  Init Binary: docker-init
+2024-12-04T05:52:09.9661410Z  containerd version: 57f17b0a6295a39009d861b89e3b3b87b005ca27
+2024-12-04T05:52:09.9662279Z  runc version: v1.1.14-0-g2c9f560
+2024-12-04T05:52:09.9662885Z  init version: de40ad0
+2024-12-04T05:52:09.9663343Z  Security Options:
+2024-12-04T05:52:09.9664441Z   apparmor
+2024-12-04T05:52:09.9664923Z   seccomp
+2024-12-04T05:52:09.9665342Z    Profile: builtin
+2024-12-04T05:52:09.9665923Z   cgroupns
+2024-12-04T05:52:09.9666460Z  Kernel Version: 6.5.0-1025-azure
+2024-12-04T05:52:09.9667016Z  Operating System: Ubuntu 22.04.5 LTS
+2024-12-04T05:52:09.9667710Z  OSType: linux
+2024-12-04T05:52:09.9668406Z  Architecture: x86_64
+2024-12-04T05:52:09.9668897Z  CPUs: 4
+2024-12-04T05:52:09.9669466Z  Total Memory: 15.61GiB
+2024-12-04T05:52:09.9669997Z  Name: fv-az1208-167
+2024-12-04T05:52:09.9670496Z  ID: 447383f1-9802-458d-bd1f-610ec17602af
+2024-12-04T05:52:09.9671225Z  Docker Root Dir: /var/lib/docker
+2024-12-04T05:52:09.9671840Z  Debug Mode: false
+2024-12-04T05:52:09.9672276Z  Username: githubactions
+2024-12-04T05:52:09.9672893Z  Experimental: false
+2024-12-04T05:52:09.9673731Z  Insecure Registries:
+2024-12-04T05:52:09.9674229Z   127.0.0.0/8
+2024-12-04T05:52:09.9674808Z  Live Restore Enabled: false
+2024-12-04T05:52:09.9675160Z 
+2024-12-04T05:52:09.9676701Z ##[endgroup]
+2024-12-04T05:52:10.0191971Z ##[group]Buildx version
+2024-12-04T05:52:10.0214078Z [command]/usr/bin/docker buildx version
+2024-12-04T05:52:10.0631532Z github.com/docker/buildx v0.18.0 fa4461b9a1ec45c23d1b9e32dee0d0a8ed29900b
+2024-12-04T05:52:10.0662430Z ##[endgroup]
+2024-12-04T05:52:10.0820152Z ##[group]Inspecting default docker context
+2024-12-04T05:52:10.0960986Z [
+2024-12-04T05:52:10.0961440Z   {
+2024-12-04T05:52:10.0961882Z     "Name": "default",
+2024-12-04T05:52:10.0962166Z     "Metadata": {},
+2024-12-04T05:52:10.0962448Z     "Endpoints": {
+2024-12-04T05:52:10.0962766Z       "docker": {
+2024-12-04T05:52:10.0963064Z         "Host": "unix:///var/run/docker.sock",
+2024-12-04T05:52:10.0963417Z         "SkipTLSVerify": false
+2024-12-04T05:52:10.0963752Z       }
+2024-12-04T05:52:10.0964005Z     },
+2024-12-04T05:52:10.0964262Z     "TLSMaterial": {},
+2024-12-04T05:52:10.0964586Z     "Storage": {
+2024-12-04T05:52:10.0964886Z       "MetadataPath": "<IN MEMORY>",
+2024-12-04T05:52:10.0965197Z       "TLSPath": "<IN MEMORY>"
+2024-12-04T05:52:10.0965538Z     }
+2024-12-04T05:52:10.0965922Z   }
+2024-12-04T05:52:10.0966162Z ]
+2024-12-04T05:52:10.0967002Z ##[endgroup]
+2024-12-04T05:52:10.0967491Z ##[group]Creating a new builder instance
+2024-12-04T05:52:10.1480364Z [command]/usr/bin/docker buildx create --name builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb --driver docker-container --buildkitd-flags --allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host --use --config /home/runner/work/_temp/docker-actions-toolkit-A7vC8h/tmp-2101-HwnwB6WrmYEF
+2024-12-04T05:52:10.1963113Z builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb
+2024-12-04T05:52:10.1996038Z ##[endgroup]
+2024-12-04T05:52:10.1996807Z ##[group]Booting builder
+2024-12-04T05:52:10.2023858Z [command]/usr/bin/docker buildx inspect --bootstrap --builder builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb
+2024-12-04T05:52:10.2457324Z #1 [internal] booting buildkit
+2024-12-04T05:52:10.3959024Z #1 pulling image moby/buildkit:buildx-stable-1 0.1s done
+2024-12-04T05:52:10.5468638Z #1 creating container buildx_buildkit_builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb0
+2024-12-04T05:52:10.9041658Z #1 creating container buildx_buildkit_builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb0 0.5s done
+2024-12-04T05:52:10.9061119Z #1 DONE 0.7s
+2024-12-04T05:52:10.9378405Z Name:          builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb
+2024-12-04T05:52:10.9379890Z Driver:        docker-container
+2024-12-04T05:52:10.9380692Z Last Activity: 2024-12-04 05:52:10 +0000 UTC
+2024-12-04T05:52:10.9381039Z 
+2024-12-04T05:52:10.9381230Z Nodes:
+2024-12-04T05:52:10.9381682Z Name:                  builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb0
+2024-12-04T05:52:10.9382515Z Endpoint:              unix:///var/run/docker.sock
+2024-12-04T05:52:10.9383090Z Status:                running
+2024-12-04T05:52:10.9383987Z BuildKit daemon flags: --allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host
+2024-12-04T05:52:10.9385037Z BuildKit version:      v0.17.2
+2024-12-04T05:52:10.9386451Z Platforms:             linux/amd64, linux/amd64/v2, linux/amd64/v3, linux/arm64, linux/riscv64, linux/ppc64le, linux/s390x, linux/386, linux/loong64, linux/arm/v7, linux/arm/v6
+2024-12-04T05:52:10.9387124Z Labels:
+2024-12-04T05:52:10.9387545Z  org.mobyproject.buildkit.worker.executor:         oci
+2024-12-04T05:52:10.9388020Z  org.mobyproject.buildkit.worker.hostname:         6ded1e57208c
+2024-12-04T05:52:10.9388489Z  org.mobyproject.buildkit.worker.network:          host
+2024-12-04T05:52:10.9389000Z  org.mobyproject.buildkit.worker.oci.process-mode: sandbox
+2024-12-04T05:52:10.9389468Z  org.mobyproject.buildkit.worker.selinux.enabled:  false
+2024-12-04T05:52:10.9389928Z  org.mobyproject.buildkit.worker.snapshotter:      overlayfs
+2024-12-04T05:52:10.9390381Z GC Policy rule#0:
+2024-12-04T05:52:10.9390862Z  All:            false
+2024-12-04T05:52:10.9391249Z  Filters:        type==source.local,type==exec.cachemount,type==source.git.checkout
+2024-12-04T05:52:10.9391760Z  Keep Duration:  48h0m0s
+2024-12-04T05:52:10.9392068Z  Max Used Space: 488.3MiB
+2024-12-04T05:52:10.9392459Z GC Policy rule#1:
+2024-12-04T05:52:10.9392987Z  All:            false
+2024-12-04T05:52:10.9393288Z  Keep Duration:  1440h0m0s
+2024-12-04T05:52:10.9393564Z  Reserved Space: 7.451GiB
+2024-12-04T05:52:10.9393899Z  Max Used Space: 54.95GiB
+2024-12-04T05:52:10.9394192Z  Min Free Space: 13.97GiB
+2024-12-04T05:52:10.9394447Z GC Policy rule#2:
+2024-12-04T05:52:10.9394763Z  All:            false
+2024-12-04T05:52:10.9395037Z  Reserved Space: 7.451GiB
+2024-12-04T05:52:10.9395305Z  Max Used Space: 54.95GiB
+2024-12-04T05:52:10.9395641Z  Min Free Space: 13.97GiB
+2024-12-04T05:52:10.9395914Z GC Policy rule#3:
+2024-12-04T05:52:10.9396157Z  All:            true
+2024-12-04T05:52:10.9396488Z  Reserved Space: 7.451GiB
+2024-12-04T05:52:10.9396768Z  Max Used Space: 54.95GiB
+2024-12-04T05:52:10.9397027Z  Min Free Space: 13.97GiB
+2024-12-04T05:52:10.9397366Z File#buildkitd.toml:
+2024-12-04T05:52:10.9397628Z  > 
+2024-12-04T05:52:10.9397845Z  > [worker]
+2024-12-04T05:52:10.9398148Z  > 
+2024-12-04T05:52:10.9398378Z  >   [worker.oci]
+2024-12-04T05:52:10.9398645Z  >     max-parallelism = 2
+2024-12-04T05:52:10.9398964Z  > 
+2024-12-04T05:52:10.9425867Z ##[endgroup]
+2024-12-04T05:52:11.0365967Z ##[group]Inspect builder
+2024-12-04T05:52:11.0412700Z {
+2024-12-04T05:52:11.0413052Z   "nodes": [
+2024-12-04T05:52:11.0413283Z     {
+2024-12-04T05:52:11.0413699Z       "name": "builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb0",
+2024-12-04T05:52:11.0414145Z       "endpoint": "unix:///var/run/docker.sock",
+2024-12-04T05:52:11.0414472Z       "status": "running",
+2024-12-04T05:52:11.0415110Z       "buildkitd-flags": "--allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host",
+2024-12-04T05:52:11.0415694Z       "buildkit": "v0.17.2",
+2024-12-04T05:52:11.0416391Z       "platforms": "linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/arm64,linux/riscv64,linux/ppc64le,linux/s390x,linux/386,linux/loong64,linux/arm/v7,linux/arm/v6",
+2024-12-04T05:52:11.0417313Z       "features": {
+2024-12-04T05:52:11.0417722Z         "Automatically load images to the Docker Engine image store": true,
+2024-12-04T05:52:11.0418308Z         "Cache export": true,
+2024-12-04T05:52:11.0418601Z         "Docker exporter": true,
+2024-12-04T05:52:11.0418937Z         "Multi-platform build": true,
+2024-12-04T05:52:11.0419302Z         "OCI exporter": true
+2024-12-04T05:52:11.0419580Z       },
+2024-12-04T05:52:11.0419879Z       "labels": {
+2024-12-04T05:52:11.0420329Z         "org.mobyproject.buildkit.worker.executor": "oci",
+2024-12-04T05:52:11.0420779Z         "org.mobyproject.buildkit.worker.hostname": "6ded1e57208c",
+2024-12-04T05:52:11.0421226Z         "org.mobyproject.buildkit.worker.network": "host",
+2024-12-04T05:52:11.0421741Z         "org.mobyproject.buildkit.worker.oci.process-mode": "sandbox",
+2024-12-04T05:52:11.0422231Z         "org.mobyproject.buildkit.worker.selinux.enabled": "false",
+2024-12-04T05:52:11.0422706Z         "org.mobyproject.buildkit.worker.snapshotter": "overlayfs"
+2024-12-04T05:52:11.0423428Z       },
+2024-12-04T05:52:11.0423690Z       "gcPolicy": [
+2024-12-04T05:52:11.0423912Z         {
+2024-12-04T05:52:11.0424225Z           "all": false,
+2024-12-04T05:52:11.0424477Z           "filter": [
+2024-12-04T05:52:11.0424755Z             "type==source.local",
+2024-12-04T05:52:11.0425130Z             "type==exec.cachemount",
+2024-12-04T05:52:11.0425436Z             "type==source.git.checkout"
+2024-12-04T05:52:11.0425752Z           ],
+2024-12-04T05:52:11.0426078Z           "keepDuration": "48h0m0s"
+2024-12-04T05:52:11.0426353Z         },
+2024-12-04T05:52:11.0426592Z         {
+2024-12-04T05:52:11.0426896Z           "all": false,
+2024-12-04T05:52:11.0427153Z           "keepDuration": "1440h0m0s"
+2024-12-04T05:52:11.0427470Z         },
+2024-12-04T05:52:11.0427753Z         {
+2024-12-04T05:52:11.0428129Z           "all": false
+2024-12-04T05:52:11.0428415Z         },
+2024-12-04T05:52:11.0428704Z         {
+2024-12-04T05:52:11.0428920Z           "all": true
+2024-12-04T05:52:11.0429210Z         }
+2024-12-04T05:52:11.0429500Z       ]
+2024-12-04T05:52:11.0429711Z     }
+2024-12-04T05:52:11.0429976Z   ],
+2024-12-04T05:52:11.0430332Z   "name": "builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb",
+2024-12-04T05:52:11.0430723Z   "driver": "docker-container",
+2024-12-04T05:52:11.0431038Z   "lastActivity": "2024-12-04T05:52:10.000Z"
+2024-12-04T05:52:11.0431416Z }
+2024-12-04T05:52:11.0431900Z ##[endgroup]
+2024-12-04T05:52:11.0432377Z ##[group]BuildKit version
+2024-12-04T05:52:11.0432717Z builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb0: v0.17.2
+2024-12-04T05:52:11.0433218Z ##[endgroup]
+2024-12-04T05:52:11.0588576Z ##[group]Run docker/build-push-action@v6.10.0
+2024-12-04T05:52:11.0588952Z with:
+2024-12-04T05:52:11.0589228Z   context: ./
+2024-12-04T05:52:11.0589593Z   file: ./src/accountingservice/Dockerfile
+2024-12-04T05:52:11.0589927Z   platforms: linux/amd64,linux/arm64
+2024-12-04T05:52:11.0590266Z   push: true
+2024-12-04T05:52:11.0590792Z   build-args: OTEL_JAVA_AGENT_VERSION=2.9.0
+OPENTELEMETRY_CPP_VERSION=1.17.0
+TRACETEST_IMAGE_VERSION=v1.7.1
+
+2024-12-04T05:52:11.0591540Z   tags: ghcr.io/shareefm0/demo:1.0.0-accountingservice
+ghcr.io/shareefm0/demo:latest-accountingservice
+
+2024-12-04T05:52:11.0592073Z   cache-from: type=gha
+2024-12-04T05:52:11.0592406Z   cache-to: type=gha
+2024-12-04T05:52:11.0592678Z   load: false
+2024-12-04T05:52:11.0592940Z   no-cache: false
+2024-12-04T05:52:11.0593247Z   pull: false
+2024-12-04T05:52:11.0593683Z   github-token: ***
+2024-12-04T05:52:11.0593919Z env:
+2024-12-04T05:52:11.0594212Z   RELEASE_VERSION: 
+2024-12-04T05:52:11.0594511Z   IMAGE_VERSION: 1.12.0
+2024-12-04T05:52:11.0594834Z   IMAGE_NAME: ghcr.io/shareefm0/demo
+2024-12-04T05:52:11.0595247Z   DEMO_VERSION: latest
+2024-12-04T05:52:11.0595495Z   TRACETEST_IMAGE_VERSION: v1.7.1
+2024-12-04T05:52:11.0595801Z   OTEL_JAVA_AGENT_VERSION: 2.9.0
+2024-12-04T05:52:11.0596206Z   OPENTELEMETRY_CPP_VERSION: 1.17.0
+2024-12-04T05:52:11.0596597Z   COLLECTOR_CONTRIB_IMAGE: otel/opentelemetry-collector-contrib:0.113.0
+2024-12-04T05:52:11.0597043Z   FLAGD_IMAGE: ghcr.io/open-feature/flagd:v0.11.4
+2024-12-04T05:52:11.0597514Z   GRAFANA_IMAGE: grafana/grafana:11.3.0
+2024-12-04T05:52:11.0597849Z   JAEGERTRACING_IMAGE: jaegertracing/all-in-one:1.62.0
+2024-12-04T05:52:11.0598266Z   OPENSEARCH_IMAGE: opensearchproject/opensearch:2.18.0
+2024-12-04T05:52:11.0598714Z   POSTGRES_IMAGE: postgres:17.0
+2024-12-04T05:52:11.0599074Z   PROMETHEUS_IMAGE: quay.io/prometheus/prometheus:v2.55.1
+2024-12-04T05:52:11.0599704Z   VALKEY_IMAGE: valkey/valkey:8.0-alpine
+2024-12-04T05:52:11.0600208Z   TRACETEST_IMAGE: kubeshop/tracetest:${TRACETEST_IMAGE_VERSION}
+2024-12-04T05:52:11.0600598Z   ENV_PLATFORM: local
+2024-12-04T05:52:11.0600852Z   HOST_FILESYSTEM: /
+2024-12-04T05:52:11.0601220Z   DOCKER_SOCK: /var/run/docker.sock
+2024-12-04T05:52:11.0601557Z   OTEL_COLLECTOR_HOST: otelcol
+2024-12-04T05:52:11.0601813Z   OTEL_COLLECTOR_PORT_GRPC: 4317
+2024-12-04T05:52:11.0602195Z   OTEL_COLLECTOR_PORT_HTTP: 4318
+2024-12-04T05:52:11.0602584Z   OTEL_COLLECTOR_CONFIG: ./src/otelcollector/otelcol-config.yml
+2024-12-04T05:52:11.0603261Z   OTEL_COLLECTOR_CONFIG_EXTRAS: ./src/otelcollector/otelcol-config-extras.yml
+2024-12-04T05:52:11.0603924Z   OTEL_EXPORTER_OTLP_ENDPOINT: http://${OTEL_COLLECTOR_HOST}:${OTEL_COLLECTOR_PORT_GRPC}
+2024-12-04T05:52:11.0604540Z   PUBLIC_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT: http://localhost:8080/otlp-http/v1/traces
+2024-12-04T05:52:11.0605249Z   OTEL_RESOURCE_ATTRIBUTES: service.namespace=opentelemetry-demo,service.version=${IMAGE_VERSION}
+2024-12-04T05:52:11.0605804Z   OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE: cumulative
+2024-12-04T05:52:11.0606302Z   ACCOUNTING_SERVICE_DOCKERFILE: ./src/accountingservice/Dockerfile
+2024-12-04T05:52:11.0606754Z   AD_SERVICE_PORT: 9555
+2024-12-04T05:52:11.0607055Z   AD_SERVICE_ADDR: adservice:${AD_SERVICE_PORT}
+2024-12-04T05:52:11.0607428Z   AD_SERVICE_DOCKERFILE: ./src/adservice/Dockerfile
+2024-12-04T05:52:11.0607825Z   CART_SERVICE_PORT: 7070
+2024-12-04T05:52:11.0608165Z   CART_SERVICE_ADDR: cartservice:${CART_SERVICE_PORT}
+2024-12-04T05:52:11.0608598Z   CART_SERVICE_DOCKERFILE: ./src/cartservice/src/Dockerfile
+2024-12-04T05:52:11.0609030Z   CHECKOUT_SERVICE_PORT: 5050
+2024-12-04T05:52:11.0609409Z   CHECKOUT_SERVICE_ADDR: checkoutservice:${CHECKOUT_SERVICE_PORT}
+2024-12-04T05:52:11.0609876Z   CHECKOUT_SERVICE_DOCKERFILE: ./src/checkoutservice/Dockerfile
+2024-12-04T05:52:11.0610319Z   CURRENCY_SERVICE_PORT: 7001
+2024-12-04T05:52:11.0610728Z   CURRENCY_SERVICE_ADDR: currencyservice:${CURRENCY_SERVICE_PORT}
+2024-12-04T05:52:11.0611150Z   CURRENCY_SERVICE_DOCKERFILE: ./src/currencyservice/Dockerfile
+2024-12-04T05:52:11.0611793Z   EMAIL_SERVICE_PORT: 6060
+2024-12-04T05:52:11.0612199Z   EMAIL_SERVICE_ADDR: http://emailservice:${EMAIL_SERVICE_PORT}
+2024-12-04T05:52:11.0612603Z   EMAIL_SERVICE_DOCKERFILE: ./src/emailservice/Dockerfile
+2024-12-04T05:52:11.0613138Z   FRAUD_SERVICE_DOCKERFILE: ./src/frauddetectionservice/Dockerfile
+2024-12-04T05:52:11.0613556Z   FRONTEND_PORT: 8080
+2024-12-04T05:52:11.0613818Z   FRONTEND_ADDR: frontend:${FRONTEND_PORT}
+2024-12-04T05:52:11.0614260Z   FRONTEND_DOCKERFILE: ./src/frontend/Dockerfile
+2024-12-04T05:52:11.0614625Z   FRONTEND_HOST: frontend
+2024-12-04T05:52:11.0614874Z   ENVOY_PORT: 8080
+2024-12-04T05:52:11.0615246Z   FRONTEND_PROXY_ADDR: frontend-proxy:${ENVOY_PORT}
+2024-12-04T05:52:11.0615683Z   FRONTEND_PROXY_DOCKERFILE: ./src/frontendproxy/Dockerfile
+2024-12-04T05:52:11.0616054Z   IMAGE_PROVIDER_HOST: imageprovider
+2024-12-04T05:52:11.0616432Z   IMAGE_PROVIDER_PORT: 8081
+2024-12-04T05:52:11.0616803Z   IMAGE_PROVIDER_DOCKERFILE: ./src/imageprovider/Dockerfile
+2024-12-04T05:52:11.0617216Z   LOCUST_WEB_PORT: 8089
+2024-12-04T05:52:11.0617503Z   LOCUST_USERS: 10
+2024-12-04T05:52:11.0617810Z   LOCUST_HOST: http://${FRONTEND_PROXY_ADDR}
+2024-12-04T05:52:11.0618164Z   LOCUST_WEB_HOST: loadgenerator
+2024-12-04T05:52:11.0618479Z   LOCUST_AUTOSTART: true
+2024-12-04T05:52:11.0618784Z   LOCUST_HEADLESS: false
+2024-12-04T05:52:11.0619137Z   LOAD_GENERATOR_DOCKERFILE: ./src/loadgenerator/Dockerfile
+2024-12-04T05:52:11.0619538Z   PAYMENT_SERVICE_PORT: 50051
+2024-12-04T05:52:11.0619950Z   PAYMENT_SERVICE_ADDR: paymentservice:${PAYMENT_SERVICE_PORT}
+2024-12-04T05:52:11.0620397Z   PAYMENT_SERVICE_DOCKERFILE: ./src/paymentservice/Dockerfile
+2024-12-04T05:52:11.0620824Z   PRODUCT_CATALOG_SERVICE_PORT: 3550
+2024-12-04T05:52:11.0621318Z   PRODUCT_CATALOG_SERVICE_ADDR: productcatalogservice:${PRODUCT_CATALOG_SERVICE_PORT}
+2024-12-04T05:52:11.0621896Z   PRODUCT_CATALOG_DOCKERFILE: ./src/productcatalogservice/Dockerfile
+2024-12-04T05:52:11.0622333Z   QUOTE_SERVICE_PORT: 8090
+2024-12-04T05:52:11.0622739Z   QUOTE_SERVICE_ADDR: http://quoteservice:${QUOTE_SERVICE_PORT}
+2024-12-04T05:52:11.0623176Z   QUOTE_SERVICE_DOCKERFILE: ./src/quoteservice/Dockerfile
+2024-12-04T05:52:11.0623617Z   RECOMMENDATION_SERVICE_PORT: 9001
+2024-12-04T05:52:11.0624053Z   RECOMMENDATION_SERVICE_ADDR: recommendationservice:${RECOMMENDATION_SERVICE_PORT}
+2024-12-04T05:52:11.0624627Z   RECOMMENDATION_SERVICE_DOCKERFILE: ./src/recommendationservice/Dockerfile
+2024-12-04T05:52:11.0625374Z   SHIPPING_SERVICE_PORT: 50050
+2024-12-04T05:52:11.0625723Z   SHIPPING_SERVICE_ADDR: shippingservice:${SHIPPING_SERVICE_PORT}
+2024-12-04T05:52:11.0626195Z   SHIPPING_SERVICE_DOCKERFILE: ./src/shippingservice/Dockerfile
+2024-12-04T05:52:11.0626666Z   FLAGD_HOST: flagd
+2024-12-04T05:52:11.0626898Z   FLAGD_PORT: 8013
+2024-12-04T05:52:11.0627187Z   FLAGD_UI_HOST: flagdui
+2024-12-04T05:52:11.0627547Z   FLAGD_UI_PORT: 4000
+2024-12-04T05:52:11.0627817Z   FLAGD_UI_DOCKERFILE: ./src/flagd-ui/Dockerfile
+2024-12-04T05:52:11.0628167Z   KAFKA_SERVICE_PORT: 9092
+2024-12-04T05:52:11.0628579Z   KAFKA_SERVICE_ADDR: kafka:${KAFKA_SERVICE_PORT}
+2024-12-04T05:52:11.0628922Z   KAFKA_SERVICE_DOCKERFILE: ./src/kafka/Dockerfile
+2024-12-04T05:52:11.0629280Z   VALKEY_PORT: 6379
+2024-12-04T05:52:11.0629626Z   VALKEY_ADDR: valkey-cart:${VALKEY_PORT}
+2024-12-04T05:52:11.0629922Z   GRAFANA_SERVICE_PORT: 3000
+2024-12-04T05:52:11.0630238Z   GRAFANA_SERVICE_HOST: grafana
+2024-12-04T05:52:11.0630601Z   JAEGER_SERVICE_PORT: 16686
+2024-12-04T05:52:11.0630871Z   JAEGER_SERVICE_HOST: jaeger
+2024-12-04T05:52:11.0631214Z   PROMETHEUS_SERVICE_PORT: 9090
+2024-12-04T05:52:11.0631587Z   PROMETHEUS_SERVICE_HOST: prometheus
+2024-12-04T05:52:11.0631965Z   PROMETHEUS_ADDR: ${PROMETHEUS_SERVICE_HOST}:${PROMETHEUS_SERVICE_PORT}
+2024-12-04T05:52:11.0632386Z ##[endgroup]
+2024-12-04T05:52:11.2970111Z ##[group]GitHub Actions runtime token ACs
+2024-12-04T05:52:11.2977964Z refs/heads/main: read/write
+2024-12-04T05:52:11.2979675Z ##[endgroup]
+2024-12-04T05:52:11.2980564Z ##[group]Docker info
+2024-12-04T05:52:11.3061291Z [command]/usr/bin/docker version
+2024-12-04T05:52:11.3262035Z Client: Docker Engine - Community
+2024-12-04T05:52:11.3265582Z  Version:           26.1.3
+2024-12-04T05:52:11.3266220Z  API version:       1.45
+2024-12-04T05:52:11.3266715Z  Go version:        go1.21.10
+2024-12-04T05:52:11.3267140Z  Git commit:        b72abbb
+2024-12-04T05:52:11.3267787Z  Built:             Thu May 16 08:33:29 2024
+2024-12-04T05:52:11.3268350Z  OS/Arch:           linux/amd64
+2024-12-04T05:52:11.3268781Z  Context:           default
+2024-12-04T05:52:11.3269189Z 
+2024-12-04T05:52:11.3269425Z Server: Docker Engine - Community
+2024-12-04T05:52:11.3269928Z  Engine:
+2024-12-04T05:52:11.3270277Z   Version:          26.1.3
+2024-12-04T05:52:11.3270940Z   API version:      1.45 (minimum version 1.24)
+2024-12-04T05:52:11.3271497Z   Go version:       go1.21.10
+2024-12-04T05:52:11.3271918Z   Git commit:       8e96db1
+2024-12-04T05:52:11.3272519Z   Built:            Thu May 16 08:33:29 2024
+2024-12-04T05:52:11.3273035Z   OS/Arch:          linux/amd64
+2024-12-04T05:52:11.3273461Z   Experimental:     false
+2024-12-04T05:52:11.3274049Z  containerd:
+2024-12-04T05:52:11.3274502Z   Version:          1.7.23
+2024-12-04T05:52:11.3275037Z   GitCommit:        57f17b0a6295a39009d861b89e3b3b87b005ca27
+2024-12-04T05:52:11.3275832Z  runc:
+2024-12-04T05:52:11.3276260Z   Version:          1.1.14
+2024-12-04T05:52:11.3276731Z   GitCommit:        v1.1.14-0-g2c9f560
+2024-12-04T05:52:11.3277437Z  docker-init:
+2024-12-04T05:52:11.3277891Z   Version:          0.19.0
+2024-12-04T05:52:11.3278354Z   GitCommit:        de40ad0
+2024-12-04T05:52:11.3317224Z [command]/usr/bin/docker info
+2024-12-04T05:52:11.3751653Z Client: Docker Engine - Community
+2024-12-04T05:52:11.3752289Z  Version:    26.1.3
+2024-12-04T05:52:11.3752854Z  Context:    default
+2024-12-04T05:52:11.3753226Z  Debug Mode: false
+2024-12-04T05:52:11.3753660Z  Plugins:
+2024-12-04T05:52:11.3754194Z   buildx: Docker Buildx (Docker Inc.)
+2024-12-04T05:52:11.3754695Z     Version:  v0.18.0
+2024-12-04T05:52:11.3755203Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2024-12-04T05:52:11.3755925Z   compose: Docker Compose (Docker Inc.)
+2024-12-04T05:52:11.3756399Z     Version:  v2.27.1
+2024-12-04T05:52:11.3756891Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2024-12-04T05:52:11.3757384Z 
+2024-12-04T05:52:11.3757593Z Server:
+2024-12-04T05:52:11.3757933Z  Containers: 1
+2024-12-04T05:52:11.3758307Z   Running: 1
+2024-12-04T05:52:11.3759082Z   Paused: 0
+2024-12-04T05:52:11.3759505Z   Stopped: 0
+2024-12-04T05:52:11.3759832Z  Images: 16
+2024-12-04T05:52:11.3760221Z  Server Version: 26.1.3
+2024-12-04T05:52:11.3760487Z  Storage Driver: overlay2
+2024-12-04T05:52:11.3760773Z   Backing Filesystem: extfs
+2024-12-04T05:52:11.3761170Z   Supports d_type: true
+2024-12-04T05:52:11.3761427Z   Using metacopy: false
+2024-12-04T05:52:11.3761692Z   Native Overlay Diff: false
+2024-12-04T05:52:11.3762077Z   userxattr: false
+2024-12-04T05:52:11.3762313Z  Logging Driver: json-file
+2024-12-04T05:52:11.3762599Z  Cgroup Driver: cgroupfs
+2024-12-04T05:52:11.3762938Z  Cgroup Version: 2
+2024-12-04T05:52:11.3763195Z  Plugins:
+2024-12-04T05:52:11.3763428Z   Volume: local
+2024-12-04T05:52:11.3763810Z   Network: bridge host ipvlan macvlan null overlay
+2024-12-04T05:52:11.3764263Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2024-12-04T05:52:11.3764678Z  Swarm: inactive
+2024-12-04T05:52:11.3765001Z  Runtimes: runc io.containerd.runc.v2
+2024-12-04T05:52:11.3765334Z  Default Runtime: runc
+2024-12-04T05:52:11.3765616Z  Init Binary: docker-init
+2024-12-04T05:52:11.3766013Z  containerd version: 57f17b0a6295a39009d861b89e3b3b87b005ca27
+2024-12-04T05:52:11.3766424Z  runc version: v1.1.14-0-g2c9f560
+2024-12-04T05:52:11.3766739Z  init version: de40ad0
+2024-12-04T05:52:11.3767091Z  Security Options:
+2024-12-04T05:52:11.3767319Z   apparmor
+2024-12-04T05:52:11.3767571Z   seccomp
+2024-12-04T05:52:11.3767901Z    Profile: builtin
+2024-12-04T05:52:11.3768130Z   cgroupns
+2024-12-04T05:52:11.3768565Z  Kernel Version: 6.5.0-1025-azure
+2024-12-04T05:52:11.3769160Z  Operating System: Ubuntu 22.04.5 LTS
+2024-12-04T05:52:11.3769678Z  OSType: linux
+2024-12-04T05:52:11.3770095Z  Architecture: x86_64
+2024-12-04T05:52:11.3770645Z  CPUs: 4
+2024-12-04T05:52:11.3771078Z  Total Memory: 15.61GiB
+2024-12-04T05:52:11.3771542Z  Name: fv-az1208-167
+2024-12-04T05:52:11.3772150Z  ID: 447383f1-9802-458d-bd1f-610ec17602af
+2024-12-04T05:52:11.3772746Z  Docker Root Dir: /var/lib/docker
+2024-12-04T05:52:11.3773260Z  Debug Mode: false
+2024-12-04T05:52:11.3773802Z  Username: githubactions
+2024-12-04T05:52:11.3774314Z  Experimental: false
+2024-12-04T05:52:11.3774758Z  Insecure Registries:
+2024-12-04T05:52:11.3775286Z   127.0.0.0/8
+2024-12-04T05:52:11.3775694Z  Live Restore Enabled: false
+2024-12-04T05:52:11.3775941Z 
+2024-12-04T05:52:11.3776614Z ##[endgroup]
+2024-12-04T05:52:11.3778855Z ##[group]Proxy configuration
+2024-12-04T05:52:11.3779396Z No proxy configuration found
+2024-12-04T05:52:11.3780657Z ##[endgroup]
+2024-12-04T05:52:11.4272887Z ##[group]Buildx version
+2024-12-04T05:52:11.4298615Z [command]/usr/bin/docker buildx version
+2024-12-04T05:52:11.4705929Z github.com/docker/buildx v0.18.0 fa4461b9a1ec45c23d1b9e32dee0d0a8ed29900b
+2024-12-04T05:52:11.4735371Z ##[endgroup]
+2024-12-04T05:52:11.4736017Z ##[group]Builder info
+2024-12-04T05:52:11.5723460Z {
+2024-12-04T05:52:11.5724414Z   "nodes": [
+2024-12-04T05:52:11.5724801Z     {
+2024-12-04T05:52:11.5725327Z       "name": "builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb0",
+2024-12-04T05:52:11.5726286Z       "endpoint": "unix:///var/run/docker.sock",
+2024-12-04T05:52:11.5726831Z       "status": "running",
+2024-12-04T05:52:11.5727786Z       "buildkitd-flags": "--allow-insecure-entitlement security.insecure --allow-insecure-entitlement network.host",
+2024-12-04T05:52:11.5728910Z       "buildkit": "v0.17.2",
+2024-12-04T05:52:11.5730047Z       "platforms": "linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/arm64,linux/riscv64,linux/ppc64le,linux/s390x,linux/386,linux/loong64,linux/arm/v7,linux/arm/v6",
+2024-12-04T05:52:11.5731267Z       "features": {
+2024-12-04T05:52:11.5732043Z         "Automatically load images to the Docker Engine image store": true,
+2024-12-04T05:52:11.5732724Z         "Cache export": true,
+2024-12-04T05:52:11.5733191Z         "Docker exporter": true,
+2024-12-04T05:52:11.5733830Z         "Multi-platform build": true,
+2024-12-04T05:52:11.5734349Z         "OCI exporter": true
+2024-12-04T05:52:11.5734708Z       },
+2024-12-04T05:52:11.5735636Z       "labels": {
+2024-12-04T05:52:11.5736164Z         "org.mobyproject.buildkit.worker.executor": "oci",
+2024-12-04T05:52:11.5736835Z         "org.mobyproject.buildkit.worker.hostname": "6ded1e57208c",
+2024-12-04T05:52:11.5737708Z         "org.mobyproject.buildkit.worker.network": "host",
+2024-12-04T05:52:11.5738488Z         "org.mobyproject.buildkit.worker.oci.process-mode": "sandbox",
+2024-12-04T05:52:11.5739210Z         "org.mobyproject.buildkit.worker.selinux.enabled": "false",
+2024-12-04T05:52:11.5740170Z         "org.mobyproject.buildkit.worker.snapshotter": "overlayfs"
+2024-12-04T05:52:11.5740834Z       },
+2024-12-04T05:52:11.5741152Z       "gcPolicy": [
+2024-12-04T05:52:11.5741715Z         {
+2024-12-04T05:52:11.5742104Z           "all": false,
+2024-12-04T05:52:11.5742479Z           "filter": [
+2024-12-04T05:52:11.5743082Z             "type==source.local",
+2024-12-04T05:52:11.5743589Z             "type==exec.cachemount",
+2024-12-04T05:52:11.5744063Z             "type==source.git.checkout"
+2024-12-04T05:52:11.5744728Z           ],
+2024-12-04T05:52:11.5745152Z           "keepDuration": "48h0m0s"
+2024-12-04T05:52:11.5745571Z         },
+2024-12-04T05:52:11.5746099Z         {
+2024-12-04T05:52:11.5746498Z           "all": false,
+2024-12-04T05:52:11.5746873Z           "keepDuration": "1440h0m0s"
+2024-12-04T05:52:11.5747533Z         },
+2024-12-04T05:52:11.5747911Z         {
+2024-12-04T05:52:11.5748220Z           "all": false
+2024-12-04T05:52:11.5748797Z         },
+2024-12-04T05:52:11.5749124Z         {
+2024-12-04T05:52:11.5749476Z           "all": true
+2024-12-04T05:52:11.5750284Z         }
+2024-12-04T05:52:11.5750652Z       ]
+2024-12-04T05:52:11.5751029Z     }
+2024-12-04T05:52:11.5751532Z   ],
+2024-12-04T05:52:11.5751965Z   "name": "builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb",
+2024-12-04T05:52:11.5752378Z   "driver": "docker-container",
+2024-12-04T05:52:11.5752806Z   "lastActivity": "2024-12-04T05:52:10.000Z"
+2024-12-04T05:52:11.5753105Z }
+2024-12-04T05:52:11.5753686Z ##[endgroup]
+2024-12-04T05:52:11.7235349Z [command]/usr/bin/docker buildx build --build-arg OTEL_JAVA_AGENT_VERSION=2.9.0 --build-arg OPENTELEMETRY_CPP_VERSION=1.17.0 --build-arg TRACETEST_IMAGE_VERSION=v1.7.1 --cache-from type=gha --cache-to type=gha --file ./src/accountingservice/Dockerfile --iidfile /home/runner/work/_temp/docker-actions-toolkit-YlIav3/build-iidfile-d42e01e05c.txt --platform linux/amd64,linux/arm64 --attest type=provenance,mode=max,builder-id=https://github.com/shareefm0/enpm818-final-phase-6/actions/runs/12153851928/attempts/1 --tag ghcr.io/shareefm0/demo:1.0.0-accountingservice --tag ghcr.io/shareefm0/demo:latest-accountingservice --metadata-file /home/runner/work/_temp/docker-actions-toolkit-YlIav3/build-metadata-16d07f3725.json --push ./
+2024-12-04T05:52:11.7656504Z 2024/12/04 05:52:11 internal_logging.go:57: "msg"="parse url" "error"="parse \"http://${OTEL_COLLECTOR_HOST}:${OTEL_COLLECTOR_PORT_GRPC}\": invalid port \":${OTEL_COLLECTOR_PORT_GRPC}\" after host" "input"="http://${OTEL_COLLECTOR_HOST}:${OTEL_COLLECTOR_PORT_GRPC}"
+2024-12-04T05:52:12.0214275Z #0 building with "builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb" instance using docker-container driver
+2024-12-04T05:52:12.0215053Z 
+2024-12-04T05:52:12.0215304Z #1 [internal] load build definition from Dockerfile
+2024-12-04T05:52:12.0215668Z #1 transferring dockerfile: 1.26kB done
+2024-12-04T05:52:12.0216299Z #1 DONE 0.0s
+2024-12-04T05:52:12.0216439Z 
+2024-12-04T05:52:12.0216725Z #2 [linux/arm64 internal] load metadata for mcr.microsoft.com/dotnet/aspnet:8.0
+2024-12-04T05:52:12.6490580Z #2 ...
+2024-12-04T05:52:12.6491233Z 
+2024-12-04T05:52:12.6491867Z #3 [linux/amd64 internal] load metadata for mcr.microsoft.com/dotnet/aspnet:8.0
+2024-12-04T05:52:12.6492844Z #3 DONE 0.8s
+2024-12-04T05:52:12.8254878Z 
+2024-12-04T05:52:12.8255895Z #4 [linux/amd64 internal] load metadata for mcr.microsoft.com/dotnet/sdk:8.0
+2024-12-04T05:52:12.8256823Z #4 DONE 0.8s
+2024-12-04T05:52:12.8257209Z 
+2024-12-04T05:52:12.8257843Z #5 [internal] load .dockerignore
+2024-12-04T05:52:12.8258884Z #5 transferring context: 1.18kB done
+2024-12-04T05:52:12.8259449Z #5 DONE 0.0s
+2024-12-04T05:52:12.8259875Z 
+2024-12-04T05:52:12.8260377Z #2 [linux/arm64 internal] load metadata for mcr.microsoft.com/dotnet/aspnet:8.0
+2024-12-04T05:52:12.8261086Z #2 DONE 0.8s
+2024-12-04T05:52:12.8261351Z 
+2024-12-04T05:52:12.8261515Z #6 [internal] load build context
+2024-12-04T05:52:12.8262196Z #6 DONE 0.0s
+2024-12-04T05:52:12.8262342Z 
+2024-12-04T05:52:12.8262911Z #7 [linux/amd64 builder 1/7] FROM mcr.microsoft.com/dotnet/sdk:8.0@sha256:032381bcea86fa0a408af5df63a930f1ff5b03116c940a7cd744d3b648e66749
+2024-12-04T05:52:12.8264202Z #7 resolve mcr.microsoft.com/dotnet/sdk:8.0@sha256:032381bcea86fa0a408af5df63a930f1ff5b03116c940a7cd744d3b648e66749 0.0s done
+2024-12-04T05:52:12.8265189Z #7 DONE 0.0s
+2024-12-04T05:52:12.8265317Z 
+2024-12-04T05:52:12.8265776Z #8 [linux/arm64 stage-2 1/6] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:04f79dd7f0a27eb079c2498ca9bab729ed40b91ed393d24846d6cb505f3fe646
+2024-12-04T05:52:12.8266764Z #8 resolve mcr.microsoft.com/dotnet/aspnet:8.0@sha256:04f79dd7f0a27eb079c2498ca9bab729ed40b91ed393d24846d6cb505f3fe646 0.0s done
+2024-12-04T05:52:12.8267553Z #8 DONE 0.0s
+2024-12-04T05:52:12.8267677Z 
+2024-12-04T05:52:12.8268393Z #9 [linux/amd64 stage-2 1/6] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:04f79dd7f0a27eb079c2498ca9bab729ed40b91ed393d24846d6cb505f3fe646
+2024-12-04T05:52:12.8269653Z #9 resolve mcr.microsoft.com/dotnet/aspnet:8.0@sha256:04f79dd7f0a27eb079c2498ca9bab729ed40b91ed393d24846d6cb505f3fe646 0.0s done
+2024-12-04T05:52:12.8270354Z #9 DONE 0.0s
+2024-12-04T05:52:12.8270798Z 
+2024-12-04T05:52:12.8271007Z #10 importing cache manifest from gha:18361398166361425290
+2024-12-04T05:52:12.8271712Z #10 DONE 0.1s
+2024-12-04T05:52:12.9379272Z 
+2024-12-04T05:52:12.9384716Z #6 [internal] load build context
+2024-12-04T05:52:12.9385509Z #6 transferring context: 14.37kB done
+2024-12-04T05:52:12.9386316Z #6 DONE 0.0s
+2024-12-04T05:52:12.9386496Z 
+2024-12-04T05:52:12.9387360Z #9 [linux/amd64 stage-2 1/6] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:04f79dd7f0a27eb079c2498ca9bab729ed40b91ed393d24846d6cb505f3fe646
+2024-12-04T05:52:12.9388672Z #9 sha256:5892c35ff1bfb48c72203fd59606394a8b72de4e9cd69e310a0cc2cbce12eddd 153B / 153B 0.0s done
+2024-12-04T05:52:13.0440791Z #9 sha256:8484524c83d0532e19da3508b0f0ca8a500a04c8b1f6f22d99674dd3402d4439 3.28kB / 3.28kB 0.0s done
+2024-12-04T05:52:13.0442394Z #9 sha256:4d2e5eaad0d352f1a49fd4f27844d3bf69c0127415ac49ebb767dcff4f63bbb2 11.07MB / 11.07MB 0.1s done
+2024-12-04T05:52:13.0444696Z #9 sha256:c34bb5eec04e5a0191ea939d8671c53439ec2d8402c94082abcbb52b28473bd0 30.41MB / 32.24MB 0.2s
+2024-12-04T05:52:13.1477935Z #9 sha256:c34bb5eec04e5a0191ea939d8671c53439ec2d8402c94082abcbb52b28473bd0 32.24MB / 32.24MB 0.2s done
+2024-12-04T05:52:13.1479217Z #9 sha256:dea5c5081fa0ac7e5e7686e2c7478486093c03cd7d4897e28f671d6f792573cc 18.53MB / 18.53MB 0.1s done
+2024-12-04T05:52:13.1480994Z #9 sha256:bc0965b23a04fe7f2d9fb20f597008fcf89891de1c705ffc1c80483a1f098e4f 28.23MB / 28.23MB 0.2s done
+2024-12-04T05:52:13.1482148Z #9 extracting sha256:bc0965b23a04fe7f2d9fb20f597008fcf89891de1c705ffc1c80483a1f098e4f
+2024-12-04T05:52:14.3447815Z #9 ...
+2024-12-04T05:52:14.3448197Z 
+2024-12-04T05:52:14.3448954Z #7 [linux/amd64 builder 1/7] FROM mcr.microsoft.com/dotnet/sdk:8.0@sha256:032381bcea86fa0a408af5df63a930f1ff5b03116c940a7cd744d3b648e66749
+2024-12-04T05:52:14.3450665Z #7 sha256:265d2ea187138b55c4a5248fb014156b06c827486e017cac5965464bd95d7ca3 15.61MB / 15.61MB 0.1s done
+2024-12-04T05:52:14.3451971Z #7 sha256:0133317f75512b2ce511b85e6267e19a20f7638a57298a7a40fbdb7f63d87ae6 174.19MB / 174.19MB 0.9s done
+2024-12-04T05:52:14.3453275Z #7 sha256:b802f43187168d1e3a4b02cb3d974abbd419c749b566b0d1a9ad53ad20c7138d 30.91MB / 30.91MB 0.2s done
+2024-12-04T05:52:14.3454270Z #7 DONE 1.3s
+2024-12-04T05:52:14.4070209Z 
+2024-12-04T05:52:14.4071763Z #9 [linux/amd64 stage-2 1/6] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:04f79dd7f0a27eb079c2498ca9bab729ed40b91ed393d24846d6cb505f3fe646
+2024-12-04T05:52:14.4073251Z #9 extracting sha256:bc0965b23a04fe7f2d9fb20f597008fcf89891de1c705ffc1c80483a1f098e4f 1.3s done
+2024-12-04T05:52:14.4074943Z #9 DONE 1.6s
+2024-12-04T05:52:14.4075188Z 
+2024-12-04T05:52:14.4076001Z #8 [linux/arm64 stage-2 1/6] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:04f79dd7f0a27eb079c2498ca9bab729ed40b91ed393d24846d6cb505f3fe646
+2024-12-04T05:52:14.4077441Z #8 sha256:963ffc7a68ff07ad0a48fc7f90d20c556c444bbabfb4bd45a180cdcba6510210 164B / 164B 0.0s done
+2024-12-04T05:52:14.4078764Z #8 sha256:4d23af0f8da9b6b2cf8447d9208e571426772a573abe3537b5553f9835984251 10.74MB / 10.74MB 0.1s done
+2024-12-04T05:52:14.4080073Z #8 sha256:11e53e0176cdd626c2032644dddb5a96e6eaf1b0fffe690b7158ce941c258190 3.33kB / 3.33kB 0.1s done
+2024-12-04T05:52:14.4080784Z #8 sha256:a99f979d704a240405f08913e30302ea667012268e72f3c676dc942e1665f7e4 30.82MB / 30.82MB 0.3s done
+2024-12-04T05:52:14.4081638Z #8 sha256:575ae10faf5887a49d34f7131754099bcd5714cb755499cb0a0d3a4de8c9dd2c 18.50MB / 18.50MB 0.2s done
+2024-12-04T05:52:14.4082598Z #8 sha256:bb3f2b52e6af242cee1bc6c19ce79e05544f8a1d13f5a6c1e828d98d2dbdc94e 28.06MB / 28.06MB 0.2s done
+2024-12-04T05:52:14.4083432Z #8 extracting sha256:bb3f2b52e6af242cee1bc6c19ce79e05544f8a1d13f5a6c1e828d98d2dbdc94e
+2024-12-04T05:52:14.5481986Z #8 extracting sha256:bb3f2b52e6af242cee1bc6c19ce79e05544f8a1d13f5a6c1e828d98d2dbdc94e 1.2s done
+2024-12-04T05:52:14.5482826Z #8 DONE 1.7s
+2024-12-04T05:52:14.5483300Z 
+2024-12-04T05:52:14.5484021Z #9 [linux/amd64 stage-2 1/6] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:04f79dd7f0a27eb079c2498ca9bab729ed40b91ed393d24846d6cb505f3fe646
+2024-12-04T05:52:14.5485673Z #9 extracting sha256:dea5c5081fa0ac7e5e7686e2c7478486093c03cd7d4897e28f671d6f792573cc
+2024-12-04T05:52:14.6929559Z #9 extracting sha256:dea5c5081fa0ac7e5e7686e2c7478486093c03cd7d4897e28f671d6f792573cc 0.3s done
+2024-12-04T05:52:14.6930390Z #9 DONE 1.9s
+2024-12-04T05:52:14.6930657Z 
+2024-12-04T05:52:14.6931371Z #8 [linux/arm64 stage-2 1/6] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:04f79dd7f0a27eb079c2498ca9bab729ed40b91ed393d24846d6cb505f3fe646
+2024-12-04T05:52:14.6932918Z #8 extracting sha256:575ae10faf5887a49d34f7131754099bcd5714cb755499cb0a0d3a4de8c9dd2c
+2024-12-04T05:52:14.8532239Z #8 extracting sha256:575ae10faf5887a49d34f7131754099bcd5714cb755499cb0a0d3a4de8c9dd2c 0.3s done
+2024-12-04T05:52:14.8533062Z #8 DONE 2.0s
+2024-12-04T05:52:14.8533558Z 
+2024-12-04T05:52:14.8534303Z #9 [linux/amd64 stage-2 1/6] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:04f79dd7f0a27eb079c2498ca9bab729ed40b91ed393d24846d6cb505f3fe646
+2024-12-04T05:52:14.8535684Z #9 extracting sha256:8484524c83d0532e19da3508b0f0ca8a500a04c8b1f6f22d99674dd3402d4439 done
+2024-12-04T05:52:14.8536712Z #9 extracting sha256:c34bb5eec04e5a0191ea939d8671c53439ec2d8402c94082abcbb52b28473bd0
+2024-12-04T05:52:15.1184435Z #9 extracting sha256:c34bb5eec04e5a0191ea939d8671c53439ec2d8402c94082abcbb52b28473bd0 0.4s done
+2024-12-04T05:52:15.1185375Z #9 DONE 2.3s
+2024-12-04T05:52:15.1186018Z 
+2024-12-04T05:52:15.1186841Z #8 [linux/arm64 stage-2 1/6] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:04f79dd7f0a27eb079c2498ca9bab729ed40b91ed393d24846d6cb505f3fe646
+2024-12-04T05:52:15.1188491Z #8 extracting sha256:11e53e0176cdd626c2032644dddb5a96e6eaf1b0fffe690b7158ce941c258190 done
+2024-12-04T05:52:15.1189216Z #8 extracting sha256:a99f979d704a240405f08913e30302ea667012268e72f3c676dc942e1665f7e4
+2024-12-04T05:52:15.2957974Z #8 ...
+2024-12-04T05:52:15.2958251Z 
+2024-12-04T05:52:15.2958970Z #9 [linux/amd64 stage-2 1/6] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:04f79dd7f0a27eb079c2498ca9bab729ed40b91ed393d24846d6cb505f3fe646
+2024-12-04T05:52:15.2960731Z #9 extracting sha256:5892c35ff1bfb48c72203fd59606394a8b72de4e9cd69e310a0cc2cbce12eddd done
+2024-12-04T05:52:15.2961617Z #9 extracting sha256:4d2e5eaad0d352f1a49fd4f27844d3bf69c0127415ac49ebb767dcff4f63bbb2 0.2s done
+2024-12-04T05:52:15.2962189Z #9 DONE 2.5s
+2024-12-04T05:52:15.4609463Z 
+2024-12-04T05:52:15.4621327Z #8 [linux/arm64 stage-2 1/6] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:04f79dd7f0a27eb079c2498ca9bab729ed40b91ed393d24846d6cb505f3fe646
+2024-12-04T05:52:15.4623057Z #8 extracting sha256:a99f979d704a240405f08913e30302ea667012268e72f3c676dc942e1665f7e4 0.4s done
+2024-12-04T05:52:15.4624870Z #8 extracting sha256:963ffc7a68ff07ad0a48fc7f90d20c556c444bbabfb4bd45a180cdcba6510210 0.0s done
+2024-12-04T05:52:15.4625987Z #8 extracting sha256:4d23af0f8da9b6b2cf8447d9208e571426772a573abe3537b5553f9835984251
+2024-12-04T05:52:15.5388234Z #8 extracting sha256:4d23af0f8da9b6b2cf8447d9208e571426772a573abe3537b5553f9835984251 0.2s done
+2024-12-04T05:52:15.5389650Z #8 DONE 2.7s
+2024-12-04T05:52:15.5389908Z 
+2024-12-04T05:52:15.5390706Z #7 [linux/amd64 builder 1/7] FROM mcr.microsoft.com/dotnet/sdk:8.0@sha256:032381bcea86fa0a408af5df63a930f1ff5b03116c940a7cd744d3b648e66749
+2024-12-04T05:52:15.5392219Z #7 extracting sha256:b802f43187168d1e3a4b02cb3d974abbd419c749b566b0d1a9ad53ad20c7138d
+2024-12-04T05:52:16.3910109Z #7 extracting sha256:b802f43187168d1e3a4b02cb3d974abbd419c749b566b0d1a9ad53ad20c7138d 1.1s done
+2024-12-04T05:52:16.3910998Z #7 DONE 2.4s
+2024-12-04T05:52:16.3911129Z 
+2024-12-04T05:52:16.3911424Z #11 [linux/arm64 stage-2 2/6] WORKDIR /app
+2024-12-04T05:52:16.5433778Z #11 ...
+2024-12-04T05:52:16.5434051Z 
+2024-12-04T05:52:16.5434569Z #12 [linux/amd64 stage-2 2/6] WORKDIR /app
+2024-12-04T05:52:16.5435148Z #12 DONE 1.1s
+2024-12-04T05:52:16.5918226Z 
+2024-12-04T05:52:16.5919269Z #11 [linux/arm64 stage-2 2/6] WORKDIR /app
+2024-12-04T05:52:16.5920604Z #11 DONE 1.1s
+2024-12-04T05:52:16.5920964Z 
+2024-12-04T05:52:16.5922045Z #7 [linux/amd64 builder 1/7] FROM mcr.microsoft.com/dotnet/sdk:8.0@sha256:032381bcea86fa0a408af5df63a930f1ff5b03116c940a7cd744d3b648e66749
+2024-12-04T05:52:16.5923270Z #7 extracting sha256:0133317f75512b2ce511b85e6267e19a20f7638a57298a7a40fbdb7f63d87ae6
+2024-12-04T05:52:18.8310360Z #7 extracting sha256:0133317f75512b2ce511b85e6267e19a20f7638a57298a7a40fbdb7f63d87ae6 2.4s done
+2024-12-04T05:52:18.8311474Z #7 DONE 4.9s
+2024-12-04T05:52:18.9815339Z 
+2024-12-04T05:52:18.9816346Z #7 [linux/amd64 builder 1/7] FROM mcr.microsoft.com/dotnet/sdk:8.0@sha256:032381bcea86fa0a408af5df63a930f1ff5b03116c940a7cd744d3b648e66749
+2024-12-04T05:52:18.9817675Z #7 extracting sha256:265d2ea187138b55c4a5248fb014156b06c827486e017cac5965464bd95d7ca3
+2024-12-04T05:52:19.0781603Z #7 extracting sha256:265d2ea187138b55c4a5248fb014156b06c827486e017cac5965464bd95d7ca3 0.2s done
+2024-12-04T05:52:19.0782270Z #7 DONE 5.1s
+2024-12-04T05:52:19.2292437Z 
+2024-12-04T05:52:19.2293077Z #13 [linux/amd64 builder 2/7] WORKDIR /src
+2024-12-04T05:52:20.0877432Z #13 DONE 1.0s
+2024-12-04T05:52:20.2699949Z 
+2024-12-04T05:52:20.2701044Z #14 [linux/amd64 builder 3/7] COPY [/src/accountingservice/, AccountingService/]
+2024-12-04T05:52:20.2701810Z #14 DONE 0.0s
+2024-12-04T05:52:20.2702037Z 
+2024-12-04T05:52:20.2702433Z #15 [linux/amd64 builder 4/7] COPY [/pb/demo.proto, AccountingService/proto/]
+2024-12-04T05:52:20.2703331Z #15 DONE 0.0s
+2024-12-04T05:52:20.2703555Z 
+2024-12-04T05:52:20.2704211Z #16 [linux/amd64 builder 5/7] RUN dotnet restore "./AccountingService/AccountingService.csproj" -r linux-musl-amd64
+2024-12-04T05:52:21.5538576Z #16 1.284   Determining projects to restore...
+2024-12-04T05:52:28.5949664Z #16 8.325   Restored /src/AccountingService/AccountingService.csproj (in 6.54 sec).
+2024-12-04T05:52:29.9400806Z #16 DONE 9.8s
+2024-12-04T05:52:29.9401157Z 
+2024-12-04T05:52:29.9401853Z #17 [linux/amd64->arm64 builder 5/7] RUN dotnet restore "./AccountingService/AccountingService.csproj" -r linux-musl-arm64
+2024-12-04T05:52:29.9402843Z #17 1.206   Determining projects to restore...
+2024-12-04T05:52:29.9403634Z #17 8.285   Restored /src/AccountingService/AccountingService.csproj (in 6.59 sec).
+2024-12-04T05:52:30.1695510Z #17 DONE 9.8s
+2024-12-04T05:52:30.1696655Z 
+2024-12-04T05:52:30.1697308Z #18 [linux/amd64->arm64 builder 6/7] WORKDIR /src/AccountingService
+2024-12-04T05:52:30.1698588Z #18 DONE 0.1s
+2024-12-04T05:52:30.1699028Z 
+2024-12-04T05:52:30.1699561Z #19 [linux/amd64 builder 6/7] WORKDIR /src/AccountingService
+2024-12-04T05:52:30.1700935Z #19 DONE 0.1s
+2024-12-04T05:52:30.1702531Z 
+2024-12-04T05:52:30.1703737Z #20 [linux/amd64 builder 7/7] RUN dotnet build "./AccountingService.csproj" -r linux-musl-amd64 -c Release -o /app/build
+2024-12-04T05:52:31.3178972Z #20 1.299   Determining projects to restore...
+2024-12-04T05:52:32.0772437Z #20 2.058   Restored /src/AccountingService/AccountingService.csproj (in 390 ms).
+2024-12-04T05:52:36.6782830Z #20 6.659   AccountingService -> /app/build/AccountingService.dll
+2024-12-04T05:52:36.8303940Z #20 6.678 
+2024-12-04T05:52:36.8304625Z #20 6.680 Build succeeded.
+2024-12-04T05:52:36.8305131Z #20 6.681     0 Warning(s)
+2024-12-04T05:52:36.8305456Z #20 6.682     0 Error(s)
+2024-12-04T05:52:36.8305921Z #20 6.684 
+2024-12-04T05:52:36.8306342Z #20 6.685 Time Elapsed 00:00:06.21
+2024-12-04T05:52:36.8306727Z #20 DONE 6.8s
+2024-12-04T05:52:36.8306898Z 
+2024-12-04T05:52:36.8307551Z #21 [linux/amd64->arm64 builder 7/7] RUN dotnet build "./AccountingService.csproj" -r linux-musl-arm64 -c Release -o /app/build
+2024-12-04T05:52:36.8308528Z #21 1.317   Determining projects to restore...
+2024-12-04T05:52:36.8309161Z #21 2.064   Restored /src/AccountingService/AccountingService.csproj (in 384 ms).
+2024-12-04T05:52:36.8310100Z #21 6.689   AccountingService -> /app/build/AccountingService.dll
+2024-12-04T05:52:36.8310742Z #21 6.704 
+2024-12-04T05:52:36.8311015Z #21 6.705 Build succeeded.
+2024-12-04T05:52:36.8311595Z #21 6.705     0 Warning(s)
+2024-12-04T05:52:36.8312091Z #21 6.705     0 Error(s)
+2024-12-04T05:52:36.8312521Z #21 6.706 
+2024-12-04T05:52:36.8313335Z #21 6.706 Time Elapsed 00:00:06.20
+2024-12-04T05:52:37.0016785Z #21 DONE 6.8s
+2024-12-04T05:52:37.0017127Z 
+2024-12-04T05:52:37.0018157Z #22 [linux/amd64->arm64 publish 1/1] RUN dotnet publish "./AccountingService.csproj" --use-current-runtime -c Release -o /app/publish /p:UseAppHost=false
+2024-12-04T05:52:37.6860027Z #22 0.834   Determining projects to restore...
+2024-12-04T05:52:38.3559132Z #22 1.505   Restored /src/AccountingService/AccountingService.csproj (in 325 ms).
+2024-12-04T05:52:43.1580851Z #22 6.307   AccountingService -> /src/AccountingService/bin/Release/net8.0/linux-x64/AccountingService.dll
+2024-12-04T05:52:43.4625661Z #22 6.611   AccountingService -> /app/publish/
+2024-12-04T05:52:43.6005272Z #22 DONE 6.7s
+2024-12-04T05:52:43.6005782Z 
+2024-12-04T05:52:43.6006061Z #23 [linux/arm64 stage-2 3/6] COPY --from=publish /app/publish .
+2024-12-04T05:52:43.7081246Z #23 DONE 0.1s
+2024-12-04T05:52:43.7081528Z 
+2024-12-04T05:52:43.7082776Z #24 [linux/amd64 publish 1/1] RUN dotnet publish "./AccountingService.csproj" --use-current-runtime -c Release -o /app/publish /p:UseAppHost=false
+2024-12-04T05:52:43.7084232Z #24 0.866   Determining projects to restore...
+2024-12-04T05:52:43.7085113Z #24 1.602   Restored /src/AccountingService/AccountingService.csproj (in 320 ms).
+2024-12-04T05:52:43.7086701Z #24 6.416   AccountingService -> /src/AccountingService/bin/Release/net8.0/linux-x64/AccountingService.dll
+2024-12-04T05:52:43.7087917Z #24 6.699   AccountingService -> /app/publish/
+2024-12-04T05:52:43.7088292Z #24 DONE 6.8s
+2024-12-04T05:52:43.7088862Z 
+2024-12-04T05:52:43.7089100Z #25 [linux/amd64 stage-2 3/6] COPY --from=publish /app/publish .
+2024-12-04T05:52:43.8165547Z #25 DONE 0.1s
+2024-12-04T05:52:43.8165834Z 
+2024-12-04T05:52:43.8168318Z #26 [linux/arm64 stage-2 4/6] RUN mkdir -p "/var/log/opentelemetry/dotnet"
+2024-12-04T05:52:43.9709617Z #26 DONE 0.1s
+2024-12-04T05:52:43.9709903Z 
+2024-12-04T05:52:43.9710257Z #27 [linux/amd64 stage-2 4/6] RUN mkdir -p "/var/log/opentelemetry/dotnet"
+2024-12-04T05:52:43.9711451Z #27 DONE 0.1s
+2024-12-04T05:52:43.9711662Z 
+2024-12-04T05:52:43.9712220Z #28 [linux/arm64 stage-2 5/6] RUN chown app "/var/log/opentelemetry/dotnet"
+2024-12-04T05:52:43.9712935Z #28 DONE 0.1s
+2024-12-04T05:52:43.9713563Z 
+2024-12-04T05:52:43.9713895Z #29 [linux/amd64 stage-2 5/6] RUN chown app "/var/log/opentelemetry/dotnet"
+2024-12-04T05:52:44.0967464Z #29 DONE 0.1s
+2024-12-04T05:52:44.0967670Z 
+2024-12-04T05:52:44.0967968Z #30 [linux/amd64 stage-2 6/6] RUN chown app "/app/instrument.sh"
+2024-12-04T05:52:44.0969243Z #30 DONE 0.1s
+2024-12-04T05:52:44.0969454Z 
+2024-12-04T05:52:44.0969807Z #31 [linux/arm64 stage-2 6/6] RUN chown app "/app/instrument.sh"
+2024-12-04T05:52:44.0970448Z #31 DONE 0.1s
+2024-12-04T05:52:44.2497045Z 
+2024-12-04T05:52:44.2497857Z #32 exporting to image
+2024-12-04T05:52:44.2498808Z #32 exporting layers
+2024-12-04T05:52:45.8021413Z #32 exporting layers 1.7s done
+2024-12-04T05:52:45.9261824Z #32 exporting manifest sha256:b391b1946e44e1527c1b38f6afaa28ea74a4b8ed2a523fbf676a913e3ddb3ca3 done
+2024-12-04T05:52:45.9263347Z #32 exporting config sha256:ad33c9cadc8e21175c24ff9ec29456b16ada91a5505fed681ae21fc97ebae49f done
+2024-12-04T05:52:45.9264599Z #32 exporting attestation manifest sha256:21d6cf6197b0657dd303dac85730614969e2840a6232cf129c342dec2aeec152 done
+2024-12-04T05:52:45.9265752Z #32 exporting manifest sha256:3da5415433d2902849b5d4a33d64b12a2dcfb90346c632aa9aec0a4b9c797d6e done
+2024-12-04T05:52:45.9267077Z #32 exporting config sha256:37a44f921f7161796a66cced90b6e9e7f6c4269eddc413c21ece7c06c9e5af97 done
+2024-12-04T05:52:45.9268451Z #32 exporting attestation manifest sha256:97428761ae7f14e2e62579ea86bbb4aaef0cd6e3967de33f0ea7024bf75db4ca done
+2024-12-04T05:52:45.9269561Z #32 exporting manifest list sha256:3b3d89e2d1d81b86309130291ea0622accb98635488ed371e1a89cb33c4c6192 done
+2024-12-04T05:52:45.9270208Z #32 pushing layers
+2024-12-04T05:52:46.0768261Z #32 ...
+2024-12-04T05:52:46.0768538Z 
+2024-12-04T05:52:46.0768980Z #33 [auth] shareefm0/demo:pull,push token for ghcr.io
+2024-12-04T05:52:46.0769473Z #33 DONE 0.0s
+2024-12-04T05:52:46.2269910Z 
+2024-12-04T05:52:46.2270535Z #32 exporting to image
+2024-12-04T05:52:47.3756625Z #32 pushing layers 1.5s done
+2024-12-04T05:52:47.3757826Z #32 pushing manifest for ghcr.io/shareefm0/demo:1.0.0-accountingservice@sha256:3b3d89e2d1d81b86309130291ea0622accb98635488ed371e1a89cb33c4c6192
+2024-12-04T05:52:48.5302500Z #32 pushing manifest for ghcr.io/shareefm0/demo:1.0.0-accountingservice@sha256:3b3d89e2d1d81b86309130291ea0622accb98635488ed371e1a89cb33c4c6192 1.2s done
+2024-12-04T05:52:48.6642958Z #32 pushing layers 0.1s done
+2024-12-04T05:52:48.6644199Z #32 pushing manifest for ghcr.io/shareefm0/demo:latest-accountingservice@sha256:3b3d89e2d1d81b86309130291ea0622accb98635488ed371e1a89cb33c4c6192
+2024-12-04T05:52:49.0095742Z #32 pushing manifest for ghcr.io/shareefm0/demo:latest-accountingservice@sha256:3b3d89e2d1d81b86309130291ea0622accb98635488ed371e1a89cb33c4c6192 0.3s done
+2024-12-04T05:52:49.0097181Z #32 DONE 4.9s
+2024-12-04T05:52:49.0097393Z 
+2024-12-04T05:52:49.0097682Z #34 exporting to GitHub Actions Cache
+2024-12-04T05:52:49.0098463Z #34 preparing build cache for export
+2024-12-04T05:52:49.1604759Z #34 writing layer sha256:121c211c67de05554a4569f2a24d2f0d6f1c744e6a2a85825d188cbb8c79f8a1 0.1s done
+2024-12-04T05:52:49.3331231Z #34 writing layer sha256:2a29a51d6635ea0e5dde4af7eb05af353622b5d576cb555455e4847a3006a08c
+2024-12-04T05:52:50.4616026Z #34 writing layer sha256:2a29a51d6635ea0e5dde4af7eb05af353622b5d576cb555455e4847a3006a08c 1.3s done
+2024-12-04T05:52:50.6142889Z #34 writing layer sha256:54525fe67c1441e6915cb644458dbfe141c1030ffd2d6cb5420c09e79534c3cb 0.1s done
+2024-12-04T05:52:50.7489635Z #34 writing layer sha256:56630b7765a54bec3726e2c28aa1c5c33e8db3111d22c5cd691dba84f3701306 0.1s done
+2024-12-04T05:52:50.7491205Z #34 writing layer sha256:5a3401d557b6805a0a7d2613abc6fc31eacf7c02aa47467f4a77ffe7fc630706
+2024-12-04T05:52:50.9345181Z #34 writing layer sha256:5a3401d557b6805a0a7d2613abc6fc31eacf7c02aa47467f4a77ffe7fc630706 0.1s done
+2024-12-04T05:52:50.9346144Z #34 writing layer sha256:6b4c5903b7374345294125f753b889eb72499bfea37b48e474c086b2c3512ecb 0.1s done
+2024-12-04T05:52:51.1470203Z #34 preparing build cache for export 2.1s done
+2024-12-04T05:52:51.1470924Z #34 DONE 2.1s
+2024-12-04T05:52:51.1858662Z 
+2024-12-04T05:52:51.1859351Z #35 resolving provenance for metadata file
+2024-12-04T05:52:51.1859783Z #35 DONE 0.0s
+2024-12-04T05:53:16.7787564Z ##[group]ImageID
+2024-12-04T05:53:16.7788007Z sha256:3b3d89e2d1d81b86309130291ea0622accb98635488ed371e1a89cb33c4c6192
+2024-12-04T05:53:16.7789399Z ##[endgroup]
+2024-12-04T05:53:16.7790314Z ##[group]Digest
+2024-12-04T05:53:16.7792581Z sha256:3b3d89e2d1d81b86309130291ea0622accb98635488ed371e1a89cb33c4c6192
+2024-12-04T05:53:16.7794220Z ##[endgroup]
+2024-12-04T05:53:16.7795040Z ##[group]Metadata
+2024-12-04T05:53:16.7795689Z {
+2024-12-04T05:53:16.7796820Z   "buildx.build.ref": "builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb/builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb0/ev8nntlacijsxa2dydvh96a91",
+2024-12-04T05:53:16.7798356Z   "containerimage.descriptor": {
+2024-12-04T05:53:16.7799169Z     "mediaType": "application/vnd.oci.image.index.v1+json",
+2024-12-04T05:53:16.7800246Z     "digest": "sha256:3b3d89e2d1d81b86309130291ea0622accb98635488ed371e1a89cb33c4c6192",
+2024-12-04T05:53:16.7801059Z     "size": 1609
+2024-12-04T05:53:16.7801469Z   },
+2024-12-04T05:53:16.7802142Z   "containerimage.digest": "sha256:3b3d89e2d1d81b86309130291ea0622accb98635488ed371e1a89cb33c4c6192",
+2024-12-04T05:53:16.7803455Z   "image.name": "ghcr.io/shareefm0/demo:1.0.0-accountingservice,ghcr.io/shareefm0/demo:latest-accountingservice"
+2024-12-04T05:53:16.7804345Z }
+2024-12-04T05:53:16.7804958Z ##[endgroup]
+2024-12-04T05:53:16.7805695Z ##[group]Reference
+2024-12-04T05:53:16.7806641Z builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb/builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb0/ev8nntlacijsxa2dydvh96a91
+2024-12-04T05:53:16.7807944Z ##[endgroup]
+2024-12-04T05:53:16.7808595Z ##[group]Check build summary support
+2024-12-04T05:53:16.7809427Z Build summary supported!
+2024-12-04T05:53:16.7810129Z ##[endgroup]
+2024-12-04T05:53:16.7930333Z Post job cleanup.
+2024-12-04T05:53:17.0420135Z ##[group]Generating build summary
+2024-12-04T05:53:17.1279829Z exporting build record to /home/runner/work/_temp/docker-actions-toolkit-v6QNCl/export
+2024-12-04T05:53:20.1343993Z [command]/usr/bin/mkfifo /home/runner/work/_temp/docker-actions-toolkit-v6QNCl/buildx-in-uPzUfE.fifo
+2024-12-04T05:53:20.1402162Z [command]/usr/bin/mkfifo /home/runner/work/_temp/docker-actions-toolkit-v6QNCl/buildx-out-nFrg0M.fifo
+2024-12-04T05:53:20.1442714Z [command]docker buildx --builder builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb dial-stdio
+2024-12-04T05:53:20.1488641Z [command]docker run --rm -i -v /home/runner/.docker/buildx/refs:/buildx-refs -v /home/runner/work/_temp/docker-actions-toolkit-v6QNCl/export:/out docker.io/dockereng/export-build:latest --ref-state-dir=/buildx-refs --node=builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb/builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb0 --ref=ev8nntlacijsxa2dydvh96a91 --uid=1001 --gid=127
+2024-12-04T05:53:20.1714733Z Unable to find image 'dockereng/export-build:latest' locally
+2024-12-04T05:53:20.4796111Z latest: Pulling from dockereng/export-build
+2024-12-04T05:53:20.5365675Z fa05fab17045: Pulling fs layer
+2024-12-04T05:53:20.5366357Z 3bee4e1c34fe: Pulling fs layer
+2024-12-04T05:53:20.6214146Z 3bee4e1c34fe: Verifying Checksum
+2024-12-04T05:53:20.7529766Z fa05fab17045: Download complete
+2024-12-04T05:53:20.8620845Z fa05fab17045: Pull complete
+2024-12-04T05:53:20.8978937Z 3bee4e1c34fe: Pull complete
+2024-12-04T05:53:20.9023155Z Digest: sha256:3d41f110aedbe6c439e0002646f6c31b3063bc50f43a712c9a55710a9b5ae3f7
+2024-12-04T05:53:20.9040796Z Status: Downloaded newer image for dockereng/export-build:latest
+2024-12-04T05:53:21.3935107Z Process "docker run" exited with code 0
+2024-12-04T05:53:21.3940553Z Parsing /home/runner/work/_temp/docker-actions-toolkit-v6QNCl/export/summary.json
+2024-12-04T05:53:21.3944420Z Build record written to /home/runner/work/_temp/docker-actions-toolkit-v6QNCl/export/shareefm0~enpm818-final-phase-6~EV8NNT.dockerbuild (88.36 KB)
+2024-12-04T05:53:21.3963159Z Uploading shareefm0~enpm818-final-phase-6~EV8NNT.dockerbuild to blob storage
+2024-12-04T05:53:21.4319022Z ERROR: read unix @->/run/docker.sock: use of closed network connection
+2024-12-04T05:53:21.4320658Z Process "buildx dial-stdio" was killed with signal SIGKILL
+2024-12-04T05:53:21.4769801Z Beginning upload of artifact content to blob storage
+2024-12-04T05:53:21.4922111Z Uploaded bytes 65536
+2024-12-04T05:53:21.4923453Z Uploaded bytes 90482
+2024-12-04T05:53:21.5180677Z Finished uploading artifact content to blob storage!
+2024-12-04T05:53:21.5185805Z SHA256 hash of uploaded artifact is 8e916253a45e0c84c3274aed5f352c271b55731eb24d54edac77b90b76439fd0
+2024-12-04T05:53:21.5187394Z Finalizing artifact upload
+2024-12-04T05:53:21.6707536Z Artifact successfully finalized (2271553848)
+2024-12-04T05:53:21.6709296Z Artifact download URL: https://github.com/shareefm0/enpm818-final-phase-6/actions/runs/12153851928/artifacts/2271553848
+2024-12-04T05:53:21.6734123Z Writing summary
+2024-12-04T05:53:21.6746955Z ##[endgroup]
+2024-12-04T05:53:21.6748158Z ##[group]Removing temp folder /home/runner/work/_temp/docker-actions-toolkit-YlIav3
+2024-12-04T05:53:21.6757719Z ##[endgroup]
+2024-12-04T05:53:21.6758735Z ##[group]Post cache
+2024-12-04T05:53:21.6759186Z State not set
+2024-12-04T05:53:21.6760329Z ##[endgroup]
+2024-12-04T05:53:21.6912711Z Post job cleanup.
+2024-12-04T05:53:21.9446387Z ##[group]Removing builder
+2024-12-04T05:53:22.0634355Z [command]/usr/bin/docker buildx rm builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb
+2024-12-04T05:53:23.4812550Z builder-db3888b1-b4a2-49cf-bed2-5eae18e175bb removed
+2024-12-04T05:53:23.4844508Z ##[endgroup]
+2024-12-04T05:53:23.4846829Z ##[group]Cleaning up certificates
+2024-12-04T05:53:23.4853076Z ##[endgroup]
+2024-12-04T05:53:23.4854294Z ##[group]Post cache
+2024-12-04T05:53:23.4856166Z State not set
+2024-12-04T05:53:23.4857096Z ##[endgroup]
+2024-12-04T05:53:23.4974228Z Post job cleanup.
+2024-12-04T05:53:23.7823565Z [command]/usr/bin/docker logout ghcr.io
+2024-12-04T05:53:23.7973840Z Removing login credentials for ghcr.io
+2024-12-04T05:53:23.8016217Z ##[group]Post cache
+2024-12-04T05:53:23.8016948Z State not set
+2024-12-04T05:53:23.8018339Z ##[endgroup]
+2024-12-04T05:53:23.8171612Z Post job cleanup.
+2024-12-04T05:53:23.9121582Z [command]/usr/bin/git version
+2024-12-04T05:53:23.9164250Z git version 2.47.0
+2024-12-04T05:53:23.9209882Z Temporarily overriding HOME='/home/runner/work/_temp/485705a5-d66e-4961-9126-f9fedfd41ba4' before making global git config changes
+2024-12-04T05:53:23.9211285Z Adding repository directory to the temporary git global config as a safe directory
+2024-12-04T05:53:23.9225354Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/enpm818-final-phase-6/enpm818-final-phase-6
+2024-12-04T05:53:23.9277131Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2024-12-04T05:53:23.9321829Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2024-12-04T05:53:23.9588017Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2024-12-04T05:53:23.9610828Z http.https://github.com/.extraheader
+2024-12-04T05:53:23.9625299Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2024-12-04T05:53:23.9658950Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2024-12-04T05:53:24.0023745Z Cleaning up orphan processes
