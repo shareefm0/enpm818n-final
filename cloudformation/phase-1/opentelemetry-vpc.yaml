@@ -1,0 +1,237 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: CloudFormation template for the OpenTelemetry VPC
+
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: Networking
+        Parameters:
+          - IpAddressRange
+    ParameterLabels:
+      IpAddressRange:
+        default: IP Address Range
+
+Parameters:
+  IpAddressRange:
+    Type: String
+    Description: The IP address range to use for all security group rules, expressed in CIDR notation
+
+Outputs:
+  InstanceSubnetId:
+    Description: The ID of the subnet created for the Docker & Kubernetes deployments
+    Value: !Ref InstanceSubnet
+    Export:
+      Name: !Sub "${AWS::StackName}-InstanceSubnetId"
+  InstanceSecurityGroupId:
+    Description: The ID of the security group created for the Docker & Kubernetes deployments
+    Value: !Ref InstanceSecurityGroup
+    Export:
+      Name: !Sub "${AWS::StackName}-InstanceSecurityGroupId"
+  K8sClusterSubnet0Id:
+    Description: The ID of subnet at us-east-1b created for the EKS cluster
+    Value: !Ref K8sClusterSubnet0
+    Export:
+      Name: !Sub "${AWS::StackName}-K8sClusterSubnet0Id"
+  K8sClusterSubnet1Id:
+    Description: The ID of subnet at us-east-1c created for the EKS cluster
+    Value: !Ref K8sClusterSubnet1
+    Export:
+      Name: !Sub "${AWS::StackName}-K8sClusterSubnet1Id"
+  K8sSecurityGroupId:
+    Description: The ID of the security group created for the EKS cluster
+    Value: !Ref K8sSecurityGroup
+    Export:
+      Name: !Sub "${AWS::StackName}-K8sSecurityGroupId"
+
+# USEFUL TOOL FOR DETERMINING SUBNET SIZES:
+# https://visualsubnetcalc.com/
+
+Resources:
+  ### VPC ###
+  Vpc:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/24
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: opentelemetry-vpc
+  ### Docker & Kubernetes Deployments ###
+  InstanceSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref Vpc
+      AvailabilityZone: us-east-1a
+      CidrBlock: 10.0.0.0/26
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: opentelemetry-ec2-subnet
+  InstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      VpcId: !Ref Vpc
+      GroupName: opentelemetry-ec2-sg
+      GroupDescription: Control traffic to/from the OpenTelemetry applications
+      Tags:
+        - Key: Name
+          Value: opentelemetry-ec2-sg
+  InstanceSecurityGroupIngressRule0:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !Ref InstanceSecurityGroup
+      IpProtocol: tcp
+      CidrIp: !Ref IpAddressRange
+      FromPort: 22
+      ToPort: 22
+  InstanceSecurityGroupIngressRule1:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !Ref InstanceSecurityGroup
+      IpProtocol: tcp
+      CidrIp: !Ref IpAddressRange
+      FromPort: 8080
+      ToPort: 8080
+  InstanceSecurityGroupIngressRule2:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !Ref InstanceSecurityGroup
+      IpProtocol: tcp
+      CidrIp: !Ref IpAddressRange
+      FromPort: 11633
+      ToPort: 11633
+  InstanceSecurityGroupEgressRule0:
+    Type: AWS::EC2::SecurityGroupEgress
+    Properties:
+      GroupId: !Ref InstanceSecurityGroup
+      IpProtocol: -1
+      CidrIp: 0.0.0.0/0
+  ### EKS Cluster ###
+  # Amazon EKS networking requirements: https://docs.aws.amazon.com/eks/latest/userguide/network-reqs.html
+  # Amazon EKS security group requirements: https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html
+  K8sClusterSubnet0:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref Vpc
+      AvailabilityZone: us-east-1b
+      CidrBlock: 10.0.0.128/26
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: opentelemetry-eks-subnet
+  K8sClusterSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref Vpc
+      AvailabilityZone: us-east-1c
+      CidrBlock: 10.0.0.192/26
+      MapPublicIpOnLaunch: false
+      Tags:
+        - Key: Name
+          Value: opentelemetry-eks-subnet
+  K8sSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      VpcId: !Ref Vpc
+      GroupName: opentelemetry-eks-sg
+      GroupDescription: Control traffic to/from the OpenTelemetry EKS cluster control plane
+      Tags:
+        - Key: Name
+          Value: opentelemetry-eks-sg
+  K8sSecurityGroupIngressRule0:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !Ref K8sSecurityGroup
+      IpProtocol: -1
+      SourceSecurityGroupId: !Ref K8sSecurityGroup
+  K8sSecurityGroupIngressRule1:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !Ref K8sSecurityGroup
+      IpProtocol: tcp
+      SourceSecurityGroupId: !Ref InstanceSecurityGroup
+      FromPort: 443
+      ToPort: 443
+  K8sSecurityGroupEgressRule0:
+    Type: AWS::EC2::SecurityGroupEgress
+    Properties:
+      GroupId: !Ref K8sSecurityGroup
+      IpProtocol: -1
+      CidrIp: 0.0.0.0/0
+  ### Gateways ###
+  # Internet Gateway
+  InternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: opentelemetry-igw
+  InternetGatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref Vpc
+      InternetGatewayId: !Ref InternetGateway
+  # NAT Gateway
+  # IDEA 1: Make the infrastructure more resilient by creating NAT gateways in each availability zone.
+  # IDEA 2: The NAT gateway is needed as EKS worker nodes need to interact with AWS services. This could be secured by
+  #         leveraging VPC endpoints to contain all traffic within the AWS cloud. Accomplishing this will make the NAT
+  #         gateway obsolete.
+  NatGatewayEip:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+  NatGateway:
+    Type: AWS::EC2::NatGateway
+    Properties:
+      AllocationId: !GetAtt NatGatewayEip.AllocationId
+      SubnetId: !Ref InstanceSubnet
+      Tags:
+        - Key: Name
+          Value: opentelemetry-nat
+  ### Route Tables ###
+  # Public Subnet Route Table
+  PublicSubnetRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref Vpc
+      Tags:
+        - Key: Name
+          Value: opentelemetry-public-rtb
+  PublicSubnetRouteTableRoute0:
+    Type: AWS::EC2::Route
+    DependsOn: InternetGatewayAttachment
+    Properties:
+      RouteTableId: !Ref PublicSubnetRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref InternetGateway
+  InstanceSubnetRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PublicSubnetRouteTable
+      SubnetId: !Ref InstanceSubnet
+  # Private Subnet Route Table
+  PrivateSubnetRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref Vpc
+      Tags:
+        - Key: Name
+          Value: opentelemetry-private-rtb
+  PrivateSubnetRouteTableRoute0:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: !Ref PrivateSubnetRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      NatGatewayId: !Ref NatGateway
+  K8sClusterSubnet0RouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PrivateSubnetRouteTable
+      SubnetId: !Ref K8sClusterSubnet0
+  K8sClusterSubnet1RouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PrivateSubnetRouteTable
+      SubnetId: !Ref K8sClusterSubnet1

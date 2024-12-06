@@ -1,0 +1,109 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: CloudFormation template for the OpenTelemetry Docker deployment
+
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: Networking
+        Parameters:
+          - VpcStackName
+      - Label:
+          default: Instance Configuration
+        Parameters:
+          - Tenancy
+          - KeyName
+    ParameterLabels:
+      VpcStackName:
+        default: VPC Stack Name
+      Tenancy:
+        default: Tenancy
+      KeyName:
+        default: Key Name
+
+Parameters:
+  VpcStackName:
+    Type: String
+  Tenancy:
+    Type: String
+    Description: Choose "dedicated" to create a dedicated EC2 instance
+    Default: default
+    AllowedValues: [default, dedicated]
+    # Use "default" for non-production purposes such as development, testing, demonstration, etc.
+    # Use "dedicated" for production purposes or for compliance purposes.
+  KeyName:
+    Type: AWS::EC2::KeyPair::KeyName
+    Description: Choose a pre-existing key pair to enable SSH connectivity
+
+Outputs:
+  PublicIp:
+    Description: The public IP address of the EC2 instance
+    Value: !GetAtt DockerInstance.PublicIp
+  WebStoreUrl:
+    Description: The URL for Web Store
+    Value: !Sub "http://${DockerInstance.PublicIp}:8080/"
+  GrafanaUrl:
+    Description: The URL for Grafana
+    Value: !Sub "http://${DockerInstance.PublicIp}:8080/grafana/"
+  LoadGeneratorUrl:
+    Description: The URL for Load Generator
+    Value: !Sub "http://${DockerInstance.PublicIp}:8080/loadgen/"
+  JaegerUrl:
+    Description: The URL for Jaeger
+    Value: !Sub "http://${DockerInstance.PublicIp}:8080/jaeger/ui/"
+  TracetestUrl:
+    Description: The URL for Tracetest
+    Value: !Sub "http://${DockerInstance.PublicIp}:11633/"
+  FlagdConfiguratorUrl:
+    Description: The URL for Flagd Configurator
+    Value: !Sub "http://${DockerInstance.PublicIp}:8080/feature"
+
+Resources:
+  DockerInstance:
+    # Instance may take several minutes before being able to accept requests. If you suspect the UserData script failed,
+    # SSH into the instance and review the "/var/log/cloud-init-output.log" log file.
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0166fe664262f664c # specific to us-east-1
+      InstanceType: t3.large
+      Tenancy: !Ref Tenancy
+      SubnetId:
+        Fn::ImportValue: !Sub "${VpcStackName}-InstanceSubnetId"
+      SecurityGroupIds:
+        - Fn::ImportValue: !Sub "${VpcStackName}-InstanceSecurityGroupId"
+      KeyName: !Ref KeyName
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            DeleteOnTermination: true
+            Encrypted: true
+            VolumeType: gp2
+            VolumeSize: 16
+      UserData: !Base64 |
+        #!/usr/bin/env bash
+        sudo yum update -y
+
+        ## Install git
+        sudo yum install git -y
+
+        ## Install docker
+        sudo amazon-linux-extras install docker -y
+        sudo service docker start
+
+        ## Install docker compose
+        # https://docs.docker.com/compose/install/linux/#install-the-plugin-manually
+        DOCKER_CONFIG=${DOCKER_CONFIG:-/usr/local/lib/docker}
+        sudo mkdir -p $DOCKER_CONFIG/cli-plugins
+        sudo curl -SL https://github.com/docker/compose/releases/download/v2.30.3/docker-compose-linux-x86_64 -o $DOCKER_CONFIG/cli-plugins/docker-compose
+        sudo chmod +x /usr/local/lib/docker/cli-plugins/docker-compose
+
+        ## Deploy OpenTelemetry using Docker
+        # https://opentelemetry.io/docs/demo/docker-deployment/
+        git clone https://github.com/open-telemetry/opentelemetry-demo.git
+        cd opentelemetry-demo/
+        sudo docker compose up --force-recreate --remove-orphans --detach && \
+          sudo docker compose -f docker-compose-tests.yml run traceBasedTests
+      PropagateTagsToVolumeOnCreation: true
+      Tags:
+        - Key: Name
+          Value: opentelemetry-docker-ec2

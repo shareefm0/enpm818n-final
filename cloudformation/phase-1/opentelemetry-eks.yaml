@@ -1,0 +1,107 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: CloudFormation template for the OpenTelemetry EKS cluster
+
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: Networking
+        Parameters:
+          - VpcStackName
+    ParameterLabels:
+      VpcStackName:
+        default: VPC Stack Name
+
+Parameters:
+  VpcStackName:
+    Type: String
+
+Outputs:
+  K8sClusterName:
+    Description: The name of the EKS cluster
+    Value: !Ref K8sCluster
+    Export:
+      Name: !Sub "${AWS::StackName}-K8sClusterName"
+
+Resources:
+  K8sCluster:
+    Type: AWS::EKS::Cluster
+    Properties:
+      Name: opentelemetry-eks
+      Version: 1.31
+      UpgradePolicy:
+        SupportType: STANDARD
+      RoleArn: !GetAtt K8sClusterRole.Arn
+      AccessConfig:
+        AuthenticationMode: API
+        BootstrapClusterCreatorAdminPermissions: true
+      BootstrapSelfManagedAddons: true
+      ResourcesVpcConfig:
+        EndpointPublicAccess: false
+        EndpointPrivateAccess: true
+        SubnetIds:
+          - Fn::ImportValue: !Sub "${VpcStackName}-K8sClusterSubnet0Id"
+          - Fn::ImportValue: !Sub "${VpcStackName}-K8sClusterSubnet1Id"
+        SecurityGroupIds:
+          - Fn::ImportValue: !Sub "${VpcStackName}-K8sSecurityGroupId"
+      Tags:
+        - Key: Name
+          Value: opentelemetry-eks
+  K8sClusterRole:
+    # https://docs.aws.amazon.com/eks/latest/userguide/cluster-iam-role.html
+    # https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AmazonEKSClusterPolicy.html
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: OpenTelemetryK8sClusterRole
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: eks.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonEKSClusterPolicy
+      Tags:
+        - Key: Name
+          Value: opentelemetry-eks-role
+  K8sWorkerNodes:
+    Type: AWS::EKS::Nodegroup
+    Properties:
+      ClusterName: !Ref K8sCluster
+      NodegroupName: opentelemetry-eks-nodes
+      NodeRole: !GetAtt K8sWorkerNodesRole.Arn
+      ScalingConfig:
+        DesiredSize: 2
+        MinSize: 0
+        MaxSize: 2
+      CapacityType: ON_DEMAND
+      InstanceTypes:
+        - t3.large
+      Subnets:
+        - Fn::ImportValue: !Sub "${VpcStackName}-K8sClusterSubnet0Id"
+        - Fn::ImportValue: !Sub "${VpcStackName}-K8sClusterSubnet1Id"
+      Tags:
+        Name: opentelemetry-eks-nodes
+  K8sWorkerNodesRole:
+    # https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html
+    # https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AmazonEKSWorkerNodePolicy.html
+    # https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AmazonEC2ContainerRegistryPullOnly.html
+    # https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AmazonEKS_CNI_Policy.html
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: OpenTelemetryK8sWorkerNodesRole
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy
+        - arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPullOnly
+        - arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy
+      Tags:
+        - Key: Name
+          Value: opentelemetry-eks-nodes-role

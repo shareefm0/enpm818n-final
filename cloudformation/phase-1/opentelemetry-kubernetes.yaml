@@ -1,0 +1,180 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: CloudFormation template for the OpenTelemetry Kubernetes deployment
+
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+      - Label:
+          default: Networking
+        Parameters:
+          - VpcStackName
+      - Label:
+          default: Kubernetes Cluster
+        Parameters:
+          - EksStackName
+      - Label:
+          default: Instance Configuration
+        Parameters:
+          - Tenancy
+          - KeyName
+    ParameterLabels:
+      VpcStackName:
+        default: VPC Stack Name
+      EksStackName:
+        default: EKS Stack Name
+      Tenancy:
+        default: Tenancy
+      KeyName:
+        default: Key Name
+
+Parameters:
+  VpcStackName:
+    Type: String
+  EksStackName:
+    Type: String
+  Tenancy:
+    Type: String
+    Description: Choose "dedicated" to create a dedicated EC2 instance
+    Default: default
+    AllowedValues: [default, dedicated]
+    # Use "default" for non-production purposes such as development, testing, demonstration, etc.
+    # Use "dedicated" for production purposes or for compliance purposes.
+  KeyName:
+    Type: AWS::EC2::KeyPair::KeyName
+    Description: Choose a pre-existing key pair to enable SSH connectivity
+
+Outputs:
+  PublicIp:
+    Description: The public IP address of the EC2 instance
+    Value: !GetAtt K8sInstance.PublicIp
+  WebStoreUrl:
+    Description: The URL for Web Store
+    Value: !Sub "http://${K8sInstance.PublicIp}:8080/"
+  GrafanaUrl:
+    Description: The URL for Grafana
+    Value: !Sub "http://${K8sInstance.PublicIp}:8080/grafana/"
+  LoadGeneratorUrl:
+    Description: The URL for Load Generator
+    Value: !Sub "http://${K8sInstance.PublicIp}:8080/loadgen/"
+  JaegerUrl:
+    Description: The URL for Jaeger
+    Value: !Sub "http://${K8sInstance.PublicIp}:8080/jaeger/ui/"
+  FlagdConfiguratorUrl:
+    Description: The URL for Flagd Configurator
+    Value: !Sub "http://${K8sInstance.PublicIp}:8080/feature"
+
+Resources:
+  K8sInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0166fe664262f664c # specific to us-east-1
+      InstanceType: t3.large
+      Tenancy: !Ref Tenancy
+      SubnetId:
+        Fn::ImportValue: !Sub "${VpcStackName}-InstanceSubnetId"
+      SecurityGroupIds:
+        - Fn::ImportValue: !Sub "${VpcStackName}-InstanceSecurityGroupId"
+      KeyName: !Ref KeyName
+      IamInstanceProfile: !Ref K8sInstanceInstanceProfile
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            DeleteOnTermination: true
+            Encrypted: true
+            VolumeType: gp2
+            VolumeSize: 8
+      UserData:
+        Fn::Base64:
+          Fn::Sub:
+            - |
+              #!/usr/bin/env bash
+              sudo yum update -y
+
+              ## Update the AWS CLI
+              sudo yum remove awscli -y
+              curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+              unzip awscliv2.zip
+              sudo ./aws/install
+
+              ## Install git
+              sudo yum install git -y
+
+              ## Install kubectl
+              # https://docs.aws.amazon.com/eks/latest/userguide/install-kubectl.html
+              curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.31.2/2024-11-15/bin/linux/amd64/kubectl
+              chmod +x ./kubectl
+              mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl
+              export PATH=$HOME/bin:$PATH
+              echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+
+              ## Install eksctl
+              # https://eksctl.io/installation/
+              ARCH=amd64
+              PLATFORM=$(uname -s)_$ARCH
+              curl -sLO "https://github.com/eksctl-io/eksctl/releases/latest/download/eksctl_$PLATFORM.tar.gz"
+              tar -xzf eksctl_$PLATFORM.tar.gz -C /tmp && rm eksctl_$PLATFORM.tar.gz
+              sudo mv /tmp/eksctl /usr/local/bin
+
+              ## Deploy OpenTelemetry using Kubernetes
+              # https://opentelemetry.io/docs/demo/kubernetes-deployment/
+              KUBECONFIG="/home/ec2-user/.kube/config" /usr/local/bin/aws eks update-kubeconfig --region us-east-1 --name ${K8sClusterName}
+              KUBECONFIG="/home/ec2-user/.kube/config" kubectl delete --namespace otel-demo -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-demo/main/kubernetes/opentelemetry-demo.yaml --ignore-not-found --wait
+              KUBECONFIG="/home/ec2-user/.kube/config" kubectl apply --namespace otel-demo -f https://raw.githubusercontent.com/open-telemetry/opentelemetry-demo/main/kubernetes/opentelemetry-demo.yaml
+              sleep 5s # not ideal, but needed to give EKS time to make the service available
+              KUBECONFIG="/home/ec2-user/.kube/config" kubectl port-forward --namespace otel-demo service/opentelemetry-demo-frontendproxy --address 0.0.0.0,:: 8080:8080
+            - K8sClusterName:
+                Fn::ImportValue: !Sub "${EksStackName}-K8sClusterName"
+      PropagateTagsToVolumeOnCreation: true
+      Tags:
+        - Key: Name
+          Value: opentelemetry-eks-ec2
+  K8sInstanceInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      InstanceProfileName: OpenTelemetryK8sInstanceInstanceProfile
+      Roles:
+        - !Ref K8sInstanceRole
+  K8sInstanceRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: OpenTelemetryK8sInstanceRole
+      AssumeRolePolicyDocument:
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: sts:AssumeRole
+      Tags:
+        - Key: Name
+          Value: opentelemetry-eks-ec2-role
+  K8sInstanceRoleInlinePolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: OpenTelemetryK8sInstanceRoleInlinePolicy
+      PolicyDocument:
+        # https://docs.aws.amazon.com/eks/latest/userguide/security-iam-id-based-policy-examples.html#policy-example2
+        Version: 2012-10-17
+        Statement:
+          - Effect: Allow
+            Action:
+              - eks:DescribeCluster
+              - eks:ListClusters
+            Resource: "*"
+      Roles:
+        - !Ref K8sInstanceRole
+  K8sInstanceAccessEntry:
+    Type: AWS::EKS::AccessEntry
+    Properties:
+      ClusterName:
+        Fn::ImportValue: !Sub "${EksStackName}-K8sClusterName"
+      PrincipalArn: !GetAtt K8sInstanceRole.Arn
+      Type: STANDARD
+      AccessPolicies:
+        - AccessScope:
+            Type: cluster
+          PolicyArn: arn:aws:eks::aws:cluster-access-policy/AmazonEKSClusterAdminPolicy
+          # https://docs.aws.amazon.com/eks/latest/userguide/access-policy-permissions.html#access-policy-permissions-amazoneksclusteradminpolicy
+      Tags:
+        - Key: Name
+          Value: opentelemetry-eks-ec2-access-entry
