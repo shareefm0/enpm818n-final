@@ -33,7 +33,7 @@ In order to demonstrate the upgrade process, I decided to change the `default.re
 
 ![Confirming the upgrade process by checking the ReplicaSet resources.](./3-upgrade-confirm.png)
 
-To perform a sanity check, I used `kubectl` to fetch a list of all ReplicaSet resources. As expected, replicas have been updated from `1` to `3`. (Note that not all ReplicaSet resources have been updated. The OpenTelemetry Artifact Hub page mentions that the setting I changed only affects "demo components").
+To perform a sanity check, I used `kubectl` to fetch a list of all ReplicaSet resources. As expected, replicas have been updated from `1` to `3`. (Note that not all ReplicaSet resources have been updated. The OpenTelemetry Artifact Hub page mentions that the setting I changed only affects "demo components.")
 
 ### 4. Rollback Demonstration
 
